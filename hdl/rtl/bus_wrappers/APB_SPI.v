@@ -41,8 +41,8 @@
                 name <= init; \
             else if (name_sel) \
                 name <= PWDATA[size-1:0];
-
-module APB_SPI(
+                
+module EF_SPI_APB(
     input wire          PCLK,
     input wire          PRESETn,
 

@@ -189,4 +189,7 @@ registers:
     bit_access: no
     write_port: ""
     description: SCK PRESCALER
-flags: []
+flags:
+  - name: Done
+    port: Done
+    description: transimation is done

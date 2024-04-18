@@ -11,9 +11,9 @@ SPI master controller with an APB interface
 ```verilog
 EF_SPI_APB INST (
 	`TB_APB_SLAVE_CONN,
-	.dout(dout),
-	.din(din),
-	.csb(csb),
+	.dout(dout)
+	.din(din)
+	.csb(csb)
 	.sclk(sclk)
 );
 ```
@@ -101,9 +101,10 @@ The following are the bit definitions for the interrupt registers:
 
 |Bit|Flag|Width|Description|
 |---|---|---|---|
+|0|DONE|-1|transimation is done|
 
 ### The Interface 
-<img src="docs/_static/spi_master.svg" width="600"/>
+
 
 #### Module Parameters 
 
