@@ -68,7 +68,7 @@ Data transmitted and received
 |bit|field name|width|description|
 |---|---|---|---|
 |0|done|1||
-|1|busy|1|clock phase|
+|1|busy|1||
 
 
 ### CTRL Register [Offset: 0x18, mode: w]

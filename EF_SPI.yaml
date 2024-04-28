@@ -172,7 +172,7 @@ registers:
         bit_offset: 1
         bit_width: 1
         write_port: ""
-        description: "clock phase"
+        description: ""
   - name: CTRL
     size: 2
     mode: w
