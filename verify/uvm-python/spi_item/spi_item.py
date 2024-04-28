@@ -17,16 +17,23 @@ class spi_item(ip_item):
         super().__init__(name)
         self.data_width = 8
         self.MOSI = 0
-        self.rand("MOSI", range(0, (1 << self.data_width) - 1))
         self.MISO = 0
+        self.rand("MISO", range(0, (1 << self.data_width) - 1))
+        self.pre_scale = 0
 
     def convert2string(self):
-        return f"data master to slave = {bin(self.MOSI).zfill(self.data_width)} slave to master = {bin(self.MISO).zfill(self.data_width)}"
+        return f"data master to slave = {hex(self.MOSI)}({bin(self.MOSI).zfill(self.data_width)}) slave to master = {hex(self.MISO)}({bin(self.MISO).zfill(self.data_width)})"
 
     def do_compare(self, tr):
-        if self.MISO == tr.MISO:
+        if self.MISO == tr.MISO and self.MOSI == tr.MOSI:
             return True
         return False
+
+    def do_clone(self):
+        tr = spi_item.create("tr", self)
+        tr.MISO = self.MISO
+        tr.MOSI = self.MOSI
+        return tr
 
 
 uvm_object_utils(spi_item)

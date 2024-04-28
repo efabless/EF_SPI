@@ -148,12 +148,12 @@ registers:
         bit_offset: 0
         bit_width: 1
         write_port: ""
-        description: ""
+        description: "clock polarity"
       - name: cpha
         bit_offset: 1
         bit_width: 1
         write_port: ""
-        description: ""
+        description: "clock phase"
   - name: STATUS
     size: 1
     mode: r
@@ -162,6 +162,17 @@ registers:
     bit_access: no
     read_port: ""
     description: ""
+    fields:
+      - name: done 
+        bit_offset: 0
+        bit_width: 1
+        write_port: ""
+        description: ""
+      - name: busy
+        bit_offset: 1
+        bit_width: 1
+        write_port: ""
+        description: "clock phase"
   - name: CTRL
     size: 2
     mode: w
@@ -186,9 +197,10 @@ registers:
     mode: w
     fifo: no
     offset: 32
+    init: "'h2"
     bit_access: no
     write_port: ""
-    description: SCK PRESCALER
+    description: SCK PRESCALER should have value >= 2
 flags:
   - name: Done
     port: Done

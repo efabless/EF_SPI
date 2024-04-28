@@ -19,6 +19,7 @@ from EF_UVM.base_test import base_test
 # seqences import
 from spi_seq_lib.spi_bus_seq import spi_bus_seq
 from spi_seq_lib.spi_ip_seq import spi_ip_seq
+from spi_seq_lib.configure_spi_seq import configure_spi_seq
 
 # override classes
 from EF_UVM.ip_env.ip_agent.ip_driver import ip_driver
@@ -83,6 +84,17 @@ class spi_base_test(base_test):
         self.set_type_override_by_type(ip_coverage.get_type(), spi_coverage.get_type())
         self.set_type_override_by_type(ip_logger.get_type(), spi_logger.get_type())
 
+    async def configure_phase(self, phase):
+        phase.raise_objection(
+            self, f"{self.__class__.__name__} configure phase OBJECTED "
+        )
+        bus_seq = configure_spi_seq("configure_spi_seq")
+        await bus_seq.start(self.bus_sqr)
+        phase.drop_objection(
+            self, f"{self.__class__.__name__} configure phase drop objection"
+        )
+        await super().configure_phase(phase)
+
 
 uvm_component_utils(spi_base_test)
 
@@ -97,10 +109,10 @@ class spi_first_test(spi_base_test):
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
         # TODO: conntect sequence with sequencer here
         # for example if you need to run the 2 sequence sequentially
-        # bus_seq = spi_bus_seq("spi_bus_seq")
-        # ip_seq = spi_ip_seq("spi_ip_seq")
-        # await bus_seq.start(self.bus_sqr)
-        # await ip_seq.start(self.ip_sqr)
+        bus_seq = spi_bus_seq("spi_bus_seq")
+        ip_seq = spi_ip_seq("spi_ip_seq")
+        await cocotb.start(ip_seq.start(self.ip_sqr))
+        await bus_seq.start(self.bus_sqr)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
 

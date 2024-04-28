@@ -83,7 +83,7 @@ module EF_SPI_APB(
     `APB_SPI_REG(DATA_REG,  8, 0, DATA_REG_sel, DATA_REG_OFF)
     `APB_SPI_REG(CFG_REG,   2, 0, CFG_REG_sel, CFG_REG_OFF)
     `APB_SPI_REG(CTRL_REG,  2, 0, CTRL_REG_sel, CTRL_REG_OFF)
-    `APB_SPI_REG(PRE_REG,   8, 0, PRE_REG_sel, PRE_REG_OFF)
+    `APB_SPI_REG(PRE_REG,   8, 2, PRE_REG_sel, PRE_REG_OFF)
     `APB_SPI_REG(IM_REG,    1, 0, IM_REG_sel, IM_REG_OFF)
     
     reg IC_REG;

@@ -37,7 +37,7 @@ The following table is the result for implementing the EF_SPI IP with different 
 |CFG|0008|0x00000000|w||
 |STATUS|0010|0x00000000|r||
 |CTRL|0018|0x00000000|w||
-|PR|0020|0x00000000|w|SCK PRESCALER|
+|PR|0020|0x00000002|w|SCK PRESCALER should have value >= 2|
 |IM|0f00|0x00000000|w|Interrupt Mask Register; write 1/0 to enable/disable interrupts; check the interrupt flags table for more details|
 |RIS|0f08|0x00000000|w|Raw Interrupt Status; reflects the current interrupts status;check the interrupt flags table for more details|
 |MIS|0f04|0x00000000|w|Masked Interrupt Status; On a read, this register gives the current masked status value of the corresponding interrupt. A write has no effect; check the interrupt flags table for more details|
@@ -56,14 +56,19 @@ Data transmitted and received
 
 |bit|field name|width|description|
 |---|---|---|---|
-|0|cpol|1||
-|1|cpha|1||
+|0|cpol|1|clock polarity|
+|1|cpha|1|clock phase|
 
 
 ### STATUS Register [Offset: 0x10, mode: r]
 
 
-<img src="https://svg.wavedrom.com/{reg:[{name:'STATUS', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+<img src="https://svg.wavedrom.com/{reg:[{name:'done', bits:1},{name:'busy', bits:1},{bits: 30}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|done|1||
+|1|busy|1|clock phase|
 
 
 ### CTRL Register [Offset: 0x18, mode: w]
@@ -79,7 +84,7 @@ Data transmitted and received
 
 ### PR Register [Offset: 0x20, mode: w]
 
-SCK PRESCALER
+SCK PRESCALER should have value >= 2
 <img src="https://svg.wavedrom.com/{reg:[{name:'PR', bits:16},{bits: 16}], config: {lanes: 2, hflip: true}} "/>
 
 

@@ -8,6 +8,7 @@ from uvm.tlm1.uvm_analysis_port import UVMAnalysisExport
 import cocotb
 from EF_UVM.ref_model.ref_model import ref_model
 from EF_UVM.bus_env.bus_item import bus_item
+from cocotb.triggers import Event
 
 
 class spi_ref_model(ref_model):
@@ -28,6 +29,7 @@ class spi_ref_model(ref_model):
         self.irq = 0
         self.mis_changed = Event()
         self.icr_changed = Event()
+        self.data_to_write = 0  # data for spi to write into the MOSI
 
     def build_phase(self, phase):
         super().build_phase(phase)
@@ -53,26 +55,28 @@ class spi_ref_model(ref_model):
             self.bus_bus_export.write(tr)
             uvm_info("Ref model", "reset from ref model", UVM_LOW)
             # TODO: write logic needed when reset is received
-            # self.bus_bus_export.write(tr)
+            self.bus_bus_export.write(tr)
             return
         if tr.kind == bus_item.WRITE:
             # TODO: write logic needed when write transaction is received
             # For example, to write the same value to the same resgiter uncomment the following lines
-            # self.regs.write_reg_value(tr.addr, tr.data)
-            # self.bus_bus_export.write(tr) # this is output to the scoreboard
+            if tr.addr == self.regs.reg_name_to_address["DATA"]:
+                self.data_to_write = tr.data
+            else:
+                uvm_info("Ref model", f"Write to reg {tr.addr} data {tr.data}", UVM_LOW)
+                self.regs.write_reg_value(tr.addr, tr.data)
+            self.bus_bus_export.write(tr)  # this is output to the scoreboard
 
             # check if the write register is icr , set the icr changed event
             if tr.addr == self.regs.reg_name_to_address["icr"] and tr.data != 0:
                 self.icr_changed.set()
-            pass
         elif tr.kind == bus_item.READ:
             # TODO: write logic needed when read transaction is received
             # For example, to read the same resgiter uncomment the following lines
-            # data = self.regs.read_reg_value(tr.addr)
-            # td = tr.do_clone()
-            # td.data = data
-            # self.bus_bus_export.write(td) # this is output to the scoreboard
-            pass
+            data = self.regs.read_reg_value(tr.addr)
+            td = tr.do_clone()
+            td.data = data
+            self.bus_bus_export.write(td)  # this is output to the scoreboard
         self.update_interrupt_regs()
 
     def write_ip(self, tr):
@@ -83,12 +87,14 @@ class spi_ref_model(ref_model):
             "Ref model recieved from ip monitor: " + tr.convert2string(),
             UVM_HIGH,
         )
-
+        self.regs.write_reg_value(self.regs.reg_name_to_address["DATA"], tr.MISO)
         # Update interrupts when a new ip transaction is received
         self.set_ris_reg()
         self.update_interrupt_regs()
         # Here the ref model should predict the transaction and send it to scoreboard
-        # self.ip_export.write(td) # this is output ro scoreboard
+        td = tr.do_clone()
+        td.MOSI = self.data_to_write
+        self.ip_export.write(td)  # this is output ro scoreboard
 
     def set_ris_reg(self):
         # TODO: update this function to update the value of 'self.ris_reg' according to the ip transaction

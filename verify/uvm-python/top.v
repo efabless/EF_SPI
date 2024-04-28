@@ -18,7 +18,7 @@ module top();
     wire         SCK;
     // TODO: initialize the ABP wrapper here
     // for example
-    EF_SPI_APB dut(.PCLK(CLK), .PRESETn(RESETn), .PADDR(PADDR), .PWRITE(PWRITE), .PSEL(PSEL), .PENABLE(PENABLE), .PWDATA(PWDATA), .PRDATA(PRDATA), .PREADY(PREADY), .MSI(MSI), .MSO(MSO), .SSn(SSn), .SCK(SCK), IRQ(irq));
+    EF_SPI_APB dut(.PCLK(CLK), .PRESETn(RESETn), .PADDR(PADDR), .PWRITE(PWRITE), .PSEL(PSEL), .PENABLE(PENABLE), .PWDATA(PWDATA), .PRDATA(PRDATA), .PREADY(PREADY), .MSI(MSI), .MSO(MSO), .SSn(SSn), .SCK(SCK), .IRQ(irq));
     // monitor inside signals
     `ifndef SKIP_WAVE_DUMP
         initial begin

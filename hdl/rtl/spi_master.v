@@ -133,7 +133,7 @@ module spi_master
          state <= IDLE_STATE;
          busy  <= 0;
          done  <= 0;
-	 stop_s <= 0;
+	      stop_s <= 0;
       end else begin
          // generate the pulse train
          if(pulse) begin
@@ -160,12 +160,12 @@ module spi_master
                if(stop) begin
                   //csb <= 1;
                   if(done) begin
-		     state <= IDLE_STATE;
-		     done <= 0;
-		     busy <= 0;
-		  end else begin
+                     state <= IDLE_STATE;
+                     done <= 0;
+                     busy <= 0;
+		            end else begin
                      done  <= 1;
-		  end
+		            end
                end else begin
                   csb <= 0;
                   if(!csb) begin
