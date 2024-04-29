@@ -75,7 +75,10 @@ class spi_ref_model(ref_model):
             # For example, to read the same resgiter uncomment the following lines
             data = self.regs.read_reg_value(tr.addr)
             td = tr.do_clone()
-            td.data = data
+            if tr.addr == self.regs.reg_name_to_address["STATUS"]:
+                pass  # don't change the data as the status register isnt calculated in the ref model for now
+            else:
+                td.data = data
             self.bus_bus_export.write(td)  # this is output to the scoreboard
         self.update_interrupt_regs()
 

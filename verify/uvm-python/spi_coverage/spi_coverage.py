@@ -6,6 +6,7 @@ from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
 from EF_UVM.ip_env.ip_coverage.ip_coverage import ip_coverage
+from spi_coverage.ip_cov_groups import ip_cov_groups
 
 
 class spi_coverage(ip_coverage):
@@ -19,11 +20,15 @@ class spi_coverage(ip_coverage):
     def build_phase(self, phase):
         super().build_phase(phase)
         # TODO: initialize the class for coverage groups here
+        arr = []
+        if not UVMConfigDb.get(self, "", "bus_regs", arr):
+            uvm_fatal(self.tag, "No json file wrapper regs")
+        else:
+            regs = arr[0]
+        self.cov_groups = ip_cov_groups("top.ip", regs)
 
     def write(self, tr):
-        # called when new transaction from ip monitor is received
-        # TODO: Add sampling logic here
-        pass
+        self.cov_groups.ip_cov(tr)
 
 
 uvm_component_utils(spi_coverage)

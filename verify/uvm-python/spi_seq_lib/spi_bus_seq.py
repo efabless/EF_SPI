@@ -29,18 +29,20 @@ class spi_bus_seq(bus_seq_base):
         await self.send_req(
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
         )
-
+        for _ in range(50):
+            await self.send_nop()
         await self.send_req(
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
         )
-        for _ in range(50):
-            await self.send_nop()
-
         await self.send_req(
             is_write=True, reg="PR", data_condition=lambda data: data > 2 and data < 10
         )
-
-        for _ in range(500):
+        for _ in range(300):
+            await self.send_nop()
+        await self.send_req(
+            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
+        )
+        for _ in range(200):
             await self.send_nop()
 
 

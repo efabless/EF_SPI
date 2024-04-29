@@ -186,7 +186,7 @@ registers:
         bit_offset: 0
         bit_width: 1
         write_port: ""
-        description: ""
+        description: "self clear field"
       - name: SSn
         bit_offset: 1
         bit_width: 1

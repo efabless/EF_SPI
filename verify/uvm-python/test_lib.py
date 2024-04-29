@@ -19,6 +19,7 @@ from EF_UVM.base_test import base_test
 # seqences import
 from spi_seq_lib.spi_bus_seq import spi_bus_seq
 from spi_seq_lib.spi_ip_seq import spi_ip_seq
+from spi_seq_lib.spi_send_MOSI_seq import spi_send_MOSI_seq
 from spi_seq_lib.configure_spi_seq import configure_spi_seq
 
 # override classes
@@ -109,7 +110,7 @@ class spi_first_test(spi_base_test):
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
         # TODO: conntect sequence with sequencer here
         # for example if you need to run the 2 sequence sequentially
-        bus_seq = spi_bus_seq("spi_bus_seq")
+        bus_seq = spi_send_MOSI_seq("spi_send_MOSI_seq")
         ip_seq = spi_ip_seq("spi_ip_seq")
         await cocotb.start(ip_seq.start(self.ip_sqr))
         await bus_seq.start(self.bus_sqr)

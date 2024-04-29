@@ -82,10 +82,20 @@ module EF_SPI_APB(
 
     `APB_SPI_REG(DATA_REG,  8, 0, DATA_REG_sel, DATA_REG_OFF)
     `APB_SPI_REG(CFG_REG,   2, 0, CFG_REG_sel, CFG_REG_OFF)
-    `APB_SPI_REG(CTRL_REG,  2, 0, CTRL_REG_sel, CTRL_REG_OFF)
+    // `APB_SPI_REG(CTRL_REG,  2, 0, CTRL_REG_sel, CTRL_REG_OFF)
     `APB_SPI_REG(PRE_REG,   8, 2, PRE_REG_sel, PRE_REG_OFF)
     `APB_SPI_REG(IM_REG,    1, 0, IM_REG_sel, IM_REG_OFF)
-    
+    // make CTRL_REG[0] self clear register 
+    reg [1:0] CTRL_REG;
+    wire CTRL_REG_sel = PENABLE & PWRITE & PREADY & PSEL & (PADDR[7:3] == CTRL_REG_OFF);
+    always @(posedge PCLK or negedge PRESETn)
+        if (~PRESETn)
+            CTRL_REG <= 0;
+        else if (CTRL_REG_sel)
+            CTRL_REG <= PWDATA[1:0];
+        else 
+            CTRL_REG[0] <= 1'b0;
+
     reg IC_REG;
     wire IC_REG_sel = (PENABLE & PWRITE & PREADY & PSEL & (PADDR[7:3] == IC_REG_OFF));
     always @(posedge PCLK, negedge PRESETn)
