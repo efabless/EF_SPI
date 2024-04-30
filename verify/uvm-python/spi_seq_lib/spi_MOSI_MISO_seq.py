@@ -5,7 +5,13 @@ from uvm.base.uvm_config_db import UVMConfigDb
 from EF_UVM.bus_env.bus_seq_lib.bus_seq_base import bus_seq_base
 from cocotb.triggers import Timer
 from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
-from uvm.base.uvm_object_globals import UVM_ALL_ON, UVM_NOPACK, UVM_HIGH, UVM_MEDIUM
+from uvm.base.uvm_object_globals import (
+    UVM_ALL_ON,
+    UVM_NOPACK,
+    UVM_HIGH,
+    UVM_MEDIUM,
+    UVM_LOW,
+)
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 import random
 
@@ -46,6 +52,8 @@ class spi_MOSI_MISO_seq(bus_seq_base):
             await self.send_req(
                 is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
             )  # go
+            await self.send_nop()
+            await self.send_nop()
             while True:
                 await self.send_req(is_write=False, reg="STATUS")
                 # pop non needed response in the fifo
@@ -53,7 +61,7 @@ class spi_MOSI_MISO_seq(bus_seq_base):
                     rsp = []
                     await self.get_response(rsp)
                     rsp = rsp[0]
-                    uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
+                    uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_LOW)
                     if rsp.addr == self.regs.reg_name_to_address["STATUS"]:
                         break
                 if rsp.data & 0b10 == 0b0:  # not busy

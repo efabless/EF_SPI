@@ -85,7 +85,8 @@ class spi_ref_model(ref_model):
             if tr.addr == self.regs.reg_name_to_address["STATUS"]:
                 pass  # don't change the data as the status register isnt calculated in the ref model for now
             else:
-                td.data = data
+                pass
+                # td.data = data
             self.bus_bus_export.write(td)  # this is output to the scoreboard
         self.update_interrupt_regs()
 

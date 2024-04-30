@@ -1,14 +1,29 @@
 PLUSARGS += "+UVM_VERBOSITY=UVM_MEDUIM"
 TOPLEVEL := top
 MODULE   ?= top_module
-AHB_FILES ?= 
-APB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/APB_SPI.v
-WB_FILES ?=
+AHB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_SPI_AHBL.pp.v
+APB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_SPI_APB.pp.v
+WB_FILES ?=$(PWD)/../../hdl/rtl/bus_wrappers/EF_SPI_WB.pp.v
 HDL_FILES ?= $(PWD)/../../hdl/rtl/spi_master.v
 VERILOG_SOURCES ?=  $(PWD)/top.v $(AHB_FILES) $(APB_FILES) $(WB_FILES) $(HDL_FILES)
-RTL_MACROS += "" # Add macros needed
-BUS_TYPE = APB # only APB is supported
-RTL_MACROS += -DBUS_TYPE_APB
+RTL_MACROS += ""
+BUS_TYPE ?= APB
+ifeq ($(BUS_TYPE),APB)
+    RTL_MACROS += -DBUS_TYPE_APB
+    DESIGN_NAME = EF_SPI_APB
+    export CLK_MAKEFILE = PCLK
+    export RST_MAKEFILE = PRESETn
+else ifeq ($(BUS_TYPE),AHB)
+    RTL_MACROS += -DBUS_TYPE_AHB
+    DESIGN_NAME = EF_SPI_AHBL
+    export CLK_MAKEFILE = HCLK
+    export RST_MAKEFILE = HRESETn
+else ifeq ($(BUS_TYPE),WISHBONE)
+    RTL_MACROS += -DBUS_TYPE_WISHBONE
+    DESIGN_NAME = EF_SPI_WB
+    export CLK_MAKEFILE = clk_i
+    export RST_MAKEFILE = rst_i
+endif
 
 # RTL_MACROS ?= "-DSKIP_WAVE_DUMP"
 YAML_FILE = $(PWD)/../../EF_SPI.yaml # TODO: update yaml file path
@@ -25,9 +40,6 @@ SIM_PATH := $(PWD)/sim/$(SIM_TAG)
 
 # Check and clone EF_UVM repository at the beginning of the Makefile execution
 ## netlist Gen 
-DESIGN_NAME = EF_SPI_APB
-export CLK_MAKEFILE = PCLK
-export RST_MAKEFILE = PRESETn
 GL_MACROS += -DGL -DFUNCTIONAL  $(RTL_MACROS) -DUNIT_DELAY=\#1 
 PRE_SYS_FILES = $(AHB_FILES) $(APB_FILES) $(WB_FILES) $(HDL_FILES)
 PDK_DIR = $(HOME)/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/

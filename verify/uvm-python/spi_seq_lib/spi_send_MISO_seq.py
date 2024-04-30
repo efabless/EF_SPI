@@ -36,7 +36,6 @@ class spi_send_MISO_seq(bus_seq_base):
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
         )  # go
         for _ in range(self.num_data):
-
             # wait until not busy
             while True:
                 await self.send_req(is_write=False, reg="STATUS")
@@ -45,16 +44,19 @@ class spi_send_MISO_seq(bus_seq_base):
                     rsp = []
                     await self.get_response(rsp)
                     rsp = rsp[0]
-                    uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
+                    # uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
                     if rsp.addr == self.regs.reg_name_to_address["STATUS"]:
                         break
                 if rsp.data & 0b10 == 0b0:  # not busy
                     break
+            uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
+
             if random.random() > 0.1:  # 90% probability of reading
                 await self.send_req(is_write=False, reg="DATA")
             await self.send_req(
                 is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
             )  # go
+
         await self.send_req(
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b00
         )  # csb disable

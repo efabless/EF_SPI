@@ -47,7 +47,49 @@
 
 `timescale 1ns/1ps
 `default_nettype wire
+// wrapper for passing the spi master module
+ module EF_SPI #(parameter CLK_DIVIDER_WIDTH=8)
+   (input clk,
+   input resetb,
+   input CPOL,
+   input CPHA,
+   input [CLK_DIVIDER_WIDTH-1:0] clk_divider,
 
+   input go,
+   input [7:0] datai,
+   output [7:0] datao,
+   output busy,
+   output done,
+
+   input  dout,
+   output din,
+   output csb,
+   input  ss,
+   output sclk
+   );
+   spi_master#(
+      .DATA_WIDTH(8),
+      .CLK_DIVIDER_WIDTH(CLK_DIVIDER_WIDTH),
+      .NUM_PORTS(1),
+      .SAMPLE_PHASE(0)
+   ) spi_master(
+      .clk(clk),
+      .resetb(resetb),
+      .CPOL(CPOL),
+      .CPHA(CPHA),
+      .clk_divider(clk_divider),
+      .go(go),
+      .datai(datai),
+      .datao(datao),
+      .busy(busy),
+      .done(done),
+      .dout(dout),
+      .din(din),
+      // .csb(csb),
+      .sclk(sclk)
+   );
+   assign csb = ~ss;
+endmodule
 
 module spi_master
   #(parameter DATA_WIDTH=16,
