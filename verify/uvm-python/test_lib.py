@@ -20,6 +20,10 @@ from EF_UVM.base_test import base_test
 from spi_seq_lib.spi_bus_seq import spi_bus_seq
 from spi_seq_lib.spi_ip_seq import spi_ip_seq
 from spi_seq_lib.spi_send_MOSI_seq import spi_send_MOSI_seq
+from spi_seq_lib.spi_send_MISO_seq import spi_send_MISO_seq
+from spi_seq_lib.spi_MOSI_MISO_seq import spi_MOSI_MISO_seq
+from spi_seq_lib.spi_csb_seq import spi_csb_seq
+from spi_seq_lib.spi_pr_seq import spi_pr_seq
 from spi_seq_lib.configure_spi_seq import configure_spi_seq
 
 # override classes
@@ -100,8 +104,8 @@ class spi_base_test(base_test):
 uvm_component_utils(spi_base_test)
 
 
-class spi_first_test(spi_base_test):
-    def __init__(self, name="spi__first_test", parent=None):
+class MOSI_stress_test(spi_base_test):
+    def __init__(self, name="MOSI_stress_test", parent=None):
         super().__init__(name, parent=parent)
         self.tag = name
 
@@ -110,11 +114,91 @@ class spi_first_test(spi_base_test):
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
         # TODO: conntect sequence with sequencer here
         # for example if you need to run the 2 sequence sequentially
-        bus_seq = spi_send_MOSI_seq("spi_send_MOSI_seq")
+        bus_seq = spi_send_MOSI_seq("spi_send_MOSI_seq", num_data=200)
         ip_seq = spi_ip_seq("spi_ip_seq")
         await cocotb.start(ip_seq.start(self.ip_sqr))
         await bus_seq.start(self.bus_sqr)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
 
-uvm_component_utils(spi_first_test)
+uvm_component_utils(MOSI_stress_test)
+
+
+class MISO_stress_test(spi_base_test):
+    def __init__(self, name="MISO_stress_test", parent=None):
+        super().__init__(name, parent=parent)
+        self.tag = name
+
+    async def main_phase(self, phase):
+        uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
+        phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
+        # TODO: conntect sequence with sequencer here
+        # for example if you need to run the 2 sequence sequentially
+        bus_seq = spi_send_MISO_seq("spi_send_MISO_seq", num_data=500)
+        ip_seq = spi_ip_seq("spi_ip_seq")
+        await cocotb.start(ip_seq.start(self.ip_sqr))
+        await bus_seq.start(self.bus_sqr)
+        phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
+
+
+uvm_component_utils(MISO_stress_test)
+
+
+class MISO_MOSI_test(spi_base_test):
+    def __init__(self, name="MISO_MOSI_test", parent=None):
+        super().__init__(name, parent=parent)
+        self.tag = name
+
+    async def main_phase(self, phase):
+        uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
+        phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
+        # TODO: conntect sequence with sequencer here
+        # for example if you need to run the 2 sequence sequentially
+        bus_seq = spi_MOSI_MISO_seq("spi_MOSI_MISO_seq", num_data=500)
+        ip_seq = spi_ip_seq("spi_ip_seq")
+        await cocotb.start(ip_seq.start(self.ip_sqr))
+        await bus_seq.start(self.bus_sqr)
+        phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
+
+
+uvm_component_utils(MISO_MOSI_test)
+
+
+class spi_csb_test(spi_base_test):
+    def __init__(self, name="spi_csb_test", parent=None):
+        super().__init__(name, parent=parent)
+        self.tag = name
+
+    async def main_phase(self, phase):
+        uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
+        phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
+        # TODO: conntect sequence with sequencer here
+        # for example if you need to run the 2 sequence sequentially
+        bus_seq = spi_csb_seq("spi_csb_seq")
+        ip_seq = spi_ip_seq("spi_ip_seq")
+        await cocotb.start(ip_seq.start(self.ip_sqr))
+        await bus_seq.start(self.bus_sqr)
+        phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
+
+
+uvm_component_utils(spi_csb_test)
+
+
+class spi_pr_test(spi_base_test):
+    def __init__(self, name="spi_pr_test", parent=None):
+        super().__init__(name, parent=parent)
+        self.tag = name
+
+    async def main_phase(self, phase):
+        uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
+        phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
+        # TODO: conntect sequence with sequencer here
+        # for example if you need to run the 2 sequence sequentially
+        bus_seq = spi_pr_seq("spi_pr_seq")
+        ip_seq = spi_ip_seq("spi_ip_seq")
+        await cocotb.start(ip_seq.start(self.ip_sqr))
+        await bus_seq.start(self.bus_sqr)
+        phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
+
+
+uvm_component_utils(spi_pr_test)

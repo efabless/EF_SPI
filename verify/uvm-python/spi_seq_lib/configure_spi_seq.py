@@ -20,7 +20,11 @@ class configure_spi_seq(bus_seq_base):
         # Add the sequqnce here
         # you could use method send_req to send a write or read using the register name
         # example for writing register by value > 5
-        await self.send_req(is_write=True, reg="CFG")
+        await self.send_req(
+            is_write=True,
+            reg="CFG",
+            data_condition=lambda data: data in [0b00, 0b01, 0b10, 0b11],
+        )
 
 
 uvm_object_utils(configure_spi_seq)

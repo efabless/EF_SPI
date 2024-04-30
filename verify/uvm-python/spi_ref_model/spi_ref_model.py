@@ -2,7 +2,7 @@ from uvm.base.uvm_component import UVMComponent
 from uvm.macros import uvm_component_utils
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisImp
 from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM
-from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
+from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_error
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisExport
 import cocotb
@@ -30,6 +30,8 @@ class spi_ref_model(ref_model):
         self.mis_changed = Event()
         self.icr_changed = Event()
         self.data_to_write = 0  # data for spi to write into the MOSI
+        self.num_wr_start = 0  # number of writing to the start bit each write when the cs is asserted and spi is not busy a transaction should be sent
+        self.num_tr = 0  # number of transaction sent this should be always equal or less than num_wr_start by 1
 
     def build_phase(self, phase):
         super().build_phase(phase)
@@ -70,6 +72,11 @@ class spi_ref_model(ref_model):
             # check if the write register is icr , set the icr changed event
             if tr.addr == self.regs.reg_name_to_address["icr"] and tr.data != 0:
                 self.icr_changed.set()
+            # detect writing to start bit
+            if tr.addr == self.regs.reg_name_to_address["CTRL"]:
+                if tr.data & 0b11 == 0b11:
+                    self.num_wr_start += 1
+                    self.check_num_tr()
         elif tr.kind == bus_item.READ:
             # TODO: write logic needed when read transaction is received
             # For example, to read the same resgiter uncomment the following lines
@@ -90,6 +97,12 @@ class spi_ref_model(ref_model):
             "Ref model recieved from ip monitor: " + tr.convert2string(),
             UVM_HIGH,
         )
+        # check data sent while the csb isn't asserted
+        if (
+            self.regs.read_reg_value(self.regs.reg_name_to_address["CTRL"]) & 0b10
+            == 0b0
+        ):
+            uvm_error(self.tag, "Data sent while csb is not asserted")
         self.regs.write_reg_value(self.regs.reg_name_to_address["DATA"], tr.MISO)
         # Update interrupts when a new ip transaction is received
         self.set_ris_reg()
@@ -98,6 +111,8 @@ class spi_ref_model(ref_model):
         td = tr.do_clone()
         td.MOSI = self.data_to_write
         self.ip_export.write(td)  # this is output ro scoreboard
+        self.num_tr += 1
+        self.check_num_tr()
 
     def set_ris_reg(self):
         # TODO: update this function to update the value of 'self.ris_reg' according to the ip transaction
@@ -151,6 +166,15 @@ class spi_ref_model(ref_model):
                 self.bus_irq_export.write(tr)
 
             self.mis_changed.clear()
+
+    def check_num_tr(self):
+        if self.num_tr in [self.num_wr_start, self.num_wr_start - 1]:
+            return True
+        uvm_error(
+            self.tag,
+            f"Number of transaction is not correct expected send tr = {self.num_wr_start} actual send tr = {self.num_tr}",
+        )
+        return False
 
 
 uvm_component_utils(spi_ref_model)

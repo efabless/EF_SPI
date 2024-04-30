@@ -15,7 +15,7 @@ YAML_FILE = $(PWD)/../../EF_SPI.yaml # TODO: update yaml file path
 MAKEFLAGS += --no-print-directory
 
 # List of tests
-TESTS := spi_first_test
+TESTS := MOSI_stress_test MISO_stress_test MISO_MOSI_test spi_csb_test spi_pr_test
 
 # Variable for tag - set this as required
 SIM_TAG ?= default_tag

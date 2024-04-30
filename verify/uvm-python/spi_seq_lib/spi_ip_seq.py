@@ -22,7 +22,6 @@ class spi_ip_seq(UVMSequence):
         uvm_info(self.tag, "Add sequence to be used by the ip sequencer", UVM_LOW)
         while True:
             await uvm_do(self, self.req)
-        pass
 
 
 uvm_object_utils(spi_ip_seq)

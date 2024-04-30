@@ -29,7 +29,7 @@ class spi_driver(ip_driver):
         self.cpha_val = (config_reg & 0b10) >> 1
 
     async def driving_edge(self):
-        if self.cpol_val != self.cpha_val:
+        if self.cpol_val == self.cpha_val:
             await RisingEdge(self.vif.SCK)
         else:
             await FallingEdge(self.vif.SCK)
@@ -42,11 +42,8 @@ class spi_driver(ip_driver):
             uvm_info(self.tag, f"Got transaction {tr[0]}", UVM_LOW)
             tr = tr[0]
             for i in range(7, -1, -1):  # drive the most significant bit first
-                if self.cpha_val == 1:
-                    await self.driving_edge()
                 self.vif.MISO.value = (tr.MISO >> i) & 0b1
-                if self.cpha_val == 0:
-                    await self.driving_edge()
+                await self.driving_edge()
             # use self.vif.<signal name> for driving interface signals
             self.seq_item_port.item_done()
 
