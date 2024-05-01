@@ -1,0 +1,182 @@
+---
+info:
+  name: EF_SPI
+  description: SPI master controller with an APB interface
+  repo: "https: //github.com/efabless/EF_SPI"
+  owner: Mohamed Shalan
+  license: APACHE 2.0
+  author: Mohamed Shalan
+  email: mshalan@efabless.com
+  version: v1.0.0
+  date: 11-12-2023
+  category: digital
+  tags:
+    - peripheral
+    - comm
+    - spi
+  bus:
+    - generic
+  type: soft
+  status: verified
+  cell_count:
+    - IP: N/A
+    - APB: N/A
+    - AHBL: N/A
+    - WB: N/A
+  width: "0.0"
+  height: "0.0"
+  technology: n/a
+  clock_freq_mhz:
+    - IP: N/A
+    - APB: N/A
+    - AHBL: N/A
+    - WB: N/A
+  digital_supply_voltage: n/a
+  analog_supply_voltage: n/a
+
+parameters:
+  - name: CLK_DIVIDER_WIDTH
+    default: 8
+    description: =Number of bits for the clock divider (used to generate spi clock
+      from main clock)
+ports:
+  - name: CPOL
+    width: 1
+    direction: input
+    description: 
+  - name: CPHA
+    width: 1
+    direction: input
+    description: 
+  - name: clk_divider
+    width: CLK_DIVIDER_WIDTH
+    direction: input
+    description: 
+  - name: go
+    width: 1
+    direction: input
+    description: 
+  - name: datai
+    width: 8
+    direction: input
+    description: 
+  - name: datao
+    width: 8
+    direction: output
+    description: 
+  - name: busy
+    width: 1
+    direction: output
+    description: 
+  - name: done
+    width: 1
+    direction: output
+    description:
+  - name: ss
+    width: 1
+    direction: input
+    description:
+external_interface:
+  - name: dout
+    port: dout
+    width: 1
+    direction: input
+    description: 
+  - name: din
+    port: din
+    width: 1
+    direction: output
+    description: 
+  - name: csb
+    port: csb
+    width: 1
+    direction: output
+    description: 
+  - name: sclk
+    port: sclk
+    width: 1
+    direction: output
+    description: 
+clock:
+  name: clk
+reset:
+  name: resetb
+  level: 0
+registers:
+  - name: DATA
+    size: 8
+    mode: rw
+    fifo: no
+    offset: 0
+    bit_access: no
+    read_port: datao
+    write_port: datai
+    description: Data transmitted and received
+  - name: CFG
+    size: 2
+    mode: w
+    fifo: no
+    offset: 8
+    bit_access: no
+    description: ""
+    fields:
+      - name: cpol
+        bit_offset: 0
+        bit_width: 1
+        write_port: CPOL
+        description: "clock polarity"
+      - name: cpha
+        bit_offset: 1
+        bit_width: 1
+        write_port: CPHA
+        description: "clock phase"
+  - name: STATUS
+    size: 2
+    mode: r
+    fifo: no
+    offset: 16
+    bit_access: no
+    description: ""
+    fields:
+      - name: done 
+        bit_offset: 0
+        bit_width: 1
+        read_port: done
+        description: ""
+      - name: busy
+        bit_offset: 1
+        bit_width: 1
+        read_port: busy
+        description: ""
+  - name: CTRL
+    size: 2
+    mode: w
+    fifo: no
+    offset: 24
+    bit_access: no
+    description: ""
+    fields:
+      - name: start
+        bit_offset: 0
+        bit_width: 1
+        write_port: go
+        description: "self clear field"
+        auto_clear: True
+      - name: SSn
+        bit_offset: 1
+        bit_width: 1
+        write_port: ss
+        description: ""
+  - name: PR
+    size: 16
+    mode: w
+    fifo: no
+    offset: 32
+    init: "'h2"
+    bit_access: no
+    write_port: clk_divider
+    description: SCK PRESCALER should have value >= 2
+flags:
+  - name: Done
+    port: done
+    description: transimation is done
