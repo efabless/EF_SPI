@@ -17,7 +17,7 @@ EF_SPI_APB INST (
 	.sclk(sclk)
 );
 ```
-> **_NOTE:_** `TB_APB_SLAVE_CONN is a convenient macro provided by [BusWrap repo](https://github.com/efabless/BusWrap/blob/main/includes/rtl/apb_wrapper.vh). The same repo contains similar macros for AHB lite and WB buses.
+> **_NOTE:_** `TB_APB_SLAVE_CONN is a convenient macro provided by [BusWrap](https://github.com/efabless/BusWrap/blob/main/includes/rtl/apb_wrapper.vh) repo. The same repo contains similar macros for AHB lite and WB buses.
 ## Implementation example  
 
 The following table is the result for implementing the EF_SPI IP with different wrappers using Sky130 PDK and [OpenLane2](https://github.com/efabless/openlane2) flow.
