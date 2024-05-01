@@ -40,17 +40,24 @@ class spi_send_MOSI_seq(bus_seq_base):
             await self.send_req(
                 is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
             )  # go
+            # wait until the response status is busy 
             while True:
                 await self.send_req(is_write=False, reg="STATUS")
-                # pop non needed response in the fifo
-                while True:
-                    rsp = []
-                    await self.get_response(rsp)
-                    rsp = rsp[0]
-                    uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
-                    if rsp.addr == self.regs.reg_name_to_address["STATUS"]:
-                        break
-                if rsp.data & 0b10 == 0b0:  # not busy
+                rsp = []
+                await self.get_response(rsp)
+                rsp = rsp[0]
+                uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
+                if rsp.addr == self.regs.reg_name_to_address["STATUS"] and rsp.data & 0b10 == 0b10:  # busy
+                    break
+            # wait until not busy
+            while True:
+                await self.send_nop()
+                await self.send_req(is_write=False, reg="STATUS")
+                rsp = []
+                await self.get_response(rsp)
+                rsp = rsp[0]
+                uvm_info(self.get_full_name(), f"RSP: {rsp} id {rsp.id}", UVM_MEDIUM)
+                if rsp.addr == self.regs.reg_name_to_address["STATUS"] and rsp.data & 0b10 == 0b0:
                     break
 
         await self.send_req(
