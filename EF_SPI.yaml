@@ -35,10 +35,10 @@ info:
   analog_supply_voltage: n/a
 
 parameters:
-  - name: CLK_DIVIDER_WIDTH
+  - name: CDW
     default: 8
-    description: =Number of bits for the clock divider (used to generate spi clock
-      from main clock)
+    description: Number of bits for the clock divider used to generate spi clock from main clock.
+
 ports:
   - name: CPOL
     width: 1
@@ -49,7 +49,7 @@ ports:
     direction: input
     description: 
   - name: clk_divider
-    width: CLK_DIVIDER_WIDTH
+    width: CDW
     direction: input
     description: 
   - name: go
@@ -97,11 +97,13 @@ external_interface:
     width: 1
     direction: output
     description: 
+
 clock:
   name: clk
 reset:
-  name: resetb
+  name: rst_n  
   level: 0
+
 registers:
   - name: DATA
     size: 8
@@ -176,7 +178,8 @@ registers:
     bit_access: no
     write_port: clk_divider
     description: SCK PRESCALER should have value >= 2
+
 flags:
   - name: Done
     port: done
-    description: transimation is done
+    description: transmission is done
