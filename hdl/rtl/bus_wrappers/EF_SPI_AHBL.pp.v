@@ -96,7 +96,7 @@
 
 module EF_SPI_AHBL #( 
 	parameter	
-		CLK_DIVIDER_WIDTH = 8
+		CDW = 8
 ) (
 	input wire          HCLK,
                                         input wire          HRESETn,
@@ -127,7 +127,7 @@ module EF_SPI_AHBL #(
 	localparam	IC_REG_OFFSET = 16'd3852;
 
 	wire		clk = HCLK;
-	wire		resetb = HRESETn;
+	wire		rst_n = HRESETn;
 
 
 	reg  last_HSEL, last_HWRITE; reg [31:0] last_HADDR; reg [1:0] last_HTRANS;
@@ -145,7 +145,7 @@ module EF_SPI_AHBL #(
 
 	wire [1-1:0]	CPOL;
 	wire [1-1:0]	CPHA;
-	wire [CLK_DIVIDER_WIDTH-1:0]	clk_divider;
+	wire [CDW-1:0]	clk_divider;
 	wire [1-1:0]	go;
 	wire [8-1:0]	datai;
 	wire [8-1:0]	datao;
@@ -215,10 +215,10 @@ module EF_SPI_AHBL #(
 	assign IRQ = |MIS_REG;
 
 	EF_SPI #(
-		.CLK_DIVIDER_WIDTH(CLK_DIVIDER_WIDTH)
+		.CDW(CDW)
 	) instance_to_wrap (
 		.clk(clk),
-		.resetb(resetb),
+		.rst_n(rst_n),
 		.CPOL(CPOL),
 		.CPHA(CPHA),
 		.clk_divider(clk_divider),
