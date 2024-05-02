@@ -81,13 +81,11 @@ class spi_ref_model(ref_model):
             # TODO: write logic needed when read transaction is received
             # For example, to read the same resgiter uncomment the following lines
             data = self.regs.read_reg_value(tr.addr)
-            td = tr.do_clone()
             if tr.addr == self.regs.reg_name_to_address["STATUS"]:
                 pass  # don't change the data as the status register isnt calculated in the ref model for now
             else:
-                pass
-                # td.data = data
-            self.bus_bus_export.write(td)  # this is output to the scoreboard
+                tr.data = data
+            self.bus_bus_export.write(tr)  # this is output to the scoreboard
         self.update_interrupt_regs()
 
     def write_ip(self, tr):

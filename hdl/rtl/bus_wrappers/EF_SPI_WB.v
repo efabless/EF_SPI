@@ -28,7 +28,7 @@
 
 module EF_SPI_WB #( 
 	parameter	
-		CLK_DIVIDER_WIDTH = 8
+		CDW = 8
 ) (
 	`WB_SLAVE_PORTS,
 	input	[1-1:0]	dout,
@@ -48,14 +48,14 @@ module EF_SPI_WB #(
 	localparam	IC_REG_OFFSET = `WB_AW'd3852;
 
 	wire		clk = clk_i;
-	wire		resetb = (~rst_i);
+	wire		rst_n = (~rst_i);
 
 
 	`WB_CTRL_SIGNALS
 
 	wire [1-1:0]	CPOL;
 	wire [1-1:0]	CPHA;
-	wire [CLK_DIVIDER_WIDTH-1:0]	clk_divider;
+	wire [CDW-1:0]	clk_divider;
 	wire [1-1:0]	go;
 	wire [8-1:0]	datai;
 	wire [8-1:0]	datao;
@@ -110,10 +110,10 @@ module EF_SPI_WB #(
 	assign IRQ = |MIS_REG;
 
 	EF_SPI #(
-		.CLK_DIVIDER_WIDTH(CLK_DIVIDER_WIDTH)
+		.CDW(CDW)
 	) instance_to_wrap (
 		.clk(clk),
-		.resetb(resetb),
+		.rst_n(rst_n),
 		.CPOL(CPOL),
 		.CPHA(CPHA),
 		.clk_divider(clk_divider),

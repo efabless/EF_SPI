@@ -25,6 +25,8 @@ class configure_spi_seq(bus_seq_base):
             reg="CFG",
             data_condition=lambda data: data in [0b00, 0b01, 0b10, 0b11],
         )
+        rsp = []
+        await self.get_response(rsp)  # wait until writing is done
 
 
 uvm_object_utils(configure_spi_seq)
