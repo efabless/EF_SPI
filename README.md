@@ -41,12 +41,12 @@ The following table is the result for implementing the EF_SPI IP with different 
 |CFG|0008|0x00000000|w|Configuration Register.|
 |CTRL|000c|0x00000000|w|Control Register.|
 |PR|0010|0x00000002|w|SPI clock Prescaler; should have a value >= 2. SPI Clock Frequency = System Clock / PR.|
-|RX_FIFO_LEVEL|1008|0x00000000|r|RX_FIFO level register.|
-|RX_FIFO_THRESHOLD|1004|0x00000000|w|RX_FIFO level threshold register.|
-|RX_FIFO_FLUSH|1000|RX_FIFO_FLUSH|0x00000000|w|
-|TX_FIFO_LEVEL|1018|0x00000000|r|TX_FIFO level register.|
-|TX_FIFO_THRESHOLD|1014|0x00000000|w|TX_FIFO level threshold register.|
-|TX_FIFO_FLUSH|1010|TX_FIFO_FLUSH|0x00000000|w|
+|TX_FIFO_LEVEL|1018|0x00000000|r|TX_FIFO Level Register|
+|TX_FIFO_THRESHOLD|1014|0x00000000|w|TX_FIFO Level Threshold Register|
+|TX_FIFO_FLUSH|1010|0x00000000|w|TX_FIFO Flush Register|
+|TX_FIFO_LEVEL|1018|0x00000000|r|TX_FIFO Level Register|
+|TX_FIFO_THRESHOLD|1014|0x00000000|w|TX_FIFO Level Threshold Register|
+|TX_FIFO_FLUSH|1010|0x00000000|w|TX_FIFO Flush Register|
 |IM|0f00|0x00000000|w|Interrupt Mask Register; write 1/0 to enable/disable interrupts; check the interrupt flags table for more details|
 |RIS|0f08|0x00000000|w|Raw Interrupt Status; reflects the current interrupts status;check the interrupt flags table for more details|
 |MIS|0f04|0x00000000|w|Masked Interrupt Status; On a read, this register gives the current masked status value of the corresponding interrupt. A write has no effect; check the interrupt flags table for more details|
@@ -91,23 +91,65 @@ SPI clock Prescaler; should have a value >= 2. SPI Clock Frequency = System Cloc
 <img src="https://svg.wavedrom.com/{reg:[{name:'PR', bits:8},{bits: 24}], config: {lanes: 2, hflip: true}} "/>
 
 
-### RX_FIFO_LEVEL Register [Offset: 0x1008, mode: r]
-<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:4},{bits: 28}], config: {lanes: 2, hflip: true}} "/>
-
-### RX_FIFO_THRESHOLD Register [Offset: 0x1004, mode: w]
-<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
-
-### RX_FIFO_FLUSH Register [Offset: 0x1000, mode: w]
-<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
-
 ### TX_FIFO_LEVEL Register [Offset: 0x1018, mode: r]
+
+TX_FIFO Level Register
 <img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:4},{bits: 28}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|level|4|FIFO data level|
+
 
 ### TX_FIFO_THRESHOLD Register [Offset: 0x1014, mode: w]
-<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+
+TX_FIFO Level Threshold Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'threshold', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|threshold|1|FIFO level threshold value|
+
 
 ### TX_FIFO_FLUSH Register [Offset: 0x1010, mode: w]
-<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+
+TX_FIFO Flush Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'flush', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|flush|1|FIFO flush|
+
+
+### TX_FIFO_LEVEL Register [Offset: 0x1018, mode: r]
+
+TX_FIFO Level Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:4},{bits: 28}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|level|4|FIFO data level|
+
+
+### TX_FIFO_THRESHOLD Register [Offset: 0x1014, mode: w]
+
+TX_FIFO Level Threshold Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'threshold', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|threshold|1|FIFO level threshold value|
+
+
+### TX_FIFO_FLUSH Register [Offset: 0x1010, mode: w]
+
+TX_FIFO Flush Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'flush', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|flush|1|FIFO flush|
+
 
 ### Interrupt Flags
 
