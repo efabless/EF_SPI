@@ -19,18 +19,18 @@ info:
   type: soft
   status: verified
   cell_count:
-    - IP: N/A
-    - APB: N/A
-    - AHBL: N/A
-    - WB: N/A
+    - IP: TBD
+    - APB: TBD
+    - AHBL: TBD
+    - WB: TBD
   width: "0.0"
   height: "0.0"
   technology: n/a
   clock_freq_mhz:
-    - IP: N/A
-    - APB: N/A
-    - AHBL: N/A
-    - WB: N/A
+    - IP: TBD
+    - APB: TBD
+    - AHBL: TBD
+    - WB: TBD
   digital_supply_voltage: n/a
   analog_supply_voltage: n/a
 
