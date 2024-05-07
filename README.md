@@ -11,11 +11,11 @@ SPI master controller with receive and transmit FIFOs.
 Based on your use case, use one of the provided wrappers or create a wrapper for your system bus type. For an example of how to integrate the APB wrapper:
 ```verilog
 EF_SPI_APB INST (
-	`TB_APB_SLAVE_CONN,
-	.miso(miso)
-	.mosi(mosi)
-	.csb(csb)
-	.sclk(sclk)
+        `TB_APB_SLAVE_CONN,
+        .miso(miso),
+        .mosi(mosi),
+        .csb(csb),
+        .sclk(sclk)
 );
 ```
 > **_NOTE:_** `TB_APB_SLAVE_CONN is a convenient macro provided by [BusWrap](https://github.com/efabless/BusWrap/tree/main).
@@ -25,10 +25,10 @@ EF_SPI_APB INST (
 The following table is the result for implementing the EF_SPI IP with different wrappers using Sky130 PDK and [OpenLane2](https://github.com/efabless/openlane2) flow.
 |Module | Number of cells | Max. freq |
 |---|---|---|
-|EF_SPI|N/A| N/A |
-|EF_SPI_APB|N/A|N/A|
-|EF_SPI_AHBL|N/A|N/A|
-|EF_SPI_WB|N/A|N/A|
+|EF_SPI|TBD| TBD |
+|EF_SPI_APB|TBD|TBD|
+|EF_SPI_AHBL|TBD|TBD|
+|EF_SPI_WB|TBD|TBD|
 ## The Programmer's Interface
 
 
@@ -41,12 +41,12 @@ The following table is the result for implementing the EF_SPI IP with different 
 |CFG|0008|0x00000000|w|Configuration Register.|
 |CTRL|000c|0x00000000|w|Control Register.|
 |PR|0010|0x00000002|w|SPI clock Prescaler; should have a value >= 2. SPI Clock Frequency = System Clock / PR.|
-|TX_FIFO_LEVEL|1018|0x00000000|r|TX_FIFO Level Register|
-|TX_FIFO_THRESHOLD|1014|0x00000000|w|TX_FIFO Level Threshold Register|
+|RX_FIFO_FLUSH|1000|0x00000000|w|RX_FIFO Flush Register|
+|RX_FIFO_THRESHOLD|1004|0x00000000|w|RX_FIFO Level Threshold Register|
+|RX_FIFO_LEVEL|1008|0x00000000|r|RX_FIFO Level Register|
 |TX_FIFO_FLUSH|1010|0x00000000|w|TX_FIFO Flush Register|
-|TX_FIFO_LEVEL|1018|0x00000000|r|TX_FIFO Level Register|
 |TX_FIFO_THRESHOLD|1014|0x00000000|w|TX_FIFO Level Threshold Register|
-|TX_FIFO_FLUSH|1010|0x00000000|w|TX_FIFO Flush Register|
+|TX_FIFO_LEVEL|1018|0x00000000|r|TX_FIFO Level Register|
 |IM|0f00|0x00000000|w|Interrupt Mask Register; write 1/0 to enable/disable interrupts; check the interrupt flags table for more details|
 |RIS|0f08|0x00000000|w|Raw Interrupt Status; reflects the current interrupts status;check the interrupt flags table for more details|
 |MIS|0f04|0x00000000|w|Masked Interrupt Status; On a read, this register gives the current masked status value of the corresponding interrupt. A write has no effect; check the interrupt flags table for more details|
@@ -91,24 +91,34 @@ SPI clock Prescaler; should have a value >= 2. SPI Clock Frequency = System Cloc
 <img src="https://svg.wavedrom.com/{reg:[{name:'PR', bits:8},{bits: 24}], config: {lanes: 2, hflip: true}} "/>
 
 
-### TX_FIFO_LEVEL Register [Offset: 0x1018, mode: r]
+### RX_FIFO_FLUSH Register [Offset: 0x1000, mode: w]
 
-TX_FIFO Level Register
-<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:4},{bits: 28}], config: {lanes: 2, hflip: true}} "/>
+RX_FIFO Flush Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'flush', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
 
 |bit|field name|width|description|
 |---|---|---|---|
-|0|level|4|FIFO data level|
+|0|flush|1|FIFO flush|
 
 
-### TX_FIFO_THRESHOLD Register [Offset: 0x1014, mode: w]
+### RX_FIFO_THRESHOLD Register [Offset: 0x1004, mode: w]
 
-TX_FIFO Level Threshold Register
+RX_FIFO Level Threshold Register
 <img src="https://svg.wavedrom.com/{reg:[{name:'threshold', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
 
 |bit|field name|width|description|
 |---|---|---|---|
 |0|threshold|1|FIFO level threshold value|
+
+
+### RX_FIFO_LEVEL Register [Offset: 0x1008, mode: r]
+
+RX_FIFO Level Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:4},{bits: 28}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|level|4|FIFO data level|
 
 
 ### TX_FIFO_FLUSH Register [Offset: 0x1010, mode: w]
@@ -121,16 +131,6 @@ TX_FIFO Flush Register
 |0|flush|1|FIFO flush|
 
 
-### TX_FIFO_LEVEL Register [Offset: 0x1018, mode: r]
-
-TX_FIFO Level Register
-<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:4},{bits: 28}], config: {lanes: 2, hflip: true}} "/>
-
-|bit|field name|width|description|
-|---|---|---|---|
-|0|level|4|FIFO data level|
-
-
 ### TX_FIFO_THRESHOLD Register [Offset: 0x1014, mode: w]
 
 TX_FIFO Level Threshold Register
@@ -141,14 +141,14 @@ TX_FIFO Level Threshold Register
 |0|threshold|1|FIFO level threshold value|
 
 
-### TX_FIFO_FLUSH Register [Offset: 0x1010, mode: w]
+### TX_FIFO_LEVEL Register [Offset: 0x1018, mode: r]
 
-TX_FIFO Flush Register
-<img src="https://svg.wavedrom.com/{reg:[{name:'flush', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+TX_FIFO Level Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:4},{bits: 28}], config: {lanes: 2, hflip: true}} "/>
 
 |bit|field name|width|description|
 |---|---|---|---|
-|0|flush|1|FIFO flush|
+|0|level|4|FIFO data level|
 
 
 ### Interrupt Flags
@@ -177,7 +177,7 @@ The following are the bit definitions for the interrupt registers:
 |5|RXA|1|Receive FIFO level is Above Threshold.|
 
 ### The Interface 
-
+<img src="docs/_static/EF_SPI.svg" width="600"/>
 
 #### Module Parameters 
 
@@ -216,6 +216,9 @@ The following are the bit definitions for the interrupt registers:
 |tx_level|output|FAW|TX FIFO data level.|
 |ss|input|1|None|
 ## F/W Usage Guidelines:
+1. Set the prescaler by writing to the ``PR`` register where SPI Clock Frequency = System Clock / PR. Note: should have a value >= 2.
+2. Configure clock polarity and clock phase bu setting ``cpol`` and ``cpha`` fields in the ``CFG`` register.
+3. Set the ``SSn`` field in the ``CTRL`` register
 ## Installation:
 You can either clone repo or use [IPM](https://github.com/efabless/IPM) which is an open-source IPs Package Manager
 * To clone repo:
