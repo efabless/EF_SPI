@@ -2,7 +2,7 @@
 info:
   name: EF_SPI
   description: SPI master controller with receive and transmit FIFOs.
-  repo: "https: //github.com/efabless/EF_SPI"
+  repo: github.com/efabless/EF_SPI
   owner: Efabless Corp.
   license: APACHE 2.0
   author: Mohamed Shalan
