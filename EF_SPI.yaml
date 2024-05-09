@@ -223,7 +223,7 @@ flags:
 - name: TXF
   port: tx_full
   description: Transmit FIFO is Full.
-- name: RXF
+- name: RXE
   port: rx_empty
   description: Receive FIFO is Empty.
 - name: RXF

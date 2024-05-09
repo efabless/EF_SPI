@@ -131,7 +131,7 @@ module EF_SPI_APB #(
 
 	wire [0:0] TXE = tx_empty;
 	wire [0:0] TXF = tx_full;
-	wire [0:0] RXF = rx_empty;
+	wire [0:0] RXE = rx_empty;
 	wire [0:0] RXF = rx_full;
 	wire [0:0] TXB = tx_level_below;
 	wire [0:0] RXA = rx_level_above;
@@ -146,7 +146,7 @@ module EF_SPI_APB #(
 			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(TXF[_i_ - 1] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 		for(_i_ = 2; _i_ < 3; _i_ = _i_ + 1) begin
-			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(RXF[_i_ - 2] == 1'b1) RIS_REG[_i_] <= 1'b1;
+			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(RXE[_i_ - 2] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 		for(_i_ = 3; _i_ < 4; _i_ = _i_ + 1) begin
 			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(RXF[_i_ - 3] == 1'b1) RIS_REG[_i_] <= 1'b1;
@@ -216,6 +216,6 @@ module EF_SPI_APB #(
 
 	assign	RXDATA_WIRE = datao;
 	assign	rd = (apb_re & (PADDR[`APB_AW-1:0] == RXDATA_REG_OFFSET));
-	assign	wdata = PWDATA;
+	// assign	wdata = PWDATA; // TODO: report bug in generate script
 	assign	wr = (apb_we & (PADDR[`APB_AW-1:0] == TXDATA_REG_OFFSET));
 endmodule

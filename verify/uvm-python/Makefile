@@ -4,7 +4,8 @@ MODULE   ?= top_module
 AHB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_SPI_AHBL.pp.v
 APB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_SPI_APB.pp.v
 WB_FILES ?=$(PWD)/../../hdl/rtl/bus_wrappers/EF_SPI_WB.pp.v
-HDL_FILES ?= $(PWD)/../../hdl/rtl/spi_master.v $(PWD)/../../hdl/rtl/EF_SPI.v
+HDL_FILES ?= $(PWD)/IP_Utilities/rtl/aucohl_lib.v $(PWD)/IP_Utilities/rtl/aucohl_rtl.vh  $(PWD)/../../hdl/rtl/spi_master.v $(PWD)/../../hdl/rtl/EF_SPI.v 
+
 VERILOG_SOURCES ?=  $(PWD)/top.v $(AHB_FILES) $(APB_FILES) $(WB_FILES) $(HDL_FILES)
 RTL_MACROS += ""
 BUS_TYPE ?= APB
@@ -45,6 +46,11 @@ PRE_SYS_FILES = $(AHB_FILES) $(APB_FILES) $(WB_FILES) $(HDL_FILES)
 PDK_DIR = $(HOME)/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/
 PDK_FILES = $(PDK_DIR)/libs.ref/sky130_fd_sc_hd/verilog/primitives.v $(PDK_DIR)/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v # get this from openlane logs in the future 
 POST_SYS_FILES = $(PWD)/top.v $(VIP_FILES) $(PWD)/../../hdl/gl/synthesis/nl/$(DESIGN_NAME).nl.v
+
+clone_ip_util := $(shell if [ ! -d "IP_Utilities" ]; then \
+	echo "Cloning the IP_Utilities repository..."; \
+	git clone https://github.com/shalan/IP_Utilities.git; \
+fi;)
 
 clone_ef_uvm := $(shell if [ ! -d "EF_UVM" ]; then \
 	echo "Cloning the EF_UVM repository..."; \
