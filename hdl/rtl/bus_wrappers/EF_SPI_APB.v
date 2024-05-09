@@ -1,5 +1,5 @@
 /*
-	Copyright 2023 Efabless Corp.
+	Copyright 2024 Efabless Corp.
 
 	Author: Mohamed Shalan (mshalan@efabless.com)
 
@@ -102,9 +102,9 @@ module EF_SPI_APB #(
 	wire [FAW-1:0]	RX_FIFO_LEVEL_WIRE;
 	assign	RX_FIFO_LEVEL_WIRE[(FAW - 1) : 0] = rx_level;
 
-	reg [0:0]	RX_FIFO_THRESHOLD_REG;
-	assign	rx_threshold	=	RX_FIFO_THRESHOLD_REG[0 : 0];
-	`APB_REG(RX_FIFO_THRESHOLD_REG, 0, 1)
+	reg [FAW-1:0]	RX_FIFO_THRESHOLD_REG;
+	assign	rx_threshold	=	RX_FIFO_THRESHOLD_REG[(FAW - 1) : 0];
+	`APB_REG(RX_FIFO_THRESHOLD_REG, 0, FAW)
 
 	reg [0:0]	RX_FIFO_FLUSH_REG;
 	assign	rx_flush	=	RX_FIFO_FLUSH_REG[0 : 0];
@@ -113,9 +113,9 @@ module EF_SPI_APB #(
 	wire [FAW-1:0]	TX_FIFO_LEVEL_WIRE;
 	assign	TX_FIFO_LEVEL_WIRE[(FAW - 1) : 0] = tx_level;
 
-	reg [0:0]	TX_FIFO_THRESHOLD_REG;
-	assign	tx_threshold	=	TX_FIFO_THRESHOLD_REG[0 : 0];
-	`APB_REG(TX_FIFO_THRESHOLD_REG, 0, 1)
+	reg [FAW-1:0]	TX_FIFO_THRESHOLD_REG;
+	assign	tx_threshold	=	TX_FIFO_THRESHOLD_REG[(FAW - 1) : 0];
+	`APB_REG(TX_FIFO_THRESHOLD_REG, 0, FAW)
 
 	reg [0:0]	TX_FIFO_FLUSH_REG;
 	assign	tx_flush	=	TX_FIFO_FLUSH_REG[0 : 0];
