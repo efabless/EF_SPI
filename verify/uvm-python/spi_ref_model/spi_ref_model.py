@@ -62,7 +62,7 @@ class spi_ref_model(ref_model):
         if tr.kind == bus_item.WRITE:
             # TODO: write logic needed when write transaction is received
             # For example, to write the same value to the same resgiter uncomment the following lines
-            if tr.addr == self.regs.reg_name_to_address["DATA"]:
+            if tr.addr == self.regs.reg_name_to_address["TXDATA"]:
                 self.data_to_write = tr.data
             else:
                 uvm_info("Ref model", f"Write to reg {tr.addr} data {tr.data}", UVM_LOW)
@@ -102,7 +102,7 @@ class spi_ref_model(ref_model):
             == 0b0
         ):
             uvm_error(self.tag, "Data sent while csb is not asserted")
-        self.regs.write_reg_value(self.regs.reg_name_to_address["DATA"], tr.MISO)
+        self.regs.write_reg_value(self.regs.reg_name_to_address["RXDATA"], tr.MISO)
         # Update interrupts when a new ip transaction is received
         self.set_ris_reg()
         self.update_interrupt_regs()

@@ -24,7 +24,7 @@ class spi_bus_seq(bus_seq_base):
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b10
         )
         await self.send_req(
-            is_write=True, reg="DATA", data_condition=lambda data: data < 0xFF
+            is_write=True, reg="TXDATA", data_condition=lambda data: data < 0xFF
         )
         await self.send_req(
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11

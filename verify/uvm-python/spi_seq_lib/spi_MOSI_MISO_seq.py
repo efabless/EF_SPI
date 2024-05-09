@@ -46,7 +46,7 @@ class spi_MOSI_MISO_seq(bus_seq_base):
             if random.random() > 0.3:  # 70% probability of writing different value
                 await self.send_req(
                     is_write=True,
-                    reg="DATA",
+                    reg="TXDATA",
                     data_condition=lambda data: data < (1 << self.data_width) - 1,
                 )
             await self.send_req(
@@ -54,14 +54,17 @@ class spi_MOSI_MISO_seq(bus_seq_base):
             )  # go
             await self.send_nop()
             await self.send_nop()
-            # wait until the response status is busy 
+            # wait until the response status is busy
             while True:
                 await self.send_req(is_write=False, reg="STATUS")
                 rsp = []
                 await self.get_response(rsp)
                 rsp = rsp[0]
                 uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
-                if rsp.addr == self.regs.reg_name_to_address["STATUS"] and rsp.data & 0b10 == 0b10:  # busy
+                if (
+                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
+                    and rsp.data & 0b10 == 0b10
+                ):  # busy
                     break
             # wait until not busy
             while True:
@@ -71,10 +74,13 @@ class spi_MOSI_MISO_seq(bus_seq_base):
                 await self.get_response(rsp)
                 rsp = rsp[0]
                 uvm_info(self.get_full_name(), f"RSP: {rsp} id {rsp.id}", UVM_MEDIUM)
-                if rsp.addr == self.regs.reg_name_to_address["STATUS"] and rsp.data & 0b10 == 0b0:
+                if (
+                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
+                    and rsp.data & 0b10 == 0b0
+                ):
                     break
             if random.random() > 0.3:  # 70% probability of reading
-                await self.send_req(is_write=False, reg="DATA")
+                await self.send_req(is_write=False, reg="RXDATA")
         if not self.disable_control:
             await self.send_req(
                 is_write=True, reg="CTRL", data_condition=lambda data: data == 0b00

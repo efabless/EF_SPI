@@ -36,14 +36,17 @@ class spi_send_MISO_seq(bus_seq_base):
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
         )  # go
         for _ in range(self.num_data):
-            # wait until the response status is busy 
+            # wait until the response status is busy
             while True:
                 await self.send_req(is_write=False, reg="STATUS")
                 rsp = []
                 await self.get_response(rsp)
                 rsp = rsp[0]
                 uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
-                if rsp.addr == self.regs.reg_name_to_address["STATUS"] and rsp.data & 0b10 == 0b10:  # busy
+                if (
+                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
+                    and rsp.data & 0b10 == 0b10
+                ):  # busy
                     break
             # wait until not busy
             while True:
@@ -53,11 +56,14 @@ class spi_send_MISO_seq(bus_seq_base):
                 await self.get_response(rsp)
                 rsp = rsp[0]
                 uvm_info(self.get_full_name(), f"RSP: {rsp} id {rsp.id}", UVM_MEDIUM)
-                if rsp.addr == self.regs.reg_name_to_address["STATUS"] and rsp.data & 0b10 == 0b0:
+                if (
+                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
+                    and rsp.data & 0b10 == 0b0
+                ):
                     break
 
             if random.random() > 0.1:  # 90% probability of reading
-                await self.send_req(is_write=False, reg="DATA")
+                await self.send_req(is_write=False, reg="RXDATA")
             await self.send_req(
                 is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
             )  # go
