@@ -40,7 +40,7 @@ class spi_MOSI_MISO_seq(bus_seq_base):
         # example for writing register by value > 5
         if not self.disable_control:
             await self.send_req(
-                is_write=True, reg="CTRL", data_condition=lambda data: data == 0b10
+                is_write=True, reg="CTRL", data_condition=lambda data: data == 0b0
             )
         for _ in range(self.num_data):
             if random.random() > 0.3:  # 70% probability of writing different value
@@ -50,8 +50,8 @@ class spi_MOSI_MISO_seq(bus_seq_base):
                     data_condition=lambda data: data < (1 << self.data_width) - 1,
                 )
             await self.send_req(
-                is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
-            )  # go
+                is_write=True, reg="CTRL", data_condition=lambda data: data == 0b1
+            )
             await self.send_nop()
             await self.send_nop()
             # wait until the response status is busy

@@ -7,6 +7,7 @@ from cocotb.triggers import Timer
 from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
 from uvm.base.uvm_object_globals import UVM_ALL_ON, UVM_NOPACK, UVM_HIGH, UVM_MEDIUM
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
+import random
 
 
 class spi_send_MOSI_seq(bus_seq_base):
@@ -29,46 +30,42 @@ class spi_send_MOSI_seq(bus_seq_base):
         # you could use method send_req to send a write or read using the register name
         # example for writing register by value > 5
         await self.send_req(
-            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b10
+            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b1
         )
-        for _ in range(self.num_data):
-            await self.send_req(
-                is_write=True,
-                reg="TXDATA",
-                data_condition=lambda data: data < (1 << self.data_width) - 1,
-            )
-            await self.send_req(
-                is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
-            )  # go
-            # wait until the response status is busy
-            while True:
-                await self.send_req(is_write=False, reg="STATUS")
-                rsp = []
-                await self.get_response(rsp)
-                rsp = rsp[0]
-                uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
-                if (
-                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
-                    and rsp.data & 0b10 == 0b10
-                ):  # busy
-                    break
-            # wait until not busy
-            while True:
+        for _ in range(50):
+            # for _ in range(self.num_data):
+            tr_to_send = random.randint(3, 14)
+            for _ in range(tr_to_send):
+                await self.send_req(
+                    is_write=True,
+                    reg="TXDATA",
+                    data_condition=lambda data: data < (1 << self.data_width) - 1,
+                )
+            # wait until tx is empty
+            cycles_to_wait = tr_to_send * 8 * 2
+            for _ in range(cycles_to_wait):
                 await self.send_nop()
-                await self.send_req(is_write=False, reg="STATUS")
-                rsp = []
-                await self.get_response(rsp)
-                rsp = rsp[0]
-                uvm_info(self.get_full_name(), f"RSP: {rsp} id {rsp.id}", UVM_MEDIUM)
-                if (
-                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
-                    and rsp.data & 0b10 == 0b0
-                ):
-                    break
-
-        await self.send_req(
-            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b00
-        )  # csb disable
+            # while True:
+            #     # clear interrupt
+            #     await self.send_req(
+            #         is_write=True,
+            #         reg="icr",
+            #         data_condition=lambda data: data & 0b1 == 0b1,
+            #     )
+            #     rsp = []
+            #     while True:
+            #         rsp = []
+            #         await self.send_req(is_write=False, reg="ris")
+            #         await self.get_response(rsp)
+            #         rsp = rsp[0]
+            #         uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
+            #         if rsp.addr == self.regs.reg_name_to_address["ris"]:
+            #             break
+            #     if (
+            #         rsp.addr == self.regs.reg_name_to_address["ris"]
+            #         and rsp.data & 0b1 == 0b1
+            #     ):
+            #         break
 
 
 uvm_object_utils(spi_send_MOSI_seq)

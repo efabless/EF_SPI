@@ -2,13 +2,14 @@ from uvm.base.uvm_component import UVMComponent
 from uvm.macros import uvm_component_utils
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisImp
 from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM
-from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_error
+from uvm.macros import uvm_component_utils, uvm_info, uvm_error, uvm_warning
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisExport
 import cocotb
 from EF_UVM.ref_model.ref_model import ref_model
 from EF_UVM.bus_env.bus_item import bus_item
 from cocotb.triggers import Event
+from cocotb.queue import Queue, QueueFull
 
 
 class spi_ref_model(ref_model):
@@ -32,6 +33,8 @@ class spi_ref_model(ref_model):
         self.data_to_write = 0  # data for spi to write into the MOSI
         self.num_wr_start = 0  # number of writing to the start bit each write when the cs is asserted and spi is not busy a transaction should be sent
         self.num_tr = 0  # number of transaction sent this should be always equal or less than num_wr_start by 1
+        self.fifo_tx = TX_QUEUE(maxsize=16)
+        self.fifo_rx = Queue(maxsize=16)
 
     def build_phase(self, phase):
         super().build_phase(phase)
@@ -53,39 +56,51 @@ class spi_ref_model(ref_model):
             " Ref model recieved from bus monitor: " + tr.convert2string(),
             UVM_HIGH,
         )
-        if tr.kind == bus_item.RESET:
-            self.bus_bus_export.write(tr)
+        td = tr.do_clone()
+        if td.kind == bus_item.RESET:
+            self.bus_bus_export.write(td)
             uvm_info("Ref model", "reset from ref model", UVM_LOW)
             # TODO: write logic needed when reset is received
-            self.bus_bus_export.write(tr)
             return
-        if tr.kind == bus_item.WRITE:
+        if td.kind == bus_item.WRITE:
             # TODO: write logic needed when write transaction is received
             # For example, to write the same value to the same resgiter uncomment the following lines
-            if tr.addr == self.regs.reg_name_to_address["TXDATA"]:
-                self.data_to_write = tr.data
+            if td.addr == self.regs.reg_name_to_address["TXDATA"]:
+                self.data_to_write = td.data
+                try:
+                    self.fifo_tx.put_nowait(td.data)
+                    uvm_info(
+                        self.tag,
+                        f"value {hex(td.data)} written to tx fifo size = {self.fifo_tx.qsize()}",
+                        UVM_MEDIUM,
+                    )
+                except QueueFull:
+                    uvm_warning(
+                        self.tag,
+                        f"writing to tx while fifo is full so ignore the value {hex(td.data)}",
+                    )
             else:
-                uvm_info("Ref model", f"Write to reg {tr.addr} data {tr.data}", UVM_LOW)
-                self.regs.write_reg_value(tr.addr, tr.data)
-            self.bus_bus_export.write(tr)  # this is output to the scoreboard
+                uvm_info("Ref model", f"Write to reg {td.addr} data {td.data}", UVM_LOW)
+                self.regs.write_reg_value(td.addr, td.data)
+            self.bus_bus_export.write(td)  # this is output to the scoreboard
 
             # check if the write register is icr , set the icr changed event
-            if tr.addr == self.regs.reg_name_to_address["icr"] and tr.data != 0:
+            if td.addr == self.regs.reg_name_to_address["icr"] and td.data != 0:
                 self.icr_changed.set()
             # detect writing to start bit
-            if tr.addr == self.regs.reg_name_to_address["CTRL"]:
-                if tr.data & 0b11 == 0b11:
-                    self.num_wr_start += 1
-                    self.check_num_tr()
-        elif tr.kind == bus_item.READ:
+        elif td.kind == bus_item.READ:
             # TODO: write logic needed when read transaction is received
             # For example, to read the same resgiter uncomment the following lines
-            data = self.regs.read_reg_value(tr.addr)
-            if tr.addr == self.regs.reg_name_to_address["STATUS"]:
-                pass  # don't change the data as the status register isnt calculated in the ref model for now
+            data = self.regs.read_reg_value(td.addr)
+            td = td.clone()
+            if td.addr == self.regs.reg_name_to_address["ris"]:
+                # pass value as it is until logic of ris is implemented
+                pass
+            elif td.addr == self.regs.reg_name_to_address["RXDATA"]:
+                td.data = self.fifo_rx.get_nowait()
             else:
-                tr.data = data
-            self.bus_bus_export.write(tr)  # this is output to the scoreboard
+                td.data = data
+            self.bus_bus_export.write(td)  # this is output to the scoreboard
         self.update_interrupt_regs()
 
     def write_ip(self, tr):
@@ -97,21 +112,27 @@ class spi_ref_model(ref_model):
             UVM_HIGH,
         )
         # check data sent while the csb isn't asserted
-        if (
-            self.regs.read_reg_value(self.regs.reg_name_to_address["CTRL"]) & 0b10
-            == 0b0
-        ):
+        if self.regs.read_reg_value(self.regs.reg_name_to_address["CTRL"]) & 0b1 == 0b0:
             uvm_error(self.tag, "Data sent while csb is not asserted")
-        self.regs.write_reg_value(self.regs.reg_name_to_address["RXDATA"], tr.MISO)
+        try:
+            self.fifo_rx.put_nowait(tr.MISO)
+        except QueueFull:
+            uvm_warning(
+                self.tag,
+                f"writing to rx while fifo is full so ignore the value {hex(tr.MISO)}",
+            )
         # Update interrupts when a new ip transaction is received
         self.set_ris_reg()
         self.update_interrupt_regs()
         # Here the ref model should predict the transaction and send it to scoreboard
         td = tr.do_clone()
-        td.MOSI = self.data_to_write
+        td.MOSI = self.fifo_tx.get_nowait()
+        uvm_info(
+            self.tag,
+            f"value {hex(td.MOSI)} read from tx fifo size = {self.fifo_tx.qsize()}",
+            UVM_MEDIUM,
+        )
         self.ip_export.write(td)  # this is output ro scoreboard
-        self.num_tr += 1
-        self.check_num_tr()
 
     def set_ris_reg(self):
         # TODO: update this function to update the value of 'self.ris_reg' according to the ip transaction
@@ -177,3 +198,18 @@ class spi_ref_model(ref_model):
 
 
 uvm_component_utils(spi_ref_model)
+
+
+class TX_QUEUE(Queue):
+    """same queue provided by cocotb but with 2 new functions to get the tx value send it and then pop it from the queue after sending"""
+
+    def __init__(self, maxsize: int = 0):
+        super().__init__(maxsize)
+
+    async def get_no_pop(self):
+        """same as get but without popping it from the queue"""
+        while self.empty():
+            event = Event("{} get".format(type(self).__name__))
+            self._getters.append((event, cocotb.scheduler._current_task))
+            await event.wait()
+        return self._queue[0]

@@ -32,7 +32,7 @@ class spi_csb_seq(bus_seq_base):
         for _ in range(30):
             if random.random() > 0.3:  # 70% probability of assert csb
                 await self.send_req(
-                    is_write=True, reg="CTRL", data_condition=lambda data: data == 0b10
+                    is_write=True, reg="CTRL", data_condition=lambda data: data == 0b1
                 )
             await uvm_do(
                 self,
@@ -44,7 +44,7 @@ class spi_csb_seq(bus_seq_base):
             )
             if random.random() > 0.3:  # 70% probability of deassert csb
                 await self.send_req(
-                    is_write=True, reg="CTRL", data_condition=lambda data: data == 0b00
+                    is_write=True, reg="CTRL", data_condition=lambda data: data == 0b0
                 )  # csb disable
 
 
