@@ -92,7 +92,7 @@ module EF_SPI_AHBL #(
 	`AHBL_REG(CFG_REG, 0, 2)
 
 	reg [0:0]	CTRL_REG;
-	assign	ss	=	CTRL_REG[1 : 1];
+	assign	ss	=	CTRL_REG[0 : 0];
 	`AHBL_REG(CTRL_REG, 0, 1)
 
 	reg [CDW-1:0]	PR_REG;
@@ -216,6 +216,6 @@ module EF_SPI_AHBL #(
 
 	assign	RXDATA_WIRE = datao;
 	assign	rd = (ahbl_re & (last_HADDR[`AHBL_AW-1:0] == RXDATA_REG_OFFSET));
-	// assign	wdata = PWDATA; // TODO: report bug in generate script
+	assign	datai = HWDATA;
 	assign	wr = (ahbl_we & (last_HADDR[`AHBL_AW-1:0] == TXDATA_REG_OFFSET));
 endmodule

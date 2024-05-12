@@ -6,8 +6,8 @@ class spi_if(sv_if):
         bus_map = {
             "SCK": "SCK",
             "SSn": "SSn",
-            "MOSI": "MSO",
-            "MISO": "MSI",
+            "MOSI": "MOSI",
+            "MISO": "MISO",
             "CLK": "CLK",
         }
         super().__init__(dut, "", bus_map)

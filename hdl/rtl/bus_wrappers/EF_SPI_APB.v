@@ -92,7 +92,7 @@ module EF_SPI_APB #(
 	`APB_REG(CFG_REG, 0, 2)
 
 	reg [0:0]	CTRL_REG;
-	assign	ss	=	CTRL_REG[1 : 1];
+	assign	ss	=	CTRL_REG[0 : 0];
 	`APB_REG(CTRL_REG, 0, 1)
 
 	reg [CDW-1:0]	PR_REG;
@@ -216,6 +216,6 @@ module EF_SPI_APB #(
 
 	assign	RXDATA_WIRE = datao;
 	assign	rd = (apb_re & (PADDR[`APB_AW-1:0] == RXDATA_REG_OFFSET));
-	// assign	wdata = PWDATA; // TODO: report bug in generate script
+	assign	datai = PWDATA;
 	assign	wr = (apb_we & (PADDR[`APB_AW-1:0] == TXDATA_REG_OFFSET));
 endmodule

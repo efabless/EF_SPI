@@ -92,7 +92,7 @@ module EF_SPI_WB #(
 	`WB_REG(CFG_REG, 0, 2)
 
 	reg [0:0]	CTRL_REG;
-	assign	ss	=	CTRL_REG[1 : 1];
+	assign	ss	=	CTRL_REG[0 : 0];
 	`WB_REG(CTRL_REG, 0, 1)
 
 	reg [CDW-1:0]	PR_REG;
@@ -221,6 +221,6 @@ module EF_SPI_WB #(
 			ack_o <= 1'b0;
 	assign	RXDATA_WIRE = datao;
 	assign	rd =  ack_o & (wb_re & (adr_i[`WB_AW-1:0] == RXDATA_REG_OFFSET));
-	// assign	wdata = PWDATA; // TODO: report bug in generate script
+	assign	datai = dat_i;
 	assign	wr = ack_o & (wb_we & (adr_i[`WB_AW-1:0] == TXDATA_REG_OFFSET));
 endmodule

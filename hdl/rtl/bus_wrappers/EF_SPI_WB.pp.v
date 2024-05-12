@@ -156,7 +156,7 @@ module EF_SPI_WB #(
 	always @(posedge clk_i or posedge rst_i) if(rst_i) CFG_REG <= 0; else if(wb_we & (adr_i[16-1:0]==CFG_REG_OFFSET)) CFG_REG <= dat_i[2-1:0];
 
 	reg [0:0]	CTRL_REG;
-	assign	ss	=	CTRL_REG[1 : 1];
+	assign	ss	=	CTRL_REG[0 : 0];
 	always @(posedge clk_i or posedge rst_i) if(rst_i) CTRL_REG <= 0; else if(wb_we & (adr_i[16-1:0]==CTRL_REG_OFFSET)) CTRL_REG <= dat_i[1-1:0];
 
 	reg [CDW-1:0]	PR_REG;
@@ -289,6 +289,6 @@ module EF_SPI_WB #(
 			ack_o <= 1'b0;
 	assign	RXDATA_WIRE = datao;
 	assign	rd =  ack_o & (wb_re & (adr_i[16-1:0] == RXDATA_REG_OFFSET));
-	// assign	wdata = PWDATA; // TODO: report bug in generate script
+	assign	datai = dat_i;
 	assign	wr = ack_o & (wb_we & (adr_i[16-1:0] == TXDATA_REG_OFFSET));
 endmodule

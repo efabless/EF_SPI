@@ -194,7 +194,7 @@ module EF_SPI_AHBL #(
                                             CFG_REG <= HWDATA[2-1:0];
 
 	reg [0:0]	CTRL_REG;
-	assign	ss	=	CTRL_REG[1 : 1];
+	assign	ss	=	CTRL_REG[0 : 0];
 	always @(posedge HCLK or negedge HRESETn) if(~HRESETn) CTRL_REG <= 0;
                                         else if(ahbl_we & (last_HADDR[16-1:0]==CTRL_REG_OFFSET))
                                             CTRL_REG <= HWDATA[1-1:0];
@@ -339,6 +339,6 @@ module EF_SPI_AHBL #(
 
 	assign	RXDATA_WIRE = datao;
 	assign	rd = (ahbl_re & (last_HADDR[16-1:0] == RXDATA_REG_OFFSET));
-	// assign	wdata = PWDATA; // TODO: report bug in generate script
+	assign	datai = HWDATA;
 	assign	wr = (ahbl_we & (last_HADDR[16-1:0] == TXDATA_REG_OFFSET));
 endmodule

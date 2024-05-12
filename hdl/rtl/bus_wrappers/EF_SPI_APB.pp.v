@@ -163,7 +163,7 @@ module EF_SPI_APB #(
                                             CFG_REG <= PWDATA[2-1:0];
 
 	reg [0:0]	CTRL_REG;
-	assign	ss	=	CTRL_REG[1 : 1];
+	assign	ss	=	CTRL_REG[0 : 0];
 	always @(posedge PCLK or negedge PRESETn) if(~PRESETn) CTRL_REG <= 0;
                                         else if(apb_we & (PADDR[16-1:0]==CTRL_REG_OFFSET))
                                             CTRL_REG <= PWDATA[1-1:0];
@@ -309,6 +309,6 @@ module EF_SPI_APB #(
 
 	assign	RXDATA_WIRE = datao;
 	assign	rd = (apb_re & (PADDR[16-1:0] == RXDATA_REG_OFFSET));
-	// assign	wdata = PWDATA; // TODO: report bug in generate script
+	assign	datai = PWDATA;
 	assign	wr = (apb_we & (PADDR[16-1:0] == TXDATA_REG_OFFSET));
 endmodule

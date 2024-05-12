@@ -202,7 +202,7 @@ registers:
   description: Control Register.
   fields:
   - name: SS
-    bit_offset: 1
+    bit_offset: 0
     bit_width: 1
     write_port: ss
     description: Slave Select (Active High).
@@ -253,7 +253,7 @@ fifos:
   width: 8
   address_width: FAW
   register: TXDATA
-  data_port: wdata
+  data_port: datai
   control_port: wr
   flush_enable: True
   flush_port: tx_flush
