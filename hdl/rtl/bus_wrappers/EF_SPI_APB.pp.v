@@ -110,6 +110,7 @@ module EF_SPI_APB #(
 	localparam	CFG_REG_OFFSET = 16'h0008;
 	localparam	CTRL_REG_OFFSET = 16'h000C;
 	localparam	PR_REG_OFFSET = 16'h0010;
+	localparam	STATUS_REG_OFFSET = 16'h0014;
 	localparam	RX_FIFO_LEVEL_REG_OFFSET = 16'hFE00;
 	localparam	RX_FIFO_THRESHOLD_REG_OFFSET = 16'hFE04;
 	localparam	RX_FIFO_FLUSH_REG_OFFSET = 16'hFE08;
@@ -149,6 +150,7 @@ module EF_SPI_APB #(
 	wire [1-1:0]	tx_level_below;
 	wire [FAW-1:0]	tx_level;
 	wire [1-1:0]	ss;
+	wire [1-1:0]	enable;
 
 	// Register Definitions
 	wire	[8-1:0]	RXDATA_WIRE;
@@ -162,17 +164,27 @@ module EF_SPI_APB #(
                                         else if(apb_we & (PADDR[16-1:0]==CFG_REG_OFFSET))
                                             CFG_REG <= PWDATA[2-1:0];
 
-	reg [0:0]	CTRL_REG;
+	reg [2:0]	CTRL_REG;
 	assign	ss	=	CTRL_REG[0 : 0];
+	assign	enable	=	CTRL_REG[1 : 1];
+	assign	rx_en	=	CTRL_REG[2 : 2];
 	always @(posedge PCLK or negedge PRESETn) if(~PRESETn) CTRL_REG <= 0;
                                         else if(apb_we & (PADDR[16-1:0]==CTRL_REG_OFFSET))
-                                            CTRL_REG <= PWDATA[1-1:0];
+                                            CTRL_REG <= PWDATA[3-1:0];
 
 	reg [CDW-1:0]	PR_REG;
 	assign	clk_divider = PR_REG;
 	always @(posedge PCLK or negedge PRESETn) if(~PRESETn) PR_REG <= 'h2;
                                         else if(apb_we & (PADDR[16-1:0]==PR_REG_OFFSET))
                                             PR_REG <= PWDATA[CDW-1:0];
+
+	wire [6-1:0]	STATUS_WIRE;
+	assign	STATUS_WIRE[0 : 0] = tx_empty;
+	assign	STATUS_WIRE[1 : 1] = tx_full;
+	assign	STATUS_WIRE[2 : 2] = rx_empty;
+	assign	STATUS_WIRE[3 : 3] = rx_full;
+	assign	STATUS_WIRE[4 : 4] = tx_level_below;
+	assign	STATUS_WIRE[5 : 5] = rx_level_above;
 
 	wire [FAW-1:0]	RX_FIFO_LEVEL_WIRE;
 	assign	RX_FIFO_LEVEL_WIRE[(FAW - 1) : 0] = rx_level;
@@ -281,6 +293,7 @@ module EF_SPI_APB #(
 		.tx_level_below(tx_level_below),
 		.tx_level(tx_level),
 		.ss(ss),
+		.enable(enable),
 		.miso(miso),
 		.mosi(mosi),
 		.csb(csb),
@@ -293,6 +306,7 @@ module EF_SPI_APB #(
 			(PADDR[16-1:0] == CFG_REG_OFFSET)	? CFG_REG :
 			(PADDR[16-1:0] == CTRL_REG_OFFSET)	? CTRL_REG :
 			(PADDR[16-1:0] == PR_REG_OFFSET)	? PR_REG :
+			(PADDR[16-1:0] == STATUS_REG_OFFSET)	? STATUS_WIRE :
 			(PADDR[16-1:0] == RX_FIFO_LEVEL_REG_OFFSET)	? RX_FIFO_LEVEL_WIRE :
 			(PADDR[16-1:0] == RX_FIFO_THRESHOLD_REG_OFFSET)	? RX_FIFO_THRESHOLD_REG :
 			(PADDR[16-1:0] == RX_FIFO_FLUSH_REG_OFFSET)	? RX_FIFO_FLUSH_REG :

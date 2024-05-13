@@ -58,7 +58,7 @@ module spi_master
    input CPOL,
    input CPHA,
    input [CLK_DIVIDER_WIDTH-1:0] clk_divider,
-
+   input enable,
    input go,
    input [(NUM_PORTS*DATA_WIDTH)-1:0] datai,
    output [(NUM_PORTS*DATA_WIDTH)-1:0] datao,
@@ -73,7 +73,7 @@ module spi_master
 
    reg  [CLK_DIVIDER_WIDTH-1:0]  clk_count;
    wire [CLK_DIVIDER_WIDTH-1:0]  next_clk_count = clk_count + 1;
-   wire pulse = next_clk_count == (clk_divider >> 1);
+   wire pulse = (next_clk_count == (clk_divider >> 1)) & enable;
    reg    state;
 
 `ifdef verilator

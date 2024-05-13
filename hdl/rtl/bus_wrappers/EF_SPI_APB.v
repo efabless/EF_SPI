@@ -43,6 +43,7 @@ module EF_SPI_APB #(
 	localparam	CFG_REG_OFFSET = `APB_AW'h0008;
 	localparam	CTRL_REG_OFFSET = `APB_AW'h000C;
 	localparam	PR_REG_OFFSET = `APB_AW'h0010;
+	localparam	STATUS_REG_OFFSET = `APB_AW'h0014;
 	localparam	RX_FIFO_LEVEL_REG_OFFSET = `APB_AW'hFE00;
 	localparam	RX_FIFO_THRESHOLD_REG_OFFSET = `APB_AW'hFE04;
 	localparam	RX_FIFO_FLUSH_REG_OFFSET = `APB_AW'hFE08;
@@ -80,6 +81,7 @@ module EF_SPI_APB #(
 	wire [1-1:0]	tx_level_below;
 	wire [FAW-1:0]	tx_level;
 	wire [1-1:0]	ss;
+	wire [1-1:0]	enable;
 
 	// Register Definitions
 	wire	[8-1:0]	RXDATA_WIRE;
@@ -91,13 +93,23 @@ module EF_SPI_APB #(
 	assign	CPHA	=	CFG_REG[1 : 1];
 	`APB_REG(CFG_REG, 0, 2)
 
-	reg [0:0]	CTRL_REG;
+	reg [2:0]	CTRL_REG;
 	assign	ss	=	CTRL_REG[0 : 0];
-	`APB_REG(CTRL_REG, 0, 1)
+	assign	enable	=	CTRL_REG[1 : 1];
+	assign	rx_en	=	CTRL_REG[2 : 2];
+	`APB_REG(CTRL_REG, 0, 3)
 
 	reg [CDW-1:0]	PR_REG;
 	assign	clk_divider = PR_REG;
 	`APB_REG(PR_REG, 'h2, CDW)
+
+	wire [6-1:0]	STATUS_WIRE;
+	assign	STATUS_WIRE[0 : 0] = tx_empty;
+	assign	STATUS_WIRE[1 : 1] = tx_full;
+	assign	STATUS_WIRE[2 : 2] = rx_empty;
+	assign	STATUS_WIRE[3 : 3] = rx_full;
+	assign	STATUS_WIRE[4 : 4] = tx_level_below;
+	assign	STATUS_WIRE[5 : 5] = rx_level_above;
 
 	wire [FAW-1:0]	RX_FIFO_LEVEL_WIRE;
 	assign	RX_FIFO_LEVEL_WIRE[(FAW - 1) : 0] = rx_level;
@@ -188,6 +200,7 @@ module EF_SPI_APB #(
 		.tx_level_below(tx_level_below),
 		.tx_level(tx_level),
 		.ss(ss),
+		.enable(enable),
 		.miso(miso),
 		.mosi(mosi),
 		.csb(csb),
@@ -200,6 +213,7 @@ module EF_SPI_APB #(
 			(PADDR[`APB_AW-1:0] == CFG_REG_OFFSET)	? CFG_REG :
 			(PADDR[`APB_AW-1:0] == CTRL_REG_OFFSET)	? CTRL_REG :
 			(PADDR[`APB_AW-1:0] == PR_REG_OFFSET)	? PR_REG :
+			(PADDR[`APB_AW-1:0] == STATUS_REG_OFFSET)	? STATUS_WIRE :
 			(PADDR[`APB_AW-1:0] == RX_FIFO_LEVEL_REG_OFFSET)	? RX_FIFO_LEVEL_WIRE :
 			(PADDR[`APB_AW-1:0] == RX_FIFO_THRESHOLD_REG_OFFSET)	? RX_FIFO_THRESHOLD_REG :
 			(PADDR[`APB_AW-1:0] == RX_FIFO_FLUSH_REG_OFFSET)	? RX_FIFO_FLUSH_REG :

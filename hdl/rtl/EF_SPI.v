@@ -33,7 +33,7 @@ module EF_SPI #(parameter
     input               rd,      
     input  [7:0]        datai,
     output [7:0]        datao,
-    
+    input               enable,
     input               rx_en,
     input               rx_flush,   
     input   [FAW-1:0]   rx_threshold,
@@ -78,9 +78,10 @@ module EF_SPI #(parameter
     wire        rx_wr       = rx_en & done_pe;
     wire        rx_rd       = rd;
     //wire        rx_empty;
-    //wire [7:0]  datao;
-    wire [7:0]  rx_wdata    = datao;
+    wire [7:0]  f_datao;
+    wire [7:0]  rx_wdata    = f_datao;
     wire [7:0]  rx_rdata;
+    assign datao = rx_rdata;
 
     assign      tx_level_below = tx_level < tx_threshold;
     assign      rx_level_above = rx_level > rx_threshold;
@@ -137,8 +138,9 @@ module EF_SPI #(parameter
         .CPHA(CPHA),
         .clk_divider(clk_divider),
         .go(spi_go),
+        .enable(enable),
         .datai(tx_rdata),
-        .datao(datao),
+        .datao(f_datao),
         .busy(busy),
         .done(done),
         .dout(miso),
