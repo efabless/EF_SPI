@@ -30,7 +30,7 @@ class spi_send_MOSI_seq(bus_seq_base):
         # you could use method send_req to send a write or read using the register name
         # example for writing register by value > 5
         await self.send_req(
-            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b1
+            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
         )
         for _ in range(50):
             # for _ in range(self.num_data):
@@ -41,31 +41,26 @@ class spi_send_MOSI_seq(bus_seq_base):
                     reg="TXDATA",
                     data_condition=lambda data: data < (1 << self.data_width) - 1,
                 )
+            # cycles_to_wait = tr_to_send * 8 * 2
+            # for _ in range(cycles_to_wait):
+            #     await self.send_nop()
             # wait until tx is empty
-            cycles_to_wait = tr_to_send * 8 * 2
-            for _ in range(cycles_to_wait):
+            self.clear_response_queue()
+            while True:
+                rsp = []
+                await self.send_req(is_write=False, reg="STATUS")
+                await self.get_response(rsp)
+                rsp = rsp[0]
+                uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
+                if (
+                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
+                    and rsp.data & 0b1 == 0b1
+                ):
+                    break
+
+            cycles_additional = 8*4
+            for _ in range(cycles_additional):
                 await self.send_nop()
-            # while True:
-            #     # clear interrupt
-            #     await self.send_req(
-            #         is_write=True,
-            #         reg="icr",
-            #         data_condition=lambda data: data & 0b1 == 0b1,
-            #     )
-            #     rsp = []
-            #     while True:
-            #         rsp = []
-            #         await self.send_req(is_write=False, reg="ris")
-            #         await self.get_response(rsp)
-            #         rsp = rsp[0]
-            #         uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
-            #         if rsp.addr == self.regs.reg_name_to_address["ris"]:
-            #             break
-            #     if (
-            #         rsp.addr == self.regs.reg_name_to_address["ris"]
-            #         and rsp.data & 0b1 == 0b1
-            #     ):
-            #         break
 
 
 uvm_object_utils(spi_send_MOSI_seq)

@@ -29,47 +29,27 @@ class spi_send_MISO_seq(bus_seq_base):
         # Add the sequqnce here
         # you could use method send_req to send a write or read using the register name
         # example for writing register by value > 5
-        await self.send_req(
-            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b10
-        )
-        await self.send_req(
-            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
-        )  # go
+        await self.send_req(is_write=True, reg="CTRL", data_condition=lambda data: data == 0b111)
         for _ in range(self.num_data):
-            # wait until the response status is busy
+            # wait received fifo not empty
+            self.clear_response_queue()
             while True:
-                await self.send_req(is_write=False, reg="STATUS")
                 rsp = []
+                await self.send_req(is_write=False, reg="STATUS")
                 await self.get_response(rsp)
                 rsp = rsp[0]
                 uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
                 if (
                     rsp.addr == self.regs.reg_name_to_address["STATUS"]
-                    and rsp.data & 0b10 == 0b10
-                ):  # busy
-                    break
-            # wait until not busy
-            while True:
-                await self.send_nop()
-                await self.send_req(is_write=False, reg="STATUS")
-                rsp = []
-                await self.get_response(rsp)
-                rsp = rsp[0]
-                uvm_info(self.get_full_name(), f"RSP: {rsp} id {rsp.id}", UVM_MEDIUM)
-                if (
-                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
-                    and rsp.data & 0b10 == 0b0
+                    and rsp.data & 0b100 == 0b0
                 ):
                     break
 
-            if random.random() > 0.1:  # 90% probability of reading
+            if random.random() < 0.9:  # 20% probability of reading
                 await self.send_req(is_write=False, reg="RXDATA")
-            await self.send_req(
-                is_write=True, reg="CTRL", data_condition=lambda data: data == 0b11
-            )  # go
 
         await self.send_req(
-            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b00
+            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b0
         )  # csb disable
 
 

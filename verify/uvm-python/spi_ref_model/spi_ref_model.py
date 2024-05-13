@@ -93,7 +93,7 @@ class spi_ref_model(ref_model):
             # For example, to read the same resgiter uncomment the following lines
             data = self.regs.read_reg_value(td.addr)
             td = td.clone()
-            if td.addr == self.regs.reg_name_to_address["ris"]:
+            if td.addr in [self.regs.reg_name_to_address["ris"], self.regs.reg_name_to_address["STATUS"]]:
                 # pass value as it is until logic of ris is implemented
                 pass
             elif td.addr == self.regs.reg_name_to_address["RXDATA"]:
