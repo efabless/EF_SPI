@@ -35,6 +35,12 @@ class spi_send_MISO_seq(bus_seq_base):
             self.clear_response_queue()
             while True:
                 rsp = []
+                await self.send_req(
+                    is_write=True,
+                    reg="TXDATA",
+                    data_condition=lambda data: data == 0,
+                )
+                self.clear_response_queue()
                 await self.send_req(is_write=False, reg="STATUS")
                 await self.get_response(rsp)
                 rsp = rsp[0]
