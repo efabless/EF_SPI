@@ -58,7 +58,7 @@ class spi_send_MOSI_seq(bus_seq_base):
                 ):
                     break
 
-            cycles_additional = 8*4
+            cycles_additional = 8 * 4
             for _ in range(cycles_additional):
                 await self.send_nop()
 

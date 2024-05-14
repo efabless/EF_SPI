@@ -29,7 +29,9 @@ class spi_send_MISO_seq(bus_seq_base):
         # Add the sequqnce here
         # you could use method send_req to send a write or read using the register name
         # example for writing register by value > 5
-        await self.send_req(is_write=True, reg="CTRL", data_condition=lambda data: data == 0b111)
+        await self.send_req(
+            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b111
+        )
         for _ in range(self.num_data):
             # wait received fifo not empty
             self.clear_response_queue()
