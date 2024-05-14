@@ -8,9 +8,10 @@ from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
 from uvm.base.uvm_object_globals import UVM_ALL_ON, UVM_NOPACK, UVM_HIGH, UVM_MEDIUM
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 import random
+from spi_seq_lib.spi_base_seq import spi_base_seq
 
 
-class spi_send_MOSI_seq(bus_seq_base):
+class spi_send_MOSI_seq(spi_base_seq):
     # use this sequence write or read from register by the bus interface
     # this sequence should be connected to the bus sequencer in the testbench
     # you should create as many sequences as you need not only this one
@@ -34,7 +35,7 @@ class spi_send_MOSI_seq(bus_seq_base):
         )
         for _ in range(50):
             # for _ in range(self.num_data):
-            tr_to_send = random.randint(3, 14)
+            tr_to_send = random.randint(3, 15)
             for _ in range(tr_to_send):
                 await self.send_req(
                     is_write=True,
@@ -44,23 +45,7 @@ class spi_send_MOSI_seq(bus_seq_base):
             # cycles_to_wait = tr_to_send * 8 * 2
             # for _ in range(cycles_to_wait):
             #     await self.send_nop()
-            # wait until tx is empty
-            self.clear_response_queue()
-            while True:
-                rsp = []
-                await self.send_req(is_write=False, reg="STATUS")
-                await self.get_response(rsp)
-                rsp = rsp[0]
-                uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
-                if (
-                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
-                    and rsp.data & 0b1 == 0b1
-                ):
-                    break
-
-            cycles_additional = 8 * 4
-            for _ in range(cycles_additional):
-                await self.send_nop()
+            await self.wait_tx_fifo_empty()
 
 
 uvm_object_utils(spi_send_MOSI_seq)

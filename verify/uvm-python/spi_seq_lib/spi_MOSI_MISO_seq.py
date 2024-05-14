@@ -14,9 +14,10 @@ from uvm.base.uvm_object_globals import (
 )
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 import random
+from spi_seq_lib.spi_base_seq import spi_base_seq
 
 
-class spi_MOSI_MISO_seq(bus_seq_base):
+class spi_MOSI_MISO_seq(spi_base_seq):
     # use this sequence write or read from register by the bus interface
     # this sequence should be connected to the bus sequencer in the testbench
     # you should create as many sequences as you need not only this one
@@ -35,52 +36,31 @@ class spi_MOSI_MISO_seq(bus_seq_base):
 
     async def body(self):
         await super().body()
-        # Add the sequqnce here
-        # you could use method send_req to send a write or read using the register name
-        # example for writing register by value > 5
         if not self.disable_control:
             await self.send_req(
                 is_write=True, reg="CTRL", data_condition=lambda data: data == 0b0
             )
         for _ in range(self.num_data):
-            if random.random() > 0.3:  # 70% probability of writing different value
+            # 2 tx then 1 read from rx
+            if not self.disable_control:
                 await self.send_req(
-                    is_write=True,
-                    reg="TXDATA",
-                    data_condition=lambda data: data < (1 << self.data_width) - 1,
+                    is_write=True, reg="CTRL", data_condition=lambda data: data == 0b111
                 )
             await self.send_req(
-                is_write=True, reg="CTRL", data_condition=lambda data: data == 0b1
+                is_write=True,
+                reg="TXDATA",
+                data_condition=lambda data: data < (1 << self.data_width) - 1,
             )
-            await self.send_nop()
-            await self.send_nop()
-            # wait until the response status is busy
-            while True:
-                await self.send_req(is_write=False, reg="STATUS")
-                rsp = []
-                await self.get_response(rsp)
-                rsp = rsp[0]
-                uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
-                if (
-                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
-                    and rsp.data & 0b10 == 0b10
-                ):  # busy
-                    break
-            # wait until not busy
-            while True:
-                await self.send_nop()
-                await self.send_req(is_write=False, reg="STATUS")
-                rsp = []
-                await self.get_response(rsp)
-                rsp = rsp[0]
-                uvm_info(self.get_full_name(), f"RSP: {rsp} id {rsp.id}", UVM_MEDIUM)
-                if (
-                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
-                    and rsp.data & 0b10 == 0b0
-                ):
-                    break
-            if random.random() > 0.3:  # 70% probability of reading
-                await self.send_req(is_write=False, reg="RXDATA")
+            await self.send_req(
+                is_write=True,
+                reg="TXDATA",
+                data_condition=lambda data: data < (1 << self.data_width) - 1,
+            )
+
+            # wait until tx is empty
+            await self.wait_tx_fifo_empty()
+
+            await self.send_req(is_write=False, reg="RXDATA")
         if not self.disable_control:
             await self.send_req(
                 is_write=True, reg="CTRL", data_condition=lambda data: data == 0b00

@@ -29,7 +29,7 @@ class spi_driver(ip_driver):
         self.cpha_val = (config_reg & 0b10) >> 1
 
     async def driving_edge(self):
-        if self.cpol_val == self.cpha_val:
+        if self.cpol_val == self.cpha_val or self.cpha_val == 1:
             await RisingEdge(self.vif.SCK)
         else:
             await FallingEdge(self.vif.SCK)

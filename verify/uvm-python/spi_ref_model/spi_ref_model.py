@@ -164,7 +164,7 @@ class spi_ref_model(ref_model):
         uvm_info(
             self.tag,
             f" Update interrupts :  im =  {im_reg:X}, ris =  {self.ris_reg:X}, mis = {mis_reg_new:X}",
-            UVM_LOW,
+            UVM_HIGH,
         )
         if mis_reg_new != self.mis_reg:
             self.mis_changed.set()

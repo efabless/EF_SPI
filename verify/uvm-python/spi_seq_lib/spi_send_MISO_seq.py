@@ -8,9 +8,10 @@ from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
 from uvm.base.uvm_object_globals import UVM_ALL_ON, UVM_NOPACK, UVM_HIGH, UVM_MEDIUM
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 import random
+from spi_seq_lib.spi_base_seq import spi_base_seq
 
 
-class spi_send_MISO_seq(bus_seq_base):
+class spi_send_MISO_seq(spi_base_seq):
     # use this sequence write or read from register by the bus interface
     # this sequence should be connected to the bus sequencer in the testbench
     # you should create as many sequences as you need not only this one
@@ -33,27 +34,8 @@ class spi_send_MISO_seq(bus_seq_base):
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b111
         )
         for _ in range(self.num_data):
-            # wait received fifo not empty
-            self.clear_response_queue()
-            while True:
-                rsp = []
-                await self.send_req(
-                    is_write=True,
-                    reg="TXDATA",
-                    data_condition=lambda data: data == 0,
-                )
-                self.clear_response_queue()
-                await self.send_req(is_write=False, reg="STATUS")
-                await self.get_response(rsp)
-                rsp = rsp[0]
-                uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
-                if (
-                    rsp.addr == self.regs.reg_name_to_address["STATUS"]
-                    and rsp.data & 0b100 == 0b0
-                ):
-                    break
-
-            if random.random() < 0.9:  # 20% probability of reading
+            await self.wait_rx_fifo_not_empty()
+            if random.random() < 0.7:  # 20% probability of reading
                 await self.send_req(is_write=False, reg="RXDATA")
 
         await self.send_req(

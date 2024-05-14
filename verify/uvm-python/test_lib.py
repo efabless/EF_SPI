@@ -22,7 +22,7 @@ from spi_seq_lib.spi_ip_seq import spi_ip_seq
 from spi_seq_lib.spi_send_MOSI_seq import spi_send_MOSI_seq
 from spi_seq_lib.spi_send_MISO_seq import spi_send_MISO_seq
 from spi_seq_lib.spi_MOSI_MISO_seq import spi_MOSI_MISO_seq
-from spi_seq_lib.spi_csb_seq import spi_csb_seq
+from spi_seq_lib.spi_rx_dis_seq import spi_rx_dis_seq
 from spi_seq_lib.spi_pr_seq import spi_pr_seq
 from spi_seq_lib.configure_spi_seq import configure_spi_seq
 
@@ -164,8 +164,8 @@ class MISO_MOSI_test(spi_base_test):
 uvm_component_utils(MISO_MOSI_test)
 
 
-class spi_csb_test(spi_base_test):
-    def __init__(self, name="spi_csb_test", parent=None):
+class spi_rx_dis_test(spi_base_test):
+    def __init__(self, name="spi_rx_dis_test", parent=None):
         super().__init__(name, parent=parent)
         self.tag = name
 
@@ -174,14 +174,14 @@ class spi_csb_test(spi_base_test):
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
         # TODO: conntect sequence with sequencer here
         # for example if you need to run the 2 sequence sequentially
-        bus_seq = spi_csb_seq("spi_csb_seq")
+        bus_seq = spi_rx_dis_seq("spi_rx_dis_seq")
         ip_seq = spi_ip_seq("spi_ip_seq")
         await cocotb.start(ip_seq.start(self.ip_sqr))
         await bus_seq.start(self.bus_sqr)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
 
-uvm_component_utils(spi_csb_test)
+uvm_component_utils(spi_rx_dis_test)
 
 
 class spi_pr_test(spi_base_test):

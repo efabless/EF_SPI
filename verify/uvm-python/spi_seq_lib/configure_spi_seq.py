@@ -23,8 +23,7 @@ class configure_spi_seq(bus_seq_base):
         await self.send_req(
             is_write=True,
             reg="CFG",
-            data_condition=lambda data: data in [0b00],
-            # data_condition=lambda data: data in [0b00, 0b01, 0b10, 0b11],
+            data_condition=lambda data: data in [0b00, 0b01, 0b10, 0b11],
         )
         rsp = []
         await self.get_response(rsp)  # wait until writing is done

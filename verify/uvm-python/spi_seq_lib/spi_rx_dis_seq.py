@@ -9,15 +9,18 @@ from uvm.base.uvm_object_globals import UVM_ALL_ON, UVM_NOPACK, UVM_HIGH, UVM_ME
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 import random
 from spi_seq_lib.spi_MOSI_MISO_seq import spi_MOSI_MISO_seq
+from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_error, uvm_warning
+from spi_seq_lib.spi_base_seq import spi_base_seq
 
 
-class spi_pr_seq(bus_seq_base):
+class spi_rx_dis_seq(spi_base_seq):
     # use this sequence write or read from register by the bus interface
     # this sequence should be connected to the bus sequencer in the testbench
     # you should create as many sequences as you need not only this one
-    def __init__(self, name="spi_pr_seq", data_width=8):
+    def __init__(self, name="spi_rx_dis_seq", num_iterations=500, data_width=8):
         super().__init__(name)
         self.data_width = data_width
+        self.num_iterations = num_iterations
         regs_arr = []
         if not UVMConfigDb.get(self, "", "bus_regs", regs_arr):
             uvm_fatal(self.tag, "No json file wrapper regs")
@@ -29,26 +32,31 @@ class spi_pr_seq(bus_seq_base):
         # Add the sequqnce here
         # you could use method send_req to send a write or read using the register name
         # example for writing register by value > 5
-        for _ in range(5):
+        await self.send_req(
+            is_write=True, reg="CTRL", data_condition=lambda data: data == 0b011
+        )
+        for _ in range(self.num_iterations):
             await self.send_req(
                 is_write=True,
-                reg="PR",
-                data_condition=lambda data: data in range(2, 10),
-            )  # change PR
-            await self.send_req(
-                is_write=True, reg="CTRL", data_condition=lambda data: data == 0b111
+                reg="TXDATA",
+                data_condition=lambda data: data < (1 << self.data_width) - 1,
             )
-            await uvm_do(
-                self,
-                spi_MOSI_MISO_seq(
-                    name="spi_MOSI_MISO_seq",
-                    num_data=random.randint(1, 10),
-                    disbale_control=True,
-                ),
-            )
-            await self.send_req(
-                is_write=True, reg="CTRL", data_condition=lambda data: data == 0b00
-            )  # csb disable
+            await self.wait_tx_fifo_empty()
+            # check if the rx wouldn't be empty ever
+            # wait received fifo not empty
+            rsp = []
+            self.clear_response_queue()
+            await self.send_req(is_write=False, reg="STATUS")
+            await self.get_response(rsp)
+            rsp = rsp[0]
+            uvm_info(self.get_full_name(), f"RSP: {rsp}", UVM_MEDIUM)
+            if (
+                rsp.addr == self.regs.reg_name_to_address["STATUS"]
+                and rsp.data & 0b100 == 0b0
+            ):
+                uvm_error(
+                    "sequence failed", f"rx fifo is not empty while rx_en is disabled"
+                )
 
 
-uvm_object_utils(spi_pr_seq)
+uvm_object_utils(spi_rx_dis_seq)
