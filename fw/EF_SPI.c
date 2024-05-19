@@ -41,24 +41,19 @@ void EF_SPI_writePhase(uint32_t spi_base, bool phase){
     spi->CFG = config;
 }
 
-int EF_SPI_readDTRUE(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-
-    return spi->STATUS & 1;
-}
 
 int EF_SPI_readTxFifoEmpty(uint32_t spi_base){
 
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
 
-    return (spi->STATUS & 0x1);
+    return (spi->STATUS & EF_SPI_STATUS_REG_TX_E_MASK);
 }
 
 int EF_SPI_readRxFifoEmpty(uint32_t spi_base){
 
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
 
-    return (spi->STATUS & 0b100);
+    return ((spi->STATUS & EF_SPI_STATUS_REG_RX_E_MASK) >> EF_SPI_STATUS_REG_RX_E_BIT);
 }
 
 
@@ -79,7 +74,7 @@ void EF_SPI_FifoRxFlush(uint32_t spi_base){
 void EF_SPI_enable(uint32_t spi_base){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
     int control = spi->CTRL;
-    control |= 2;
+    control |= EF_SPI_CTRL_REG_ENABLE_MASK;
     spi->CTRL = control;
     // control &= ~1;
     // spi->CTRL = control;
@@ -88,21 +83,21 @@ void EF_SPI_enable(uint32_t spi_base){
 void EF_SPI_disable(uint32_t spi_base){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
     int control = spi->CTRL;
-    control &= ~2;
+    control &= ~EF_SPI_CTRL_REG_ENABLE_MASK;
     spi->CTRL = control;
 }
 
 void EF_SPI_enableRx(uint32_t spi_base){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
     int control = spi->CTRL;
-    control |= 4;
+    control |= EF_SPI_CTRL_REG_RX_EN_MASK;
     spi->CTRL = control;
 }
 
 void EF_SPI_disableRx(uint32_t spi_base){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
     int control = spi->CTRL;
-    control &= ~4;
+    control &= ~EF_SPI_CTRL_REG_RX_EN_MASK;
     spi->CTRL = control;
 }
 
@@ -110,14 +105,14 @@ void EF_SPI_disableRx(uint32_t spi_base){
 void EF_SPI_assertCs(uint32_t spi_base){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
     int control = spi->CTRL;
-    control |= 1;
+    control |= EF_SPI_CTRL_REG_SS_MASK;
     spi->CTRL = control;
 }
 
 void EF_SPI_deassertCs(uint32_t spi_base){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
     int control = spi->CTRL;
-    control &= ~1;
+    control &= ~EF_SPI_CTRL_REG_SS_MASK;
     spi->CTRL = control;
 }
 

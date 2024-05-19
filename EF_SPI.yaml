@@ -248,12 +248,12 @@ registers:
       bit_width: 1
       read_port: tx_full
       description: Transmit FIFO is Full.
-    - name: RX_F
+    - name: RX_E
       bit_offset: 2
       bit_width: 1
       read_port: rx_empty
       description: Receive FIFO is Empty.
-    - name: RX_E
+    - name: RX_F
       bit_offset: 3
       bit_width: 1
       read_port: rx_full
