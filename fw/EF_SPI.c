@@ -47,59 +47,84 @@ int EF_SPI_readDTRUE(uint32_t spi_base){
     return spi->STATUS & 1;
 }
 
-int EF_SPI_readBusyTRUE(uint32_t spi_base){
+int EF_SPI_readTxFifoEmpty(uint32_t spi_base){
 
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
 
-    return (spi->STATUS & 0x2) >> 1;
+    return (spi->STATUS & 0x1);
 }
 
-void EF_SPI_waitForDone(uint32_t spi_base){
+int EF_SPI_readRxFifoEmpty(uint32_t spi_base){
+
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
 
-    while(EF_SPI_readDTRUE(spi_base) == 0);
+    return (spi->STATUS & 0b100);
 }
-void EF_SPI_waitForNotDone(uint32_t spi_base){
+
+
+void EF_SPI_waitTxFifoEmpty(uint32_t spi_base){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    while(EF_SPI_readDTRUE(spi_base) == 1);
+    while(EF_SPI_readTxFifoEmpty(spi_base) == 0);
 }
-void EF_SPI_waitForBusy(uint32_t spi_base){
+
+void EF_SPI_waitRxFifoNotEmpty(uint32_t spi_base){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    while(EF_SPI_readBusyTRUE(spi_base) == 1);
+    while(EF_SPI_readRxFifoEmpty(spi_base) == 1);
 }
-void EF_SPI_assertStart(uint32_t spi_base){
+void EF_SPI_FifoRxFlush(uint32_t spi_base){
+    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
+    spi->RX_FIFO_FLUSH = 1;
+}
+
+void EF_SPI_enable(uint32_t spi_base){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
     int control = spi->CTRL;
-    control |= 1;
+    control |= 2;
     spi->CTRL = control;
     // control &= ~1;
     // spi->CTRL = control;
 }
 
-void SPI_deassertStart(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    int control = spi->CTRL;
-    control &= ~1;
-    spi->CTRL = control;
-}
-void SPI_assertCs(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    int control = spi->CTRL;
-    control |= 2;
-    spi->CTRL = control;
-}
-
-void SPI_deassertCs(uint32_t spi_base){
+void EF_SPI_disable(uint32_t spi_base){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
     int control = spi->CTRL;
     control &= ~2;
     spi->CTRL = control;
 }
 
-void SPI_setInterruptMask(uint32_t spi_base, int mask){
+void EF_SPI_enableRx(uint32_t spi_base){
+    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
+    int control = spi->CTRL;
+    control |= 4;
+    spi->CTRL = control;
+}
+
+void EF_SPI_disableRx(uint32_t spi_base){
+    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
+    int control = spi->CTRL;
+    control &= ~4;
+    spi->CTRL = control;
+}
+
+
+void EF_SPI_assertCs(uint32_t spi_base){
+    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
+    int control = spi->CTRL;
+    control |= 1;
+    spi->CTRL = control;
+}
+
+void EF_SPI_deassertCs(uint32_t spi_base){
+    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
+    int control = spi->CTRL;
+    control &= ~1;
+    spi->CTRL = control;
+}
+
+void EF_SPI_setInterruptMask(uint32_t spi_base, int mask){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
     // bit 0: Done
-    spi->IC = mask;
+    spi->IM = mask;
 }
 
 #endif
