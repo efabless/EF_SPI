@@ -32,10 +32,10 @@ module EF_SPI_AHBL #(
 		FAW = 4
 ) (
 	`AHBL_SLAVE_PORTS,
-	input	[1-1:0]	miso,
-	output	[1-1:0]	mosi,
-	output	[1-1:0]	csb,
-	output	[1-1:0]	sclk
+	input	wire	[1-1:0]	miso,
+	output	wire	[1-1:0]	mosi,
+	output	wire	[1-1:0]	csb,
+	output	wire	[1-1:0]	sclk
 );
 
 	localparam	RXDATA_REG_OFFSET = `AHBL_AW'h0000;

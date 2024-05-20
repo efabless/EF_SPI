@@ -32,10 +32,10 @@ module EF_SPI_WB #(
 		FAW = 4
 ) (
 	`WB_SLAVE_PORTS,
-	input	[1-1:0]	miso,
-	output	[1-1:0]	mosi,
-	output	[1-1:0]	csb,
-	output	[1-1:0]	sclk
+	input	wire	[1-1:0]	miso,
+	output	wire	[1-1:0]	mosi,
+	output	wire	[1-1:0]	csb,
+	output	wire	[1-1:0]	sclk
 );
 
 	localparam	RXDATA_REG_OFFSET = `WB_AW'h0000;

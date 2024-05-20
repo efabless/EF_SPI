@@ -99,10 +99,10 @@ module EF_SPI_APB #(
                                         output wire [31:0]  PRDATA,
                                         output wire         IRQ
 ,
-	input	[1-1:0]	miso,
-	output	[1-1:0]	mosi,
-	output	[1-1:0]	csb,
-	output	[1-1:0]	sclk
+	input	wire	[1-1:0]	miso,
+	output	wire	[1-1:0]	mosi,
+	output	wire	[1-1:0]	csb,
+	output	wire	[1-1:0]	sclk
 );
 
 	localparam	RXDATA_REG_OFFSET = 16'h0000;
