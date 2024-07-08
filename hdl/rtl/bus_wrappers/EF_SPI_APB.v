@@ -32,8 +32,8 @@ module EF_SPI_APB #(
 		FAW = 4
 ) (
 `ifdef USE_POWER_PINS
-	input wire VPWR,
-	input wire VGND,
+	inout VPWR,
+	inout VGND,
 `endif
 	`APB_SLAVE_PORTS,
 	input	wire	[1-1:0]	miso,
