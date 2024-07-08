@@ -31,6 +31,10 @@ module EF_SPI_APB #(
 		CDW = 8,
 		FAW = 4
 ) (
+`ifdef USE_POWER_PINS
+	input wire VPWR,
+	input wire VGND,
+`endif
 	`APB_SLAVE_PORTS,
 	input	wire	[1-1:0]	miso,
 	output	wire	[1-1:0]	mosi,
@@ -54,7 +58,23 @@ module EF_SPI_APB #(
 	localparam	MIS_REG_OFFSET = `APB_AW'hFF04;
 	localparam	RIS_REG_OFFSET = `APB_AW'hFF08;
 	localparam	IC_REG_OFFSET = `APB_AW'hFF0C;
-	wire		clk = PCLK;
+
+        wire clk_g;
+        wire clk_gated_en = GCLK_REG[0];
+
+    (* keep *) sky130_fd_sc_hd__dlclkp_4 clk_gate(
+    `ifdef USE_POWER_PINS 
+        .VPWR(VPWR), 
+        .VGND(VGND), 
+        .VNB(VGND),
+		.VPB(VPWR),
+    `endif 
+        .GCLK(clk_g), 
+        .GATE(clk_gated_en), 
+        .CLK(PCLK)
+        );
+        
+	wire		clk = clk_g;
 	wire		rst_n = PRESETn;
 
 
@@ -132,6 +152,10 @@ module EF_SPI_APB #(
 	reg [0:0]	TX_FIFO_FLUSH_REG;
 	assign	tx_flush	=	TX_FIFO_FLUSH_REG[0 : 0];
 	`APB_REG_AC(TX_FIFO_FLUSH_REG, 0, 1, 1'h0)
+
+	localparam	GCLK_REG_OFFSET = `APB_AW'hFF10;
+	reg [0:0] GCLK_REG;
+	`APB_REG(GCLK_REG, 0, 1)
 
 	reg [5:0] IM_REG;
 	reg [5:0] IC_REG;
@@ -224,6 +248,7 @@ module EF_SPI_APB #(
 			(PADDR[`APB_AW-1:0] == MIS_REG_OFFSET)	? MIS_REG :
 			(PADDR[`APB_AW-1:0] == RIS_REG_OFFSET)	? RIS_REG :
 			(PADDR[`APB_AW-1:0] == IC_REG_OFFSET)	? IC_REG :
+			(PADDR[`APB_AW-1:0] == GCLK_REG_OFFSET)	? GCLK_REG :
 			32'hDEADBEEF;
 
 	assign	PREADY = 1'b1;

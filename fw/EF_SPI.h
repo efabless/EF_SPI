@@ -4,7 +4,7 @@
 #include <EF_SPI_regs.h>
 #include <stdint.h>
 #include <stdbool.h>
-
+void EF_SPI_setGclkEnable (uint32_t spi_base, int value);
 void EF_SPI_writeData(uint32_t spi_base, int data);
 int EF_SPI_readData(uint32_t spi_base);
 void EF_SPI_writepolarity(uint32_t spi_base, bool polarity);

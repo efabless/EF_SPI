@@ -3,6 +3,10 @@
 
 #include <EF_SPI.h>
 
+void EF_SPI_setGclkEnable (uint32_t spi_base, int value){
+    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
+    spi->GCLK = value;
+}
 
 void EF_SPI_writeData(uint32_t spi_base, int data){
 
