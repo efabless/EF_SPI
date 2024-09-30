@@ -48,10 +48,6 @@ PDK_DIR = $(HOME)/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be0
 PDK_FILES = $(PDK_DIR)/libs.ref/sky130_fd_sc_hd/verilog/primitives.v $(PDK_DIR)/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v # get this from openlane logs in the future 
 POST_SYS_FILES = $(PWD)/top.v $(VIP_FILES) $(PWD)/../../hdl/gl/synthesis/nl/$(DESIGN_NAME).nl.v
 
-clone_ip_util := $(shell if [ ! -d "IP_Utilities" ]; then \
-	echo "Cloning the IP_Utilities repository..."; \
-	git clone https://github.com/shalan/IP_Utilities.git; \
-fi;)
 
 clone_ef_uvm := $(shell if [ ! -d "EF_UVM" ]; then \
 	echo "Cloning the EF_UVM repository..."; \
