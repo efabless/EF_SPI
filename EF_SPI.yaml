@@ -140,7 +140,7 @@ external_interface:
   width: 1
   direction: input
   description: SPI Master In Slave Out.
-  sync: True
+  sync: False
 - name: mosi
   port: mosi
   width: 1

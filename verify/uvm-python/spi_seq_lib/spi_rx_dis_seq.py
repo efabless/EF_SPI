@@ -32,6 +32,7 @@ class spi_rx_dis_seq(spi_base_seq):
         # Add the sequqnce here
         # you could use method send_req to send a write or read using the register name
         # example for writing register by value > 5
+        await self.send_req(is_write=True, reg="CLKGATE", data_condition=lambda data: data == 1)
         await self.send_req(
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b011
         )

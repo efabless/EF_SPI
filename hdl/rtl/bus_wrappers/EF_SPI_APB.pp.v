@@ -102,10 +102,10 @@ module EF_SPI_APB #(
 		CDW = 8,
 		FAW = 4
 ) (
-`ifdef USE_POWER_PINS
-	inout VPWR,
-	inout VGND,
-`endif
+
+
+
+
 	input wire          PCLK,
                                         input wire          PRESETn,
                                         input wire          PWRITE,
@@ -140,27 +140,20 @@ module EF_SPI_APB #(
 	localparam	RIS_REG_OFFSET = 16'hFF08;
 	localparam	IC_REG_OFFSET = 16'hFF0C;
 
-        reg [0:0] GCLK_REG;
-        wire clk_g;
-        wire clk_gated_en = GCLK_REG[0];
+    reg [0:0] GCLK_REG;
+    wire clk_g;
+    wire clk_gated_en = GCLK_REG[0];
+    ef_gating_cell clk_gate_cell(
+        
 
-	`ifdef FPGA
-		wire clk = PCLK;
-	`else
-		(* keep *) sky130_fd_sc_hd__dlclkp_4 clk_gate(
-		`ifdef USE_POWER_PINS 
-			.VPWR(VPWR), 
-			.VGND(VGND), 
-			.VNB(VGND),
-			.VPB(VPWR),
-		`endif
-			.GCLK(clk_g), 
-			.GATE(clk_gated_en), 
-			.CLK(PCLK)
-			);
-			
-		wire		clk = clk_g;
-	`endif
+
+ // USE_POWER_PINS
+        .clk(PCLK),
+        .clk_en(clk_gated_en),
+        .clk_o(clk_g)
+    );
+    
+	wire		clk = clk_g;
 	wire		rst_n = PRESETn;
 
 
@@ -310,17 +303,6 @@ module EF_SPI_APB #(
 
 	assign IRQ = |MIS_REG;
 
-	reg [0:0]	_miso_reg_[1:0];
-	wire		_miso_w_ = _miso_reg_[1];
-	always@(posedge PCLK or negedge PRESETn)
-		if(PRESETn == 0) begin
-			_miso_reg_[0] <= 'b0;
-			_miso_reg_[1] <= 'b0;
-		end
-		else begin
-			_miso_reg_[0] <= miso;
-			_miso_reg_[1] <= _miso_reg_[0];
-		end
 	EF_SPI #(
 		.CDW(CDW),
 		.FAW(FAW)
@@ -349,7 +331,7 @@ module EF_SPI_APB #(
 		.tx_level(tx_level),
 		.ss(ss),
 		.enable(enable),
-		.miso(_miso_w_),
+		.miso(miso),
 		.mosi(mosi),
 		.csb(csb),
 		.sclk(sclk)

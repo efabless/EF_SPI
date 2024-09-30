@@ -31,6 +31,10 @@ module EF_SPI_WB #(
 		CDW = 8,
 		FAW = 4
 ) (
+`ifdef USE_POWER_PINS
+	inout VPWR,
+	inout VGND,
+`endif
 	`WB_SLAVE_PORTS,
 	input	wire	[1-1:0]	miso,
 	output	wire	[1-1:0]	mosi,
@@ -54,7 +58,21 @@ module EF_SPI_WB #(
 	localparam	MIS_REG_OFFSET = `WB_AW'hFF04;
 	localparam	RIS_REG_OFFSET = `WB_AW'hFF08;
 	localparam	IC_REG_OFFSET = `WB_AW'hFF0C;
-	wire		clk = clk_i;
+
+    reg [0:0] GCLK_REG;
+    wire clk_g;
+    wire clk_gated_en = GCLK_REG[0];
+    ef_gating_cell clk_gate_cell(
+        `ifdef USE_POWER_PINS 
+        .vpwr(VPWR),
+        .vgnd(VGND),
+        `endif // USE_POWER_PINS
+        .clk(clk_i),
+        .clk_en(clk_gated_en),
+        .clk_o(clk_g)
+    );
+    
+	wire		clk = clk_g;
 	wire		rst_n = (~rst_i);
 
 
@@ -132,6 +150,9 @@ module EF_SPI_WB #(
 	reg [0:0]	TX_FIFO_FLUSH_REG;
 	assign	tx_flush	=	TX_FIFO_FLUSH_REG[0 : 0];
 	`WB_REG_AC(TX_FIFO_FLUSH_REG, 0, 1, 1'h0)
+
+	localparam	GCLK_REG_OFFSET = `WB_AW'hFF10;
+	`WB_REG(GCLK_REG, 0, 1)
 
 	reg [5:0] IM_REG;
 	reg [5:0] IC_REG;
