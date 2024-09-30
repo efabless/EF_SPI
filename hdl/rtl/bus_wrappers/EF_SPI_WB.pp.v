@@ -164,6 +164,8 @@ module EF_SPI_WB #(
 	wire [FAW-1:0]	tx_level;
 	wire [1-1:0]	ss;
 	wire [1-1:0]	enable;
+	wire [1-1:0]	done;
+	wire [1-1:0]	busy;
 
 	// Register Definitions
 	wire	[8-1:0]	RXDATA_WIRE;
@@ -185,13 +187,15 @@ module EF_SPI_WB #(
 	assign	clk_divider = PR_REG;
 	always @(posedge clk_i or posedge rst_i) if(rst_i) PR_REG <= 'h2; else if(wb_we & (adr_i[16-1:0]==PR_REG_OFFSET)) PR_REG <= dat_i[CDW-1:0];
 
-	wire [6-1:0]	STATUS_WIRE;
+	wire [8-1:0]	STATUS_WIRE;
 	assign	STATUS_WIRE[0 : 0] = tx_empty;
 	assign	STATUS_WIRE[1 : 1] = tx_full;
 	assign	STATUS_WIRE[2 : 2] = rx_empty;
 	assign	STATUS_WIRE[3 : 3] = rx_full;
 	assign	STATUS_WIRE[4 : 4] = tx_level_below;
 	assign	STATUS_WIRE[5 : 5] = rx_level_above;
+	assign	STATUS_WIRE[6 : 6] = busy;
+	assign	STATUS_WIRE[7 : 7] = done;
 
 	wire [FAW-1:0]	RX_FIFO_LEVEL_WIRE;
 	assign	RX_FIFO_LEVEL_WIRE[(FAW - 1) : 0] = rx_level;
@@ -290,6 +294,8 @@ module EF_SPI_WB #(
 		.tx_level(tx_level),
 		.ss(ss),
 		.enable(enable),
+		.done(done),
+		.busy(busy),
 		.miso(miso),
 		.mosi(mosi),
 		.csb(csb),

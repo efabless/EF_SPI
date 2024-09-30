@@ -49,8 +49,8 @@ module EF_SPI #(parameter
     output wire             tx_level_below,
     output wire [FAW-1:0]   tx_level,
 
-    //output              busy,
-    //output              done,
+    output              busy,
+    output              done,
 
     input  wire             miso,
     output wire             mosi,
@@ -61,9 +61,6 @@ module EF_SPI #(parameter
 
     localparam FDW = 8;
     
-    wire              busy;
-    wire              done;
-
     // TX Side
     wire        tx_wr       = wr;
     wire        tx_rd       = !tx_empty & !busy;

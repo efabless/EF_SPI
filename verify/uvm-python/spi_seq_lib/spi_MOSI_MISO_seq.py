@@ -36,7 +36,6 @@ class spi_MOSI_MISO_seq(spi_base_seq):
 
     async def body(self):
         await super().body()
-        await self.send_req(is_write=True, reg="CLKGATE", data_condition=lambda data: data == 1)
         if not self.disable_control:
             await self.send_req(
                 is_write=True, reg="CTRL", data_condition=lambda data: data == 0b0

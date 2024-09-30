@@ -30,7 +30,6 @@ class spi_send_MISO_seq(spi_base_seq):
         # Add the sequqnce here
         # you could use method send_req to send a write or read using the register name
         # example for writing register by value > 5
-        await self.send_req(is_write=True, reg="CLKGATE", data_condition=lambda data: data == 1)
         await self.send_req(
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b111
         )
@@ -38,6 +37,7 @@ class spi_send_MISO_seq(spi_base_seq):
             await self.wait_rx_fifo_not_empty()
             if random.random() < 0.7:  # 20% probability of reading
                 await self.send_req(is_write=False, reg="RXDATA")
+            uvm_info(self.tag, f"interation number {_}", UVM_MEDIUM)
 
         await self.send_req(
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b0

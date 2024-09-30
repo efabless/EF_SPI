@@ -133,6 +133,14 @@ ports:
   width: 1
   direction: input
   description: enable for spi master pulse generation
+- name: done
+  width: 1
+  direction: output
+  description: spi done flag.
+- name: busy
+  width: 1
+  direction: output
+  description: spi busy flag.
 
 external_interface:
 - name: miso
@@ -231,7 +239,7 @@ registers:
   write_port: clk_divider
   description: SPI clock Prescaler; should have a value >= 2. SPI Clock Frequency = System Clock / PR.
 - name: STATUS
-  size: 6
+  size: 8
   mode: r
   fifo: no
   offset: 20
@@ -269,6 +277,16 @@ registers:
       bit_width: 1
       read_port: rx_level_above
       description: Receive FIFO level is Above Threshold.
+    - name : busy
+      bit_offset: 6
+      bit_width: 1
+      read_port: busy
+      description: spi busy flag.
+    - name : done
+      bit_offset: 7
+      bit_width: 1
+      read_port: done
+      description: spi done flag.
 
 
 flags:
