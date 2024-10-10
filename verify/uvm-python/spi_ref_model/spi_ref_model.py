@@ -9,7 +9,7 @@ import cocotb
 from EF_UVM.ref_model.ref_model import ref_model
 from EF_UVM.bus_env.bus_item import bus_item
 from cocotb.triggers import Event
-from cocotb.queue import Queue, QueueFull
+from cocotb.queue import Queue, QueueFull, QueueEmpty
 
 
 class spi_ref_model(ref_model):
@@ -100,7 +100,11 @@ class spi_ref_model(ref_model):
                 # pass value as it is until logic of ris is implemented
                 pass
             elif td.addr == self.regs.reg_name_to_address["RXDATA"]:
-                td.data = self.fifo_rx.get_nowait()
+                try:
+                    td.data = self.fifo_rx.get_nowait()
+                except QueueEmpty:
+                    uvm_warning(self.tag, f"reading from rx while fifo is empty")
+                    td.data = "xxxxxxxxxxxxxxxxxxxxxxxx00000000"
             else:
                 td.data = data
             self.bus_bus_export.write(td)  # this is output to the scoreboard

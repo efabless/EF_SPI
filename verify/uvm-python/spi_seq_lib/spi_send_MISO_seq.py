@@ -35,6 +35,7 @@ class spi_send_MISO_seq(spi_base_seq):
         )
         for _ in range(self.num_data):
             await self.wait_rx_fifo_not_empty()
+            await self.wait_rx_fifo_not_empty()# to make sure it's empty
             if random.random() < 0.7:  # 20% probability of reading
                 await self.send_req(is_write=False, reg="RXDATA")
             uvm_info(self.tag, f"interation number {_}", UVM_MEDIUM)
