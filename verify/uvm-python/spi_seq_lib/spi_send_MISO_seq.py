@@ -9,7 +9,7 @@ from uvm.base.uvm_object_globals import UVM_ALL_ON, UVM_NOPACK, UVM_HIGH, UVM_ME
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 import random
 from spi_seq_lib.spi_base_seq import spi_base_seq
-
+import cocotb
 
 class spi_send_MISO_seq(spi_base_seq):
     # use this sequence write or read from register by the bus interface
@@ -35,8 +35,11 @@ class spi_send_MISO_seq(spi_base_seq):
         )
         for _ in range(self.num_data):
             await self.wait_rx_fifo_not_empty()
+            if cocotb.plusargs["BUS_TYPE"] == "AHB": # since apb is so fast
+                await self.wait_rx_fifo_not_empty()# to make sure it's empty
             if random.random() < 0.7:  # 20% probability of reading
                 await self.send_req(is_write=False, reg="RXDATA")
+            uvm_info(self.tag, f"interation number {_}", UVM_MEDIUM)
 
         await self.send_req(
             is_write=True, reg="CTRL", data_condition=lambda data: data == 0b0

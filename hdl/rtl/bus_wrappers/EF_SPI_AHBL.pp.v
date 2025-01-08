@@ -104,6 +104,10 @@ module EF_SPI_AHBL #(
 		CDW = 8,
 		FAW = 4
 ) (
+
+
+
+
 	input wire          HCLK,
                                         input wire          HRESETn,
                                         input wire          HWRITE,
@@ -138,7 +142,21 @@ module EF_SPI_AHBL #(
 	localparam	MIS_REG_OFFSET = 16'hFF04;
 	localparam	RIS_REG_OFFSET = 16'hFF08;
 	localparam	IC_REG_OFFSET = 16'hFF0C;
-	wire		clk = HCLK;
+
+    reg [0:0] GCLK_REG;
+    wire clk_g;
+    wire clk_gated_en = GCLK_REG[0];
+    ef_gating_cell clk_gate_cell(
+        
+
+
+ // USE_POWER_PINS
+        .clk(HCLK),
+        .clk_en(clk_gated_en),
+        .clk_o(clk_g)
+    );
+    
+	wire		clk = clk_g;
 	wire		rst_n = HRESETn;
 
 
@@ -182,6 +200,8 @@ module EF_SPI_AHBL #(
 	wire [FAW-1:0]	tx_level;
 	wire [1-1:0]	ss;
 	wire [1-1:0]	enable;
+	wire [1-1:0]	done;
+	wire [1-1:0]	busy;
 
 	// Register Definitions
 	wire	[8-1:0]	RXDATA_WIRE;
@@ -209,13 +229,15 @@ module EF_SPI_AHBL #(
                                         else if(ahbl_we & (last_HADDR[16-1:0]==PR_REG_OFFSET))
                                             PR_REG <= HWDATA[CDW-1:0];
 
-	wire [6-1:0]	STATUS_WIRE;
+	wire [8-1:0]	STATUS_WIRE;
 	assign	STATUS_WIRE[0 : 0] = tx_empty;
 	assign	STATUS_WIRE[1 : 1] = tx_full;
 	assign	STATUS_WIRE[2 : 2] = rx_empty;
 	assign	STATUS_WIRE[3 : 3] = rx_full;
 	assign	STATUS_WIRE[4 : 4] = tx_level_below;
 	assign	STATUS_WIRE[5 : 5] = rx_level_above;
+	assign	STATUS_WIRE[6 : 6] = busy;
+	assign	STATUS_WIRE[7 : 7] = done;
 
 	wire [FAW-1:0]	RX_FIFO_LEVEL_WIRE;
 	assign	RX_FIFO_LEVEL_WIRE[(FAW - 1) : 0] = rx_level;
@@ -250,6 +272,11 @@ module EF_SPI_AHBL #(
                                                     TX_FIFO_FLUSH_REG <= HWDATA[1-1:0];
                                                 else
                                                     TX_FIFO_FLUSH_REG <= 1'h0 & TX_FIFO_FLUSH_REG;
+
+	localparam	GCLK_REG_OFFSET = 16'hFF10;
+	always @(posedge HCLK or negedge HRESETn) if(~HRESETn) GCLK_REG <= 0;
+                                        else if(ahbl_we & (last_HADDR[16-1:0]==GCLK_REG_OFFSET))
+                                            GCLK_REG <= HWDATA[1-1:0];
 
 	reg [5:0] IM_REG;
 	reg [5:0] IC_REG;
@@ -324,6 +351,8 @@ module EF_SPI_AHBL #(
 		.tx_level(tx_level),
 		.ss(ss),
 		.enable(enable),
+		.done(done),
+		.busy(busy),
 		.miso(miso),
 		.mosi(mosi),
 		.csb(csb),
@@ -347,6 +376,7 @@ module EF_SPI_AHBL #(
 			(last_HADDR[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
 			(last_HADDR[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
 			(last_HADDR[16-1:0] == IC_REG_OFFSET)	? IC_REG :
+			(last_HADDR[16-1:0] == GCLK_REG_OFFSET)	? GCLK_REG :
 			32'hDEADBEEF;
 
 	assign	HREADYOUT = 1'b1;

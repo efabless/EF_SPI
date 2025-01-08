@@ -81,6 +81,10 @@ module EF_SPI_WB #(
 		CDW = 8,
 		FAW = 4
 ) (
+
+
+
+
 	input   wire            ext_clk,
                                         input   wire            clk_i,
                                         input   wire            rst_i,
@@ -93,10 +97,10 @@ module EF_SPI_WB #(
                                         output  reg             ack_o,
                                         input   wire            we_i,
                                         output  wire            IRQ,
-										input	wire	[1-1:0]	miso,
-										output	wire	[1-1:0]	mosi,
-										output	wire	[1-1:0]	csb,
-										output	wire	[1-1:0]	sclk
+	input	wire	[1-1:0]	miso,
+	output	wire	[1-1:0]	mosi,
+	output	wire	[1-1:0]	csb,
+	output	wire	[1-1:0]	sclk
 );
 
 	localparam	RXDATA_REG_OFFSET = 16'h0000;
@@ -115,7 +119,21 @@ module EF_SPI_WB #(
 	localparam	MIS_REG_OFFSET = 16'hFF04;
 	localparam	RIS_REG_OFFSET = 16'hFF08;
 	localparam	IC_REG_OFFSET = 16'hFF0C;
-	wire		clk = clk_i;
+
+    reg [0:0] GCLK_REG;
+    wire clk_g;
+    wire clk_gated_en = GCLK_REG[0];
+    ef_gating_cell clk_gate_cell(
+        
+
+
+ // USE_POWER_PINS
+        .clk(clk_i),
+        .clk_en(clk_gated_en),
+        .clk_o(clk_g)
+    );
+    
+	wire		clk = clk_g;
 	wire		rst_n = (~rst_i);
 
 
@@ -146,6 +164,8 @@ module EF_SPI_WB #(
 	wire [FAW-1:0]	tx_level;
 	wire [1-1:0]	ss;
 	wire [1-1:0]	enable;
+	wire [1-1:0]	done;
+	wire [1-1:0]	busy;
 
 	// Register Definitions
 	wire	[8-1:0]	RXDATA_WIRE;
@@ -167,13 +187,15 @@ module EF_SPI_WB #(
 	assign	clk_divider = PR_REG;
 	always @(posedge clk_i or posedge rst_i) if(rst_i) PR_REG <= 'h2; else if(wb_we & (adr_i[16-1:0]==PR_REG_OFFSET)) PR_REG <= dat_i[CDW-1:0];
 
-	wire [6-1:0]	STATUS_WIRE;
+	wire [8-1:0]	STATUS_WIRE;
 	assign	STATUS_WIRE[0 : 0] = tx_empty;
 	assign	STATUS_WIRE[1 : 1] = tx_full;
 	assign	STATUS_WIRE[2 : 2] = rx_empty;
 	assign	STATUS_WIRE[3 : 3] = rx_full;
 	assign	STATUS_WIRE[4 : 4] = tx_level_below;
 	assign	STATUS_WIRE[5 : 5] = rx_level_above;
+	assign	STATUS_WIRE[6 : 6] = busy;
+	assign	STATUS_WIRE[7 : 7] = done;
 
 	wire [FAW-1:0]	RX_FIFO_LEVEL_WIRE;
 	assign	RX_FIFO_LEVEL_WIRE[(FAW - 1) : 0] = rx_level;
@@ -196,6 +218,9 @@ module EF_SPI_WB #(
 	reg [0:0]	TX_FIFO_FLUSH_REG;
 	assign	tx_flush	=	TX_FIFO_FLUSH_REG[0 : 0];
 	always @(posedge clk_i or posedge rst_i) if(rst_i) TX_FIFO_FLUSH_REG <= 0; else if(wb_we & (adr_i[16-1:0]==TX_FIFO_FLUSH_REG_OFFSET)) TX_FIFO_FLUSH_REG <= dat_i[1-1:0]; else TX_FIFO_FLUSH_REG <= 1'h0 & TX_FIFO_FLUSH_REG;
+
+	localparam	GCLK_REG_OFFSET = 16'hFF10;
+	always @(posedge clk_i or posedge rst_i) if(rst_i) GCLK_REG <= 0; else if(wb_we & (adr_i[16-1:0]==GCLK_REG_OFFSET)) GCLK_REG <= dat_i[1-1:0];
 
 	reg [5:0] IM_REG;
 	reg [5:0] IC_REG;
@@ -269,6 +294,8 @@ module EF_SPI_WB #(
 		.tx_level(tx_level),
 		.ss(ss),
 		.enable(enable),
+		.done(done),
+		.busy(busy),
 		.miso(miso),
 		.mosi(mosi),
 		.csb(csb),
