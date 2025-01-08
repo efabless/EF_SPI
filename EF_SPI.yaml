@@ -35,6 +35,10 @@ info:
   analog_supply_voltage: n/a
   irq_reg_offset: 0xFF00
   fifo_reg_offset: 0xFE00
+  firmware_guidelines: |
+    1. Set the prescaler by writing to the ``PR`` register where SPI Clock Frequency = System Clock / PR. Note: should have a value >= 2.
+    2. Configure clock polarity and clock phase bu setting ``cpol`` and ``cpha`` fields in the ``CFG`` register.
+    3. Set the ``SSn`` field in the ``CTRL`` register
 
 parameters:
 - name: CDW
@@ -159,6 +163,7 @@ external_interface:
 
 clock:
   name: clk
+  gated: "yes"
 reset:
   name: rst_n  
   level: 0
