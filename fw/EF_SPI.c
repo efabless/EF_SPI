@@ -53,122 +53,244 @@
 /******************************************************************************
 * Function Definitions
 ******************************************************************************/
+#define EF_SPI_TXDATA_MAX_VALUE 0x000000FF
 
-
-void EF_SPI_setGclkEnable (EF_SPI_TYPE_PTR spi, uint32_t value){
+EF_DRIVER_STATUS EF_SPI_setGclkEnable (EF_SPI_TYPE_PTR spi, uint32_t value){
     
-    spi->GCLK = value;
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else if (value > (uint32_t)0x1) {  
+        status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if value is out of range
+    }else {
+        spi->GCLK = value;                     // Set the GCLK enable bit to the given value
+    }
+
+    return status;
 }
 
-void EF_SPI_writeData(EF_SPI_TYPE_PTR spi, uint32_t data){
-
-    spi->TXDATA = data;
-}
-
-void EF_SPI_readData(EF_SPI_TYPE_PTR spi, uint32_t *data){
-
-    *data = spi->RXDATA;
-}
-
-void EF_SPI_writepolarity(EF_SPI_TYPE_PTR spi, bool polarity){
+EF_DRIVER_STATUS EF_SPI_writeData(EF_SPI_TYPE_PTR spi, uint32_t data){
     
-    uint32_t config = spi->CFG;
-    if (polarity == true)
-        config |= EF_SPI_CFG_REG_CPOL_MASK;
-    else
-        config &= ~EF_SPI_CFG_REG_CPOL_MASK;
-    spi->CFG = config; 
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else if (data > EF_SPI_TXDATA_MAX_VALUE) {
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if data is out of range
+    }else {
+        spi->TXDATA = data;                     // Write the data to the TXDATA register
+    }
+    return status;
 }
 
-void EF_SPI_writePhase(EF_SPI_TYPE_PTR spi, bool phase){
+EF_DRIVER_STATUS EF_SPI_readData(EF_SPI_TYPE_PTR spi, uint32_t *data){
 
-    uint32_t config = spi->CFG;
-    if (phase == true)
-        config |= EF_SPI_CFG_REG_CPHA_MASK;
-    else
-        config &= ~EF_SPI_CFG_REG_CPHA_MASK;
-    spi->CFG = config;
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else if (data == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if data is NULL
+                                                // i.e. there is no memory location to store the value
+    }else{
+        *data = spi->RXDATA;
+    }
+    return status;
 }
 
-
-void EF_SPI_readTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state){
-
-    *TXfifo_state = spi->STATUS & EF_SPI_STATUS_REG_TX_E_MASK;
-}
-
-void EF_SPI_readRxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state){
-
-    *RXfifo_state = (spi->STATUS & EF_SPI_STATUS_REG_RX_E_MASK) >> EF_SPI_STATUS_REG_RX_E_BIT;
-}
-
-
-void EF_SPI_waitTxFifoEmpty(EF_SPI_TYPE_PTR spi){
-    uint32_t TXfifo_state;
-    do {    
-        EF_SPI_readTxFifoEmpty(spi, &TXfifo_state);
-    } while(TXfifo_state == 0);
-}
-
-void EF_SPI_waitRxFifoNotEmpty(EF_SPI_TYPE_PTR spi){
-    uint32_t RXfifo_state;
-    do {
-        EF_SPI_readRxFifoEmpty(spi, &RXfifo_state);
-    } while(RXfifo_state == 1);
-}
-void EF_SPI_FifoRxFlush(EF_SPI_TYPE_PTR spi){
+EF_DRIVER_STATUS EF_SPI_writepolarity(EF_SPI_TYPE_PTR spi, bool polarity){
     
-    spi->RX_FIFO_FLUSH = 1;
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
+        uint32_t config = spi->CFG;
+        if (polarity)
+            {config |= EF_SPI_CFG_REG_CPOL_MASK;}
+        else
+            {config &= ~EF_SPI_CFG_REG_CPOL_MASK;}
+        spi->CFG = config; 
+    }
+    return status;
 }
 
-void EF_SPI_enable(EF_SPI_TYPE_PTR spi){
+EF_DRIVER_STATUS EF_SPI_writePhase(EF_SPI_TYPE_PTR spi, bool phase){
     
-    uint32_t control = spi->CTRL;
-    control |= EF_SPI_CTRL_REG_ENABLE_MASK;
-    spi->CTRL = control;
-    // control &= ~1;
-    // spi->CTRL = control;
-}
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
 
-void EF_SPI_disable(EF_SPI_TYPE_PTR spi){
-    
-    uint32_t control = spi->CTRL;
-    control &= ~EF_SPI_CTRL_REG_ENABLE_MASK;
-    spi->CTRL = control;
-}
-
-void EF_SPI_enableRx(EF_SPI_TYPE_PTR spi){
-    
-    uint32_t control = spi->CTRL;
-    control |= EF_SPI_CTRL_REG_RX_EN_MASK;
-    spi->CTRL = control;
-}
-
-void EF_SPI_disableRx(EF_SPI_TYPE_PTR spi){
-    
-    uint32_t control = spi->CTRL;
-    control &= ~EF_SPI_CTRL_REG_RX_EN_MASK;
-    spi->CTRL = control;
+        uint32_t config = spi->CFG;
+        if (phase)
+            {config |= EF_SPI_CFG_REG_CPHA_MASK;}
+        else
+            {config &= ~EF_SPI_CFG_REG_CPHA_MASK;}
+        spi->CFG = config;
+    }
+    return status;
 }
 
 
-void EF_SPI_assertCs(EF_SPI_TYPE_PTR spi){
-    
-    uint32_t control = spi->CTRL;
-    control |= EF_SPI_CTRL_REG_SS_MASK;
-    spi->CTRL = control;
+EF_DRIVER_STATUS EF_SPI_readTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state){
+
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else if (TXfifo_state == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if TXfifo_state is NULL
+                                                // i.e. there is no memory location to store the value
+    }else{
+        *TXfifo_state = spi->STATUS & EF_SPI_STATUS_REG_TX_E_MASK;
+    }
+
+    return status;
 }
 
-void EF_SPI_deassertCs(EF_SPI_TYPE_PTR spi){
-    
-    uint32_t control = spi->CTRL;
-    control &= ~EF_SPI_CTRL_REG_SS_MASK;
-    spi->CTRL = control;
+EF_DRIVER_STATUS EF_SPI_readRxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state){
+
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else if (RXfifo_state == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if RXfifo_state is NULL
+                                                // i.e. there is no memory location to store the value
+    }else{ 
+        *RXfifo_state = (spi->STATUS & EF_SPI_STATUS_REG_RX_E_MASK) >> EF_SPI_STATUS_REG_RX_E_BIT;
+    }
+    return status;
 }
 
-void EF_SPI_setInterruptMask(EF_SPI_TYPE_PTR spi, uint32_t mask){
+
+EF_DRIVER_STATUS EF_SPI_waitTxFifoEmpty(EF_SPI_TYPE_PTR spi){
     
-    // bit 0: Done
-    spi->IM = mask;
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
+        uint32_t TXfifo_state;
+        do {    
+            status = EF_SPI_readTxFifoEmpty(spi, &TXfifo_state);
+        } while((status == EF_DRIVER_OK) && (TXfifo_state == (uint32_t)0));
+    }
+    return status;
+}
+
+EF_DRIVER_STATUS EF_SPI_waitRxFifoNotEmpty(EF_SPI_TYPE_PTR spi){
+    
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
+        uint32_t RXfifo_state;
+        do {
+            status = EF_SPI_readRxFifoEmpty(spi, &RXfifo_state);
+        } while((status == EF_DRIVER_OK) && (RXfifo_state == (uint32_t)1));
+    }
+    return status;
+}
+
+EF_DRIVER_STATUS EF_SPI_FifoRxFlush(EF_SPI_TYPE_PTR spi){
+
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
+        spi->RX_FIFO_FLUSH = 1;
+    }
+    return status;
+}
+
+EF_DRIVER_STATUS EF_SPI_enable(EF_SPI_TYPE_PTR spi){
+
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
+        spi->CTRL |= EF_SPI_CTRL_REG_ENABLE_MASK;
+    }
+    return status;
+}
+
+EF_DRIVER_STATUS EF_SPI_disable(EF_SPI_TYPE_PTR spi){
+
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
+        spi->CTRL &= ~EF_SPI_CTRL_REG_ENABLE_MASK;
+    }
+    return status;
+}
+
+EF_DRIVER_STATUS EF_SPI_enableRx(EF_SPI_TYPE_PTR spi){
+    
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
+        spi->CTRL |= EF_SPI_CTRL_REG_RX_EN_MASK;
+    }
+    return status;
+}
+
+EF_DRIVER_STATUS EF_SPI_disableRx(EF_SPI_TYPE_PTR spi){
+    
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
+        spi->CTRL &= ~EF_SPI_CTRL_REG_RX_EN_MASK;
+    }
+    return status;
+}
+
+EF_DRIVER_STATUS EF_SPI_assertCs(EF_SPI_TYPE_PTR spi){
+    
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
+        spi->CTRL |= EF_SPI_CTRL_REG_SS_MASK;
+    }
+    return status;
+}
+
+EF_DRIVER_STATUS EF_SPI_deassertCs(EF_SPI_TYPE_PTR spi){
+    
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
+        spi->CTRL &= ~EF_SPI_CTRL_REG_SS_MASK;
+    }
+    return status;
+}
+
+
+EF_DRIVER_STATUS EF_SPI_setInterruptMask(EF_SPI_TYPE_PTR spi, uint32_t mask){
+
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else{
+        // bit 0: Done
+        spi->IM = mask;
+    }
+    return status;
 }
 
 

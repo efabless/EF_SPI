@@ -43,23 +43,23 @@
 * Function Prototypes
 ******************************************************************************/
 
-void EF_SPI_setGclkEnable (EF_SPI_TYPE_PTR spi, uint32_t value);
-void EF_SPI_writeData(EF_SPI_TYPE_PTR spi, uint32_t data);
-void EF_SPI_readData(EF_SPI_TYPE_PTR spi, uint32_t *data);
-void EF_SPI_writepolarity(EF_SPI_TYPE_PTR spi, bool polarity);
-void EF_SPI_writePhase(EF_SPI_TYPE_PTR spi, bool phase);
-void EF_SPI_readTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state);
-void EF_SPI_readRxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state);
-void EF_SPI_waitTxFifoEmpty(EF_SPI_TYPE_PTR spi);
-void EF_SPI_waitRxFifoNotEmpty(EF_SPI_TYPE_PTR spi);
-void EF_SPI_FifoRxFlush(EF_SPI_TYPE_PTR spi);
-void EF_SPI_enable(EF_SPI_TYPE_PTR spi);
-void EF_SPI_disable(EF_SPI_TYPE_PTR spi);
-void EF_SPI_enableRx(EF_SPI_TYPE_PTR spi);
-void EF_SPI_disableRx(EF_SPI_TYPE_PTR spi);
-void EF_SPI_assertCs(EF_SPI_TYPE_PTR spi);
-void EF_SPI_deassertCs(EF_SPI_TYPE_PTR spi);
-void EF_SPI_setInterruptMask(EF_SPI_TYPE_PTR spi, uint32_t mask);
+EF_DRIVER_STATUS EF_SPI_setGclkEnable (EF_SPI_TYPE_PTR spi, uint32_t value);
+EF_DRIVER_STATUS EF_SPI_writeData(EF_SPI_TYPE_PTR spi, uint32_t data);
+EF_DRIVER_STATUS EF_SPI_readData(EF_SPI_TYPE_PTR spi, uint32_t *data);
+EF_DRIVER_STATUS EF_SPI_writepolarity(EF_SPI_TYPE_PTR spi, bool polarity);
+EF_DRIVER_STATUS EF_SPI_writePhase(EF_SPI_TYPE_PTR spi, bool phase);
+EF_DRIVER_STATUS EF_SPI_readTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state);
+EF_DRIVER_STATUS EF_SPI_readRxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state);
+EF_DRIVER_STATUS EF_SPI_waitTxFifoEmpty(EF_SPI_TYPE_PTR spi);
+EF_DRIVER_STATUS EF_SPI_waitRxFifoNotEmpty(EF_SPI_TYPE_PTR spi);
+EF_DRIVER_STATUS EF_SPI_FifoRxFlush(EF_SPI_TYPE_PTR spi);
+EF_DRIVER_STATUS EF_SPI_enable(EF_SPI_TYPE_PTR spi);
+EF_DRIVER_STATUS EF_SPI_disable(EF_SPI_TYPE_PTR spi);
+EF_DRIVER_STATUS EF_SPI_enableRx(EF_SPI_TYPE_PTR spi);
+EF_DRIVER_STATUS EF_SPI_disableRx(EF_SPI_TYPE_PTR spi);
+EF_DRIVER_STATUS EF_SPI_assertCs(EF_SPI_TYPE_PTR spi);
+EF_DRIVER_STATUS EF_SPI_deassertCs(EF_SPI_TYPE_PTR spi);
+EF_DRIVER_STATUS EF_SPI_setInterruptMask(EF_SPI_TYPE_PTR spi, uint32_t mask);
 
 
 /******************************************************************************
