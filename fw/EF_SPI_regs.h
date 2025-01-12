@@ -7,7 +7,7 @@
 	you may not use this file except in compliance with the License.
 	You may obtain a copy of the License at
 
-	    http://www.apache.org/licenses/LICENSE-2.0
+	    www.apache.org/licenses/LICENSE-2.0
 
 	Unless required by applicable law or agreed to in writing, software
 	distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,55 +20,68 @@
 #ifndef EF_SPIREGS_H
 #define EF_SPIREGS_H
 
+/******************************************************************************
+* Includes
+******************************************************************************/
+#include "EF_Driver_Common.h"
+
+
+/******************************************************************************
+* Macros and Constants
+******************************************************************************/
 #ifndef IO_TYPES
 #define IO_TYPES
-#define   __R     volatile const unsigned int
-#define   __W     volatile       unsigned int
-#define   __RW    volatile       unsigned int
+#define   __R     volatile const uint32_t
+#define   __W     volatile       uint32_t
+#define   __RW    volatile       uint32_t
 #endif
 
-#define EF_SPI_CFG_REG_CPOL_BIT	0
-#define EF_SPI_CFG_REG_CPOL_MASK	0x1
-#define EF_SPI_CFG_REG_CPHA_BIT	1
-#define EF_SPI_CFG_REG_CPHA_MASK	0x2
-#define EF_SPI_CTRL_REG_SS_BIT	0
-#define EF_SPI_CTRL_REG_SS_MASK	0x1
-#define EF_SPI_CTRL_REG_ENABLE_BIT	1
-#define EF_SPI_CTRL_REG_ENABLE_MASK	0x2
-#define EF_SPI_CTRL_REG_RX_EN_BIT	2
-#define EF_SPI_CTRL_REG_RX_EN_MASK	0x4
-#define EF_SPI_STATUS_REG_TX_E_BIT	0
-#define EF_SPI_STATUS_REG_TX_E_MASK	0x1
-#define EF_SPI_STATUS_REG_TX_F_BIT	1
-#define EF_SPI_STATUS_REG_TX_F_MASK	0x2
-#define EF_SPI_STATUS_REG_RX_E_BIT	2
-#define EF_SPI_STATUS_REG_RX_E_MASK	0x4
-#define EF_SPI_STATUS_REG_RX_F_BIT	3
-#define EF_SPI_STATUS_REG_RX_F_MASK	0x8
-#define EF_SPI_STATUS_REG_TX_B_BIT	4
-#define EF_SPI_STATUS_REG_TX_B_MASK	0x10
-#define EF_SPI_STATUS_REG_RX_A_BIT	5
-#define EF_SPI_STATUS_REG_RX_A_MASK	0x20
-#define EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_BIT	0
-#define EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_MASK	0xf
-#define EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT	0
-#define EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK	0xf
-#define EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_BIT	0
-#define EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_MASK	0x1
-#define EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_BIT	0
-#define EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_MASK	0xf
-#define EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT	0
-#define EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK	0xf
-#define EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_BIT	0
-#define EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_MASK	0x1
+#define EF_SPI_CFG_REG_CPOL_BIT	                    ((uint32_t)0)
+#define EF_SPI_CFG_REG_CPOL_MASK	                ((uint32_t)0x1)
+#define EF_SPI_CFG_REG_CPHA_BIT	                    ((uint32_t)1)
+#define EF_SPI_CFG_REG_CPHA_MASK	                ((uint32_t)0x2)
+#define EF_SPI_CTRL_REG_SS_BIT	                    ((uint32_t)0)
+#define EF_SPI_CTRL_REG_SS_MASK	                    ((uint32_t)0x1)
+#define EF_SPI_CTRL_REG_ENABLE_BIT	                ((uint32_t)1)
+#define EF_SPI_CTRL_REG_ENABLE_MASK	                ((uint32_t)0x2)
+#define EF_SPI_CTRL_REG_RX_EN_BIT	                ((uint32_t)2)
+#define EF_SPI_CTRL_REG_RX_EN_MASK	                ((uint32_t)0x4)
+#define EF_SPI_STATUS_REG_TX_E_BIT	                ((uint32_t)0)
+#define EF_SPI_STATUS_REG_TX_E_MASK	                ((uint32_t)0x1)
+#define EF_SPI_STATUS_REG_TX_F_BIT	                ((uint32_t)1)
+#define EF_SPI_STATUS_REG_TX_F_MASK	                ((uint32_t)0x2)
+#define EF_SPI_STATUS_REG_RX_E_BIT	                ((uint32_t)2)
+#define EF_SPI_STATUS_REG_RX_E_MASK	                ((uint32_t)0x4)
+#define EF_SPI_STATUS_REG_RX_F_BIT	                ((uint32_t)3)
+#define EF_SPI_STATUS_REG_RX_F_MASK	                ((uint32_t)0x8)
+#define EF_SPI_STATUS_REG_TX_B_BIT	                ((uint32_t)4)
+#define EF_SPI_STATUS_REG_TX_B_MASK	                ((uint32_t)0x10)
+#define EF_SPI_STATUS_REG_RX_A_BIT	                ((uint32_t)5)
+#define EF_SPI_STATUS_REG_RX_A_MASK	                ((uint32_t)0x20)
+#define EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_BIT	        ((uint32_t)0)
+#define EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_MASK	        ((uint32_t)0xf)
+#define EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT	((uint32_t)0)
+#define EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK	((uint32_t)0xf)
+#define EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_BIT	        ((uint32_t)0)
+#define EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_MASK	        ((uint32_t)0x1)
+#define EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_BIT	        ((uint32_t)0)
+#define EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_MASK	        ((uint32_t)0xf)
+#define EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT	((uint32_t)0)
+#define EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK	((uint32_t)0xf)
+#define EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_BIT	        ((uint32_t)0)
+#define EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_MASK	        ((uint32_t)0x1)
 
-#define EF_SPI_TXE_FLAG	0x1
-#define EF_SPI_TXF_FLAG	0x2
-#define EF_SPI_RXE_FLAG	0x4
-#define EF_SPI_RXF_FLAG	0x8
-#define EF_SPI_TXB_FLAG	0x10
-#define EF_SPI_RXA_FLAG	0x20
+#define EF_SPI_TXE_FLAG	((uint32_t)0x1)
+#define EF_SPI_TXF_FLAG	((uint32_t)0x2)
+#define EF_SPI_RXE_FLAG	((uint32_t)0x4)
+#define EF_SPI_RXF_FLAG	((uint32_t)0x8)
+#define EF_SPI_TXB_FLAG	((uint32_t)0x10)
+#define EF_SPI_RXA_FLAG	((uint32_t)0x20)
 
+
+/******************************************************************************
+* Typedefs and Enums
+******************************************************************************/
 typedef struct _EF_SPI_TYPE_ {
 	__R 	RXDATA;
 	__W 	TXDATA;
@@ -92,5 +105,21 @@ typedef struct _EF_SPI_TYPE_ {
 	__W 	GCLK;
 } EF_SPI_TYPE;
 
-#endif
+/******************************************************************************
+* Function Prototypes
+******************************************************************************/
 
+
+
+/******************************************************************************
+* External Variables
+******************************************************************************/
+
+
+
+
+#endif // EF_SPIREGS_H
+
+/******************************************************************************
+* End of File
+******************************************************************************/

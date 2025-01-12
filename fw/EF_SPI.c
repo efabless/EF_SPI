@@ -1,7 +1,59 @@
+/*
+	Copyright 2025 Efabless Corp.
+
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	    www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+*/
+
+/*! \file EF_SPI.c
+    \brief C file for SPI APIs which contains the function Implementations
+    
+*/
+
 #ifndef EF_SPI_C
 #define EF_SPI_C
 
-#include <EF_SPI.h>
+
+/******************************************************************************
+* Includes
+******************************************************************************/
+#include "EF_SPI.h"
+
+
+
+/******************************************************************************
+* File-Specific Macros and Constants
+******************************************************************************/
+
+
+
+/******************************************************************************
+* Static Variables
+******************************************************************************/
+
+
+
+/******************************************************************************
+* Static Function Prototypes
+******************************************************************************/
+
+
+
+/******************************************************************************
+* Function Definitions
+******************************************************************************/
+
 
 void EF_SPI_setGclkEnable (uint32_t spi_base, int value){
     EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
@@ -126,4 +178,17 @@ void EF_SPI_setInterruptMask(uint32_t spi_base, int mask){
     spi->IM = mask;
 }
 
-#endif
+
+/******************************************************************************
+* Static Function Definitions
+******************************************************************************/
+
+
+
+
+
+#endif // EF_SPI_C
+
+/******************************************************************************
+* End of File
+******************************************************************************/

@@ -16,50 +16,41 @@
 
 */
 
-/*! \file EF_SPI.h
-    \brief C header file for SPI APIs which contains the function prototypes 
+/*! \file EF_Driver_Common.h
+    \brief C header file for common driver definitions and types
     
 */
 
-#ifndef EF_SPI_H
-#define EF_SPI_H
+
+#ifndef EF_DRIVER_COMMON_H
+#define EF_DRIVER_COMMON_H
+
 /******************************************************************************
 * Includes
 ******************************************************************************/
-#include "EF_SPI_regs.h"
-#include "EF_Driver_Common.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+
 
 /******************************************************************************
 * Macros and Constants
 ******************************************************************************/
+/* General return codes */
+#define EF_DRIVER_OK                    ((uint32_t)0)   ///< Operation succeeded 
+#define EF_DRIVER_ERROR                 ((uint32_t)1)   ///< Unspecified error
+#define EF_DRIVER_ERROR_BUSY            ((uint32_t)2)   ///< Driver is busy
+#define EF_DRIVER_ERROR_TIMEOUT         ((uint32_t)3)   ///< Timeout occurred
+#define EF_DRIVER_ERROR_UNSUPPORTED     ((uint32_t)4)   ///< Operation not supported
+#define EF_DRIVER_ERROR_PARAMETER       ((uint32_t)5)   ///< Parameter error
+#define EF_DRIVER_ERROR_SPECIFIC        ((uint32_t)6)   ///< Start of driver specific errors 
+
 
 /******************************************************************************
 * Typedefs and Enums
 ******************************************************************************/
 
-
-
-/******************************************************************************
-* Function Prototypes
-******************************************************************************/
-
-void EF_SPI_setGclkEnable (uint32_t spi_base, int value);
-void EF_SPI_writeData(uint32_t spi_base, int data);
-int EF_SPI_readData(uint32_t spi_base);
-void EF_SPI_writepolarity(uint32_t spi_base, bool polarity);
-void EF_SPI_writePhase(uint32_t spi_base, bool phase);
-int EF_SPI_readTxFifoEmpty(uint32_t spi_base);
-int EF_SPI_readRxFifoEmpty(uint32_t spi_base);
-void EF_SPI_waitTxFifoEmpty(uint32_t spi_base);
-void EF_SPI_waitRxFifoNotEmpty(uint32_t spi_base);
-void EF_SPI_FifoRxFlush(uint32_t spi_base);
-void EF_SPI_enable(uint32_t spi_base);
-void EF_SPI_disable(uint32_t spi_base);
-void EF_SPI_enableRx(uint32_t spi_base);
-void EF_SPI_disableRx(uint32_t spi_base);
-void EF_SPI_assertCs(uint32_t spi_base);
-void EF_SPI_deassertCs(uint32_t spi_base);
-void EF_SPI_setInterruptMask(uint32_t spi_base, int mask);
+typedef uint32_t EF_DRIVER_STATUS;      ///<  A type that is used to return the status of the driver functions
 
 
 /******************************************************************************
@@ -67,9 +58,12 @@ void EF_SPI_setInterruptMask(uint32_t spi_base, int mask);
 ******************************************************************************/
 
 
+/******************************************************************************
+* Function Prototypes
+******************************************************************************/
 
 
-#endif // EF_SPI_H
+#endif // EF_DRIVER_COMMON_H 
 
 /******************************************************************************
 * End of File
