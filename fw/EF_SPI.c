@@ -55,29 +55,24 @@
 ******************************************************************************/
 
 
-void EF_SPI_setGclkEnable (uint32_t spi_base, int value){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
+void EF_SPI_setGclkEnable (EF_SPI_TYPE_PTR spi, uint32_t value){
+    
     spi->GCLK = value;
 }
 
-void EF_SPI_writeData(uint32_t spi_base, int data){
-
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
+void EF_SPI_writeData(EF_SPI_TYPE_PTR spi, uint32_t data){
 
     spi->TXDATA = data;
 }
 
-int EF_SPI_readData(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
+void EF_SPI_readData(EF_SPI_TYPE_PTR spi, uint32_t *data){
 
-    return (spi->RXDATA);
+    *data = spi->RXDATA;
 }
 
-void EF_SPI_writepolarity(uint32_t spi_base, bool polarity){
-
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-
-    int config = spi->CFG;
+void EF_SPI_writepolarity(EF_SPI_TYPE_PTR spi, bool polarity){
+    
+    uint32_t config = spi->CFG;
     if (polarity == true)
         config |= EF_SPI_CFG_REG_CPOL_MASK;
     else
@@ -85,11 +80,9 @@ void EF_SPI_writepolarity(uint32_t spi_base, bool polarity){
     spi->CFG = config; 
 }
 
-void EF_SPI_writePhase(uint32_t spi_base, bool phase){
+void EF_SPI_writePhase(EF_SPI_TYPE_PTR spi, bool phase){
 
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-
-    int config = spi->CFG;
+    uint32_t config = spi->CFG;
     if (phase == true)
         config |= EF_SPI_CFG_REG_CPHA_MASK;
     else
@@ -98,82 +91,82 @@ void EF_SPI_writePhase(uint32_t spi_base, bool phase){
 }
 
 
-int EF_SPI_readTxFifoEmpty(uint32_t spi_base){
+void EF_SPI_readTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state){
 
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-
-    return (spi->STATUS & EF_SPI_STATUS_REG_TX_E_MASK);
+    *TXfifo_state = spi->STATUS & EF_SPI_STATUS_REG_TX_E_MASK;
 }
 
-int EF_SPI_readRxFifoEmpty(uint32_t spi_base){
+void EF_SPI_readRxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state){
 
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-
-    return ((spi->STATUS & EF_SPI_STATUS_REG_RX_E_MASK) >> EF_SPI_STATUS_REG_RX_E_BIT);
+    *RXfifo_state = (spi->STATUS & EF_SPI_STATUS_REG_RX_E_MASK) >> EF_SPI_STATUS_REG_RX_E_BIT;
 }
 
 
-void EF_SPI_waitTxFifoEmpty(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    while(EF_SPI_readTxFifoEmpty(spi_base) == 0);
+void EF_SPI_waitTxFifoEmpty(EF_SPI_TYPE_PTR spi){
+    uint32_t TXfifo_state;
+    do {    
+        EF_SPI_readTxFifoEmpty(spi, &TXfifo_state);
+    } while(TXfifo_state == 0);
 }
 
-void EF_SPI_waitRxFifoNotEmpty(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    while(EF_SPI_readRxFifoEmpty(spi_base) == 1);
+void EF_SPI_waitRxFifoNotEmpty(EF_SPI_TYPE_PTR spi){
+    uint32_t RXfifo_state;
+    do {
+        EF_SPI_readRxFifoEmpty(spi, &RXfifo_state);
+    } while(RXfifo_state == 1);
 }
-void EF_SPI_FifoRxFlush(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
+void EF_SPI_FifoRxFlush(EF_SPI_TYPE_PTR spi){
+    
     spi->RX_FIFO_FLUSH = 1;
 }
 
-void EF_SPI_enable(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    int control = spi->CTRL;
+void EF_SPI_enable(EF_SPI_TYPE_PTR spi){
+    
+    uint32_t control = spi->CTRL;
     control |= EF_SPI_CTRL_REG_ENABLE_MASK;
     spi->CTRL = control;
     // control &= ~1;
     // spi->CTRL = control;
 }
 
-void EF_SPI_disable(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    int control = spi->CTRL;
+void EF_SPI_disable(EF_SPI_TYPE_PTR spi){
+    
+    uint32_t control = spi->CTRL;
     control &= ~EF_SPI_CTRL_REG_ENABLE_MASK;
     spi->CTRL = control;
 }
 
-void EF_SPI_enableRx(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    int control = spi->CTRL;
+void EF_SPI_enableRx(EF_SPI_TYPE_PTR spi){
+    
+    uint32_t control = spi->CTRL;
     control |= EF_SPI_CTRL_REG_RX_EN_MASK;
     spi->CTRL = control;
 }
 
-void EF_SPI_disableRx(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    int control = spi->CTRL;
+void EF_SPI_disableRx(EF_SPI_TYPE_PTR spi){
+    
+    uint32_t control = spi->CTRL;
     control &= ~EF_SPI_CTRL_REG_RX_EN_MASK;
     spi->CTRL = control;
 }
 
 
-void EF_SPI_assertCs(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    int control = spi->CTRL;
+void EF_SPI_assertCs(EF_SPI_TYPE_PTR spi){
+    
+    uint32_t control = spi->CTRL;
     control |= EF_SPI_CTRL_REG_SS_MASK;
     spi->CTRL = control;
 }
 
-void EF_SPI_deassertCs(uint32_t spi_base){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
-    int control = spi->CTRL;
+void EF_SPI_deassertCs(EF_SPI_TYPE_PTR spi){
+    
+    uint32_t control = spi->CTRL;
     control &= ~EF_SPI_CTRL_REG_SS_MASK;
     spi->CTRL = control;
 }
 
-void EF_SPI_setInterruptMask(uint32_t spi_base, int mask){
-    EF_SPI_TYPE* spi = (EF_SPI_TYPE*)spi_base;
+void EF_SPI_setInterruptMask(EF_SPI_TYPE_PTR spi, uint32_t mask){
+    
     // bit 0: Done
     spi->IM = mask;
 }
@@ -182,7 +175,6 @@ void EF_SPI_setInterruptMask(uint32_t spi_base, int mask){
 /******************************************************************************
 * Static Function Definitions
 ******************************************************************************/
-
 
 
 

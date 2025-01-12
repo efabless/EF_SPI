@@ -43,23 +43,23 @@
 * Function Prototypes
 ******************************************************************************/
 
-void EF_SPI_setGclkEnable (uint32_t spi_base, int value);
-void EF_SPI_writeData(uint32_t spi_base, int data);
-int EF_SPI_readData(uint32_t spi_base);
-void EF_SPI_writepolarity(uint32_t spi_base, bool polarity);
-void EF_SPI_writePhase(uint32_t spi_base, bool phase);
-int EF_SPI_readTxFifoEmpty(uint32_t spi_base);
-int EF_SPI_readRxFifoEmpty(uint32_t spi_base);
-void EF_SPI_waitTxFifoEmpty(uint32_t spi_base);
-void EF_SPI_waitRxFifoNotEmpty(uint32_t spi_base);
-void EF_SPI_FifoRxFlush(uint32_t spi_base);
-void EF_SPI_enable(uint32_t spi_base);
-void EF_SPI_disable(uint32_t spi_base);
-void EF_SPI_enableRx(uint32_t spi_base);
-void EF_SPI_disableRx(uint32_t spi_base);
-void EF_SPI_assertCs(uint32_t spi_base);
-void EF_SPI_deassertCs(uint32_t spi_base);
-void EF_SPI_setInterruptMask(uint32_t spi_base, int mask);
+void EF_SPI_setGclkEnable (EF_SPI_TYPE_PTR spi, uint32_t value);
+void EF_SPI_writeData(EF_SPI_TYPE_PTR spi, uint32_t data);
+void EF_SPI_readData(EF_SPI_TYPE_PTR spi, uint32_t *data);
+void EF_SPI_writepolarity(EF_SPI_TYPE_PTR spi, bool polarity);
+void EF_SPI_writePhase(EF_SPI_TYPE_PTR spi, bool phase);
+void EF_SPI_readTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state);
+void EF_SPI_readRxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state);
+void EF_SPI_waitTxFifoEmpty(EF_SPI_TYPE_PTR spi);
+void EF_SPI_waitRxFifoNotEmpty(EF_SPI_TYPE_PTR spi);
+void EF_SPI_FifoRxFlush(EF_SPI_TYPE_PTR spi);
+void EF_SPI_enable(EF_SPI_TYPE_PTR spi);
+void EF_SPI_disable(EF_SPI_TYPE_PTR spi);
+void EF_SPI_enableRx(EF_SPI_TYPE_PTR spi);
+void EF_SPI_disableRx(EF_SPI_TYPE_PTR spi);
+void EF_SPI_assertCs(EF_SPI_TYPE_PTR spi);
+void EF_SPI_deassertCs(EF_SPI_TYPE_PTR spi);
+void EF_SPI_setInterruptMask(EF_SPI_TYPE_PTR spi, uint32_t mask);
 
 
 /******************************************************************************
