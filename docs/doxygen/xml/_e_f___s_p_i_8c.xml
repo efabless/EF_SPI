@@ -832,6 +832,56 @@
         </inbodydescription>
         <location file="EF_SPI.c" line="327" column="18" bodyfile="EF_SPI.c" bodystart="327" bodyend="340"/>
       </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8c_1a1bd18073e3f75287527f0ee881546b2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_setICR</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t mask)</argsstring>
+        <name>EF_SPI_setICR</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the value of the Interrupt Clear Register; which clears the interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 TXF : Transmit FIFO is Full.</para>
+</listitem><listitem><para>bit 2 RXE : Receive FIFO is Empty.</para>
+</listitem><listitem><para>bit 3 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 4 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 5 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.c" line="343" column="18" bodyfile="EF_SPI.c" bodystart="343" bodyend="353"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
 <para>C file for SPI APIs which contains the function Implementations. </para>
@@ -1176,21 +1226,32 @@
 <codeline lineno="340"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="341"><highlight class="normal"></highlight></codeline>
 <codeline lineno="342"><highlight class="normal"></highlight></codeline>
-<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a1bd18073e3f75287527f0ee881546b2a" kindref="member">EF_SPI_setICR</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>mask){</highlight></codeline>
 <codeline lineno="344"><highlight class="normal"></highlight></codeline>
-<codeline lineno="345"><highlight class="normal"></highlight></codeline>
-<codeline lineno="346"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
-<codeline lineno="347"><highlight class="comment">*<sp/>Static<sp/>Function<sp/>Definitions</highlight></codeline>
-<codeline lineno="348"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="349"><highlight class="normal"></highlight></codeline>
-<codeline lineno="350"><highlight class="normal"></highlight></codeline>
-<codeline lineno="351"><highlight class="normal"></highlight></codeline>
-<codeline lineno="352"><highlight class="normal"></highlight></codeline>
-<codeline lineno="353"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EF_SPI_C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(spi<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>spi<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spi-&gt;<ref refid="struct___e_f___s_p_i___t_y_p_e___1aed0d63b563874f4b6c1b4b32dbe10140" kindref="member">IC</ref><sp/>=<sp/>mask;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>IC<sp/>register<sp/>with<sp/>the<sp/>required<sp/>mask<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="353"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="354"><highlight class="normal"></highlight></codeline>
-<codeline lineno="355"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
-<codeline lineno="356"><highlight class="comment">*<sp/>End<sp/>of<sp/>File</highlight></codeline>
-<codeline lineno="357"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="358"><highlight class="comment">*<sp/>Static<sp/>Function<sp/>Definitions</highlight></codeline>
+<codeline lineno="359"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EF_SPI_C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="367"><highlight class="comment">*<sp/>End<sp/>of<sp/>File</highlight></codeline>
+<codeline lineno="368"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="EF_SPI.c"/>
   </compounddef>

@@ -55,6 +55,8 @@ C file for SPI APIs which contains the function Implementations.
 \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a83c5fa1a6e95392f2b3ab02661f40dec}{EF\+\_\+\+SPI\+\_\+get\+RIS}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, uint32\+\_\+t $\ast$mask)
 \item 
 \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a8f3ae4eb3cca3c9892bf0fd2ea1af96e}{EF\+\_\+\+SPI\+\_\+get\+MIS}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, uint32\+\_\+t $\ast$mask)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a1bd18073e3f75287527f0ee881546b2a}{EF\+\_\+\+SPI\+\_\+set\+ICR}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, uint32\+\_\+t mask)
 \end{DoxyCompactItemize}
 
 
@@ -358,6 +360,32 @@ sets the GCLK enable bit in the SPI register to a certain value
 \mbox{\texttt{ in}}  & {\em spi} & An \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} pointer, which points to the base memory address of SPI registers. \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} is a structure that contains the SPI registers. \\
 \hline
 \mbox{\texttt{ in}}  & {\em value} & The value of the GCLK enable bit\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___s_p_i_8c_a1bd18073e3f75287527f0ee881546b2a}\label{_e_f___s_p_i_8c_a1bd18073e3f75287527f0ee881546b2a}} 
+\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_setICR@{EF\_SPI\_setICR}}
+\index{EF\_SPI\_setICR@{EF\_SPI\_setICR}!EF\_SPI.c@{EF\_SPI.c}}
+\doxysubsubsection{\texorpdfstring{EF\_SPI\_setICR()}{EF\_SPI\_setICR()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+SPI\+\_\+set\+ICR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}}}]{spi,  }\item[{uint32\+\_\+t}]{mask }\end{DoxyParamCaption})}
+
+sets the value of the Interrupt Clear Register; which clears the interrupts The mask value is a 6-\/bit value, where each bit corresponds to a specific interrupt
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 TXF \+: Transmit FIFO is Full.
+\item bit 2 RXE \+: Receive FIFO is Empty.
+\item bit 3 RXF \+: Receive FIFO is Full.
+\item bit 4 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 5 RXA \+: Receive FIFO level is Above Threshold.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em spi} & An \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} pointer, which points to the base memory address of SPI registers. \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} is a structure that contains the SPI registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & The required mask value\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

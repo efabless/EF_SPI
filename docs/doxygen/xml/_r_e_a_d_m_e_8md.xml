@@ -1,0 +1,1013 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>API<sp/>Reference</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Header<sp/>files</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[EF_Driver_Common.h](#file-ef_driver_commonh)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[EF_SPI.h](#file-ef_spih)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[EF_SPI_regs.h](#file-ef_spi_regsh)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>File<sp/>EF_Driver_Common.h</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_C<sp/>header<sp/>file<sp/>for<sp/>common<sp/>driver<sp/>definitions<sp/>and<sp/>types._</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Structures<sp/>and<sp/>Types</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>typedef<sp/>uint32\_t<sp/>|<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/><sp/>&lt;br&gt;_A<sp/>type<sp/>that<sp/>is<sp/>used<sp/>to<sp/>return<sp/>the<sp/>status<sp/>of<sp/>the<sp/>driver<sp/>functions._<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Macros</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR**](#define-ef_driver_error)<sp/><sp/>((uint32\_t)1)&lt;br&gt;_Unspecified<sp/>error._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR\_BUSY**](#define-ef_driver_error_busy)<sp/><sp/>((uint32\_t)2)&lt;br&gt;_Driver<sp/>is<sp/>busy._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR\_PARAMETER**](#define-ef_driver_error_parameter)<sp/><sp/>((uint32\_t)5)&lt;br&gt;_Parameter<sp/>error._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR\_SPECIFIC**](#define-ef_driver_error_specific)<sp/><sp/>((uint32\_t)6)&lt;br&gt;_Start<sp/>of<sp/>driver<sp/>specific<sp/>errors._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR\_TIMEOUT**](#define-ef_driver_error_timeout)<sp/><sp/>((uint32\_t)3)&lt;br&gt;_Timeout<sp/>occurred._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR\_UNSUPPORTED**](#define-ef_driver_error_unsupported)<sp/><sp/>((uint32\_t)4)&lt;br&gt;_Operation<sp/>not<sp/>supported._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_OK**](#define-ef_driver_ok)<sp/><sp/>((uint32\_t)0)&lt;br&gt;_Operation<sp/>succeeded._<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Structures<sp/>and<sp/>Types<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>typedef<sp/>`EF_DRIVER_STATUS`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_A<sp/>type<sp/>that<sp/>is<sp/>used<sp/>to<sp/>return<sp/>the<sp/>status<sp/>of<sp/>the<sp/>driver<sp/>functions._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>uint32_t<sp/>EF_DRIVER_STATUS;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Macros<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Unspecified<sp/>error._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR<sp/>((uint32_t)1)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR_BUSY`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Driver<sp/>is<sp/>busy._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR_BUSY<sp/>((uint32_t)2)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR_PARAMETER`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Parameter<sp/>error._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>((uint32_t)5)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR_SPECIFIC`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Start<sp/>of<sp/>driver<sp/>specific<sp/>errors._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR_SPECIFIC<sp/>((uint32_t)6)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR_TIMEOUT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Timeout<sp/>occurred._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR_TIMEOUT<sp/>((uint32_t)3)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR_UNSUPPORTED`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Operation<sp/>not<sp/>supported._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR_UNSUPPORTED<sp/>((uint32_t)4)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_OK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Operation<sp/>succeeded._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_OK<sp/>((uint32_t)0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>File<sp/>EF_SPI.h</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_C<sp/>header<sp/>file<sp/>for<sp/>SPI<sp/>APIs<sp/>which<sp/>contains<sp/>the<sp/>function<sp/>prototypes._</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Functions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_FifoRxFlush**](#function-ef_spi_fiforxflush)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi)<sp/>&lt;br&gt;_flushes<sp/>the<sp/>RX<sp/>FIFO<sp/>by<sp/>writing<sp/>to<sp/>the<sp/>RX<sp/>FIFO<sp/>FLUSH<sp/>register_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_assertCs**](#function-ef_spi_assertcs)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi)<sp/>&lt;br&gt;_asserts<sp/>the<sp/>CS<sp/>line<sp/>by<sp/>setting<sp/>the<sp/>SS<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>1,<sp/>asserts<sp/>the<sp/>CS<sp/>line<sp/>to<sp/>start<sp/>a<sp/>transaction<sp/>with<sp/>the<sp/>slave_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_deassertCs**](#function-ef_spi_deassertcs)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi)<sp/>&lt;br&gt;_deasserts<sp/>the<sp/>CS<sp/>line<sp/>by<sp/>setting<sp/>the<sp/>SS<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>0,<sp/>deasserts<sp/>the<sp/>CS<sp/>line<sp/>to<sp/>end<sp/>a<sp/>transaction<sp/>with<sp/>the<sp/>slave_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_disable**](#function-ef_spi_disable)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi)<sp/>&lt;br&gt;_disables<sp/>the<sp/>SPI<sp/>by<sp/>setting<sp/>the<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>0,<sp/>disables<sp/>spi<sp/>master<sp/>pulse<sp/>generation_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_disableRx**](#function-ef_spi_disablerx)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi)<sp/>&lt;br&gt;_disables<sp/>the<sp/>RX<sp/>by<sp/>setting<sp/>the<sp/>RX<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>0,<sp/>disables<sp/>storing<sp/>bytes<sp/>recieved<sp/>from<sp/>slave<sp/>in<sp/>RX<sp/>FIFO_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_enable**](#function-ef_spi_enable)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi)<sp/>&lt;br&gt;_enables<sp/>the<sp/>SPI<sp/>by<sp/>setting<sp/>the<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>1,<sp/>enables<sp/>spi<sp/>master<sp/>pulse<sp/>generation_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_enableRx**](#function-ef_spi_enablerx)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi)<sp/>&lt;br&gt;_enables<sp/>the<sp/>RX<sp/>by<sp/>setting<sp/>the<sp/>RX<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>1,<sp/>enables<sp/>storing<sp/>bytes<sp/>recieved<sp/>from<sp/>slave<sp/>in<sp/>RX<sp/>FIFO_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_getIM**](#function-ef_spi_getim)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>uint32\_t<sp/>\*mask)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_getMIS**](#function-ef_spi_getmis)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>uint32\_t<sp/>\*mask)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_getRIS**](#function-ef_spi_getris)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>uint32\_t<sp/>\*mask)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_readData**](#function-ef_spi_readdata)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>uint32\_t<sp/>\*data)<sp/>&lt;br&gt;_reads<sp/>a<sp/>byte<sp/>of<sp/>data<sp/>from<sp/>the<sp/>RXDATA<sp/>register_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_readRxFifoEmpty**](#function-ef_spi_readrxfifoempty)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>uint32\_t<sp/>\*RXfifo\_state)<sp/>&lt;br&gt;_reads<sp/>the<sp/>RX<sp/>FIFO<sp/>empty<sp/>flag<sp/>from<sp/>the<sp/>STATUS<sp/>register_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_readTxFifoEmpty**](#function-ef_spi_readtxfifoempty)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>uint32\_t<sp/>\*TXfifo\_state)<sp/>&lt;br&gt;_reads<sp/>the<sp/>TX<sp/>FIFO<sp/>empty<sp/>flag<sp/>from<sp/>the<sp/>STATUS<sp/>register_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_setGclkEnable**](#function-ef_spi_setgclkenable)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>uint32\_t<sp/>value)<sp/>&lt;br&gt;_sets<sp/>the<sp/>GCLK<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>SPI<sp/>register<sp/>to<sp/>a<sp/>certain<sp/>value_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_setICR**](#function-ef_spi_seticr)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>uint32\_t<sp/>mask)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_setIM**](#function-ef_spi_setim)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>uint32\_t<sp/>mask)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_waitRxFifoNotEmpty**](#function-ef_spi_waitrxfifonotempty)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi)<sp/>&lt;br&gt;_waits<sp/>for<sp/>the<sp/>RX<sp/>FIFO<sp/>to<sp/>be<sp/>not<sp/>empty<sp/>by<sp/>polling<sp/>the<sp/>RX<sp/>FIFO<sp/>empty<sp/>flag<sp/>in<sp/>the<sp/>STATUS<sp/>register_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_waitTxFifoEmpty**](#function-ef_spi_waittxfifoempty)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi)<sp/>&lt;br&gt;_waits<sp/>for<sp/>the<sp/>TX<sp/>FIFO<sp/>to<sp/>be<sp/>empty<sp/>by<sp/>polling<sp/>the<sp/>TX<sp/>FIFO<sp/>empty<sp/>flag<sp/>in<sp/>the<sp/>STATUS<sp/>register_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_writeData**](#function-ef_spi_writedata)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>uint32\_t<sp/>data)<sp/>&lt;br&gt;_writes<sp/>a<sp/>byte<sp/>of<sp/>data<sp/>to<sp/>the<sp/>TXDATA<sp/>register_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_writePhase**](#function-ef_spi_writephase)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>bool<sp/>phase)<sp/>&lt;br&gt;_sets<sp/>the<sp/>clock<sp/>phase<sp/>of<sp/>the<sp/>SPI<sp/>in<sp/>the<sp/>CFG<sp/>register<sp/>to<sp/>a<sp/>certain<sp/>value_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_SPI\_writepolarity**](#function-ef_spi_writepolarity)<sp/>([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/>spi,<sp/>bool<sp/>polarity)<sp/>&lt;br&gt;_sets<sp/>the<sp/>clock<sp/>polarity<sp/>of<sp/>the<sp/>SPI<sp/>in<sp/>the<sp/>CFG<sp/>register<sp/>to<sp/>a<sp/>certain<sp/>value_<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Functions<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_FifoRxFlush`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_flushes<sp/>the<sp/>RX<sp/>FIFO<sp/>by<sp/>writing<sp/>to<sp/>the<sp/>RX<sp/>FIFO<sp/>FLUSH<sp/>register_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_FifoRxFlush<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_assertCs`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_asserts<sp/>the<sp/>CS<sp/>line<sp/>by<sp/>setting<sp/>the<sp/>SS<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>1,<sp/>asserts<sp/>the<sp/>CS<sp/>line<sp/>to<sp/>start<sp/>a<sp/>transaction<sp/>with<sp/>the<sp/>slave_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_assertCs<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_deassertCs`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_deasserts<sp/>the<sp/>CS<sp/>line<sp/>by<sp/>setting<sp/>the<sp/>SS<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>0,<sp/>deasserts<sp/>the<sp/>CS<sp/>line<sp/>to<sp/>end<sp/>a<sp/>transaction<sp/>with<sp/>the<sp/>slave_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_deassertCs<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_disable`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_disables<sp/>the<sp/>SPI<sp/>by<sp/>setting<sp/>the<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>0,<sp/>disables<sp/>spi<sp/>master<sp/>pulse<sp/>generation_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_disable<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_disableRx`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_disables<sp/>the<sp/>RX<sp/>by<sp/>setting<sp/>the<sp/>RX<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>0,<sp/>disables<sp/>storing<sp/>bytes<sp/>recieved<sp/>from<sp/>slave<sp/>in<sp/>RX<sp/>FIFO_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_disableRx<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_enable`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_enables<sp/>the<sp/>SPI<sp/>by<sp/>setting<sp/>the<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>1,<sp/>enables<sp/>spi<sp/>master<sp/>pulse<sp/>generation_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_enable<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_enableRx`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_enables<sp/>the<sp/>RX<sp/>by<sp/>setting<sp/>the<sp/>RX<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>CTRL<sp/>register<sp/>to<sp/>1,<sp/>enables<sp/>storing<sp/>bytes<sp/>recieved<sp/>from<sp/>slave<sp/>in<sp/>RX<sp/>FIFO_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_enableRx<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_getIM`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_getIM<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">gets<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Interrupts<sp/>Masking<sp/>Register;<sp/>which<sp/>enable<sp/>and<sp/>disables<sp/>interrupts<sp/>The<sp/>mask<sp/>value<sp/>is<sp/>a<sp/>6-bit<sp/>value,<sp/>where<sp/>each<sp/>bit<sp/>corresponds<sp/>to<sp/>a<sp/>specific<sp/>interrupt</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>TXE<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>TXF<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>RXE<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>RXF<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>TXB<sp/>:<sp/>Transmit<sp/>FIFO<sp/>level<sp/>is<sp/>Below<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>RXA<sp/>:<sp/>Receive<sp/>FIFO<sp/>level<sp/>is<sp/>Above<sp/>Threshold.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`mask`<sp/>The<sp/>required<sp/>mask<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_getMIS`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_getMIS<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">gets<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Masked<sp/>Interrupt<sp/>Status<sp/>Register;<sp/>which<sp/>shows<sp/>the<sp/>status<sp/>of<sp/>the<sp/>interrupts<sp/>after<sp/>masking<sp/>(ANDing)<sp/>RIS<sp/>by<sp/>IM.<sp/>The<sp/>mask<sp/>value<sp/>is<sp/>a<sp/>6-bit<sp/>value,<sp/>where<sp/>each<sp/>bit<sp/>corresponds<sp/>to<sp/>a<sp/>specific<sp/>interrupt</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>TXE<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>TXF<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>RXE<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>RXF<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>TXB<sp/>:<sp/>Transmit<sp/>FIFO<sp/>level<sp/>is<sp/>Below<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>RXA<sp/>:<sp/>Receive<sp/>FIFO<sp/>level<sp/>is<sp/>Above<sp/>Threshold.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`mask`<sp/>The<sp/>required<sp/>mask<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_getRIS`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_getRIS<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">gets<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Raw<sp/>Interrupt<sp/>Status<sp/>Register;<sp/>which<sp/>shows<sp/>the<sp/>status<sp/>of<sp/>the<sp/>interrupts<sp/>The<sp/>mask<sp/>value<sp/>is<sp/>a<sp/>6-bit<sp/>value,<sp/>where<sp/>each<sp/>bit<sp/>corresponds<sp/>to<sp/>a<sp/>specific<sp/>interrupt</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>TXE<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>TXF<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>RXE<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>RXF<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>TXB<sp/>:<sp/>Transmit<sp/>FIFO<sp/>level<sp/>is<sp/>Below<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>RXA<sp/>:<sp/>Receive<sp/>FIFO<sp/>level<sp/>is<sp/>Above<sp/>Threshold.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`mask`<sp/>The<sp/>required<sp/>mask<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_readData`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_reads<sp/>a<sp/>byte<sp/>of<sp/>data<sp/>from<sp/>the<sp/>RXDATA<sp/>register_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_readData<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*data</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`data`<sp/>The<sp/>data<sp/>read<sp/>from<sp/>the<sp/>RXDATA<sp/>register</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_readRxFifoEmpty`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_reads<sp/>the<sp/>RX<sp/>FIFO<sp/>empty<sp/>flag<sp/>from<sp/>the<sp/>STATUS<sp/>register_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_readRxFifoEmpty<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*RXfifo_state</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`RXfifo_state`<sp/>The<sp/>RX<sp/>FIFO<sp/>empty<sp/>flag<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_readTxFifoEmpty`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_reads<sp/>the<sp/>TX<sp/>FIFO<sp/>empty<sp/>flag<sp/>from<sp/>the<sp/>STATUS<sp/>register_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_readTxFifoEmpty<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*TXfifo_state</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`TXfifo_state`<sp/>The<sp/>TX<sp/>FIFO<sp/>empty<sp/>flag<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_setGclkEnable`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_sets<sp/>the<sp/>GCLK<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>SPI<sp/>register<sp/>to<sp/>a<sp/>certain<sp/>value_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_setGclkEnable<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`value`<sp/>The<sp/>value<sp/>of<sp/>the<sp/>GCLK<sp/>enable<sp/>bit</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_setICR`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_setICR<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Interrupt<sp/>Clear<sp/>Register;<sp/>which<sp/>clears<sp/>the<sp/>interrupts<sp/>The<sp/>mask<sp/>value<sp/>is<sp/>a<sp/>6-bit<sp/>value,<sp/>where<sp/>each<sp/>bit<sp/>corresponds<sp/>to<sp/>a<sp/>specific<sp/>interrupt</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>TXE<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>TXF<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>RXE<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>RXF<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>TXB<sp/>:<sp/>Transmit<sp/>FIFO<sp/>level<sp/>is<sp/>Below<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>RXA<sp/>:<sp/>Receive<sp/>FIFO<sp/>level<sp/>is<sp/>Above<sp/>Threshold.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`mask`<sp/>The<sp/>required<sp/>mask<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_setIM`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_setIM<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Interrupts<sp/>Masking<sp/>Register;<sp/>which<sp/>enable<sp/>and<sp/>disables<sp/>interrupts<sp/>The<sp/>mask<sp/>value<sp/>is<sp/>a<sp/>6-bit<sp/>value,<sp/>where<sp/>each<sp/>bit<sp/>corresponds<sp/>to<sp/>a<sp/>specific<sp/>interrupt</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>TXE<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>TXF<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>RXE<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>RXF<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>TXB<sp/>:<sp/>Transmit<sp/>FIFO<sp/>level<sp/>is<sp/>Below<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>RXA<sp/>:<sp/>Receive<sp/>FIFO<sp/>level<sp/>is<sp/>Above<sp/>Threshold.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`mask`<sp/>The<sp/>required<sp/>mask<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_waitRxFifoNotEmpty`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_waits<sp/>for<sp/>the<sp/>RX<sp/>FIFO<sp/>to<sp/>be<sp/>not<sp/>empty<sp/>by<sp/>polling<sp/>the<sp/>RX<sp/>FIFO<sp/>empty<sp/>flag<sp/>in<sp/>the<sp/>STATUS<sp/>register_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_waitRxFifoNotEmpty<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_waitTxFifoEmpty`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_waits<sp/>for<sp/>the<sp/>TX<sp/>FIFO<sp/>to<sp/>be<sp/>empty<sp/>by<sp/>polling<sp/>the<sp/>TX<sp/>FIFO<sp/>empty<sp/>flag<sp/>in<sp/>the<sp/>STATUS<sp/>register_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_waitTxFifoEmpty<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_writeData`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_writes<sp/>a<sp/>byte<sp/>of<sp/>data<sp/>to<sp/>the<sp/>TXDATA<sp/>register_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_writeData<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`data`<sp/>The<sp/>data<sp/>to<sp/>be<sp/>written<sp/>to<sp/>the<sp/>TXDATA<sp/>register</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_writePhase`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_sets<sp/>the<sp/>clock<sp/>phase<sp/>of<sp/>the<sp/>SPI<sp/>in<sp/>the<sp/>CFG<sp/>register<sp/>to<sp/>a<sp/>certain<sp/>value_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_writePhase<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>phase</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`phase`<sp/>The<sp/>clock<sp/>phase<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_SPI_writepolarity`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_sets<sp/>the<sp/>clock<sp/>polarity<sp/>of<sp/>the<sp/>SPI<sp/>in<sp/>the<sp/>CFG<sp/>register<sp/>to<sp/>a<sp/>certain<sp/>value_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_SPI_writepolarity<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_SPI_TYPE_PTR<sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>polarity</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`spi`<sp/>An<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>SPI<sp/>registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>SPI<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`polarity`<sp/>The<sp/>clock<sp/>polarity<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>File<sp/>EF_SPI_regs.h</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Structures<sp/>and<sp/>Types</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>typedef<sp/>struct<sp/>[**\_EF\_SPI\_TYPE\_**](#struct-_ef_spi_type_)<sp/>|<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/><sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>typedef<sp/>[**EF\_SPI\_TYPE**](#typedef-ef_spi_type)<sp/>\*<sp/>|<sp/>[**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr)<sp/><sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>struct<sp/>|<sp/>[**\_EF\_SPI\_TYPE\_**](#struct-_ef_spi_type_)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Macros</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_CFG\_REG\_CPHA\_BIT**](#define-ef_spi_cfg_reg_cpha_bit)<sp/><sp/>((uint32\_t)1)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_CFG\_REG\_CPHA\_MASK**](#define-ef_spi_cfg_reg_cpha_mask)<sp/><sp/>((uint32\_t)0x2)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_CFG\_REG\_CPOL\_BIT**](#define-ef_spi_cfg_reg_cpol_bit)<sp/><sp/>((uint32\_t)0)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_CFG\_REG\_CPOL\_MASK**](#define-ef_spi_cfg_reg_cpol_mask)<sp/><sp/>((uint32\_t)0x1)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_CTRL\_REG\_ENABLE\_BIT**](#define-ef_spi_ctrl_reg_enable_bit)<sp/><sp/>((uint32\_t)1)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_CTRL\_REG\_ENABLE\_MASK**](#define-ef_spi_ctrl_reg_enable_mask)<sp/><sp/>((uint32\_t)0x2)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_CTRL\_REG\_RX\_EN\_BIT**](#define-ef_spi_ctrl_reg_rx_en_bit)<sp/><sp/>((uint32\_t)2)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_CTRL\_REG\_RX\_EN\_MASK**](#define-ef_spi_ctrl_reg_rx_en_mask)<sp/><sp/>((uint32\_t)0x4)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_CTRL\_REG\_SS\_BIT**](#define-ef_spi_ctrl_reg_ss_bit)<sp/><sp/>((uint32\_t)0)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_CTRL\_REG\_SS\_MASK**](#define-ef_spi_ctrl_reg_ss_mask)<sp/><sp/>((uint32\_t)0x1)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_RXA\_FLAG**](#define-ef_spi_rxa_flag)<sp/><sp/>((uint32\_t)0x20)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_RXE\_FLAG**](#define-ef_spi_rxe_flag)<sp/><sp/>((uint32\_t)0x4)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_RXF\_FLAG**](#define-ef_spi_rxf_flag)<sp/><sp/>((uint32\_t)0x8)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT**](#define-ef_spi_rx_fifo_flush_reg_flush_bit)<sp/><sp/>((uint32\_t)0)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK**](#define-ef_spi_rx_fifo_flush_reg_flush_mask)<sp/><sp/>((uint32\_t)0x1)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT**](#define-ef_spi_rx_fifo_level_reg_level_bit)<sp/><sp/>((uint32\_t)0)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK**](#define-ef_spi_rx_fifo_level_reg_level_mask)<sp/><sp/>((uint32\_t)0xf)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT**](#define-ef_spi_rx_fifo_threshold_reg_threshold_bit)<sp/><sp/>((uint32\_t)0)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK**](#define-ef_spi_rx_fifo_threshold_reg_threshold_mask)<sp/><sp/>((uint32\_t)0xf)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_RX\_A\_BIT**](#define-ef_spi_status_reg_rx_a_bit)<sp/><sp/>((uint32\_t)5)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_RX\_A\_MASK**](#define-ef_spi_status_reg_rx_a_mask)<sp/><sp/>((uint32\_t)0x20)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_RX\_E\_BIT**](#define-ef_spi_status_reg_rx_e_bit)<sp/><sp/>((uint32\_t)2)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_RX\_E\_MASK**](#define-ef_spi_status_reg_rx_e_mask)<sp/><sp/>((uint32\_t)0x4)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_RX\_F\_BIT**](#define-ef_spi_status_reg_rx_f_bit)<sp/><sp/>((uint32\_t)3)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_RX\_F\_MASK**](#define-ef_spi_status_reg_rx_f_mask)<sp/><sp/>((uint32\_t)0x8)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_TX\_B\_BIT**](#define-ef_spi_status_reg_tx_b_bit)<sp/><sp/>((uint32\_t)4)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_TX\_B\_MASK**](#define-ef_spi_status_reg_tx_b_mask)<sp/><sp/>((uint32\_t)0x10)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_TX\_E\_BIT**](#define-ef_spi_status_reg_tx_e_bit)<sp/><sp/>((uint32\_t)0)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_TX\_E\_MASK**](#define-ef_spi_status_reg_tx_e_mask)<sp/><sp/>((uint32\_t)0x1)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_TX\_F\_BIT**](#define-ef_spi_status_reg_tx_f_bit)<sp/><sp/>((uint32\_t)1)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_STATUS\_REG\_TX\_F\_MASK**](#define-ef_spi_status_reg_tx_f_mask)<sp/><sp/>((uint32\_t)0x2)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_TXB\_FLAG**](#define-ef_spi_txb_flag)<sp/><sp/>((uint32\_t)0x10)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_TXE\_FLAG**](#define-ef_spi_txe_flag)<sp/><sp/>((uint32\_t)0x1)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_TXF\_FLAG**](#define-ef_spi_txf_flag)<sp/><sp/>((uint32\_t)0x2)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT**](#define-ef_spi_tx_fifo_flush_reg_flush_bit)<sp/><sp/>((uint32\_t)0)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK**](#define-ef_spi_tx_fifo_flush_reg_flush_mask)<sp/><sp/>((uint32\_t)0x1)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT**](#define-ef_spi_tx_fifo_level_reg_level_bit)<sp/><sp/>((uint32\_t)0)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK**](#define-ef_spi_tx_fifo_level_reg_level_mask)<sp/><sp/>((uint32\_t)0xf)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT**](#define-ef_spi_tx_fifo_threshold_reg_threshold_bit)<sp/><sp/>((uint32\_t)0)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_SPI\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK**](#define-ef_spi_tx_fifo_threshold_reg_threshold_mask)<sp/><sp/>((uint32\_t)0xf)&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**IO\_TYPES**](#define-io_types)<sp/><sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**\_\_R**](#define-__r)<sp/><sp/>volatile<sp/>const<sp/>uint32\_t&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**\_\_RW**](#define-__rw)<sp/><sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32\_t&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**\_\_W**](#define-__w)<sp/><sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32\_t&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Structures<sp/>and<sp/>Types<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>typedef<sp/>`EF_SPI_TYPE`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>struct<sp/>_EF_SPI_TYPE_<sp/>EF_SPI_TYPE;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>typedef<sp/>`EF_SPI_TYPE_PTR`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>EF_SPI_TYPE*<sp/>EF_SPI_TYPE_PTR;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>struct<sp/>`_EF_SPI_TYPE_`</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Variables:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>CFG<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>CTRL<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>GCLK<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>IC<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_RW**](#define-__rw)<sp/>IM<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>MIS<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>PR<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>RIS<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>RXDATA<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>RX_FIFO_FLUSH<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>RX_FIFO_LEVEL<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>RX_FIFO_THRESHOLD<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>STATUS<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>TXDATA<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>TX_FIFO_FLUSH<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>TX_FIFO_LEVEL<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>TX_FIFO_THRESHOLD<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>reserved_0<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>reserved_1<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>reserved_2<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Macros<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_CFG_REG_CPHA_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_CFG_REG_CPHA_BIT<sp/>((uint32_t)1)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_CFG_REG_CPHA_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_CFG_REG_CPHA_MASK<sp/>((uint32_t)0x2)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_CFG_REG_CPOL_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_CFG_REG_CPOL_BIT<sp/>((uint32_t)0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_CFG_REG_CPOL_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_CFG_REG_CPOL_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_CTRL_REG_ENABLE_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_CTRL_REG_ENABLE_BIT<sp/>((uint32_t)1)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_CTRL_REG_ENABLE_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_CTRL_REG_ENABLE_MASK<sp/>((uint32_t)0x2)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_CTRL_REG_RX_EN_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_CTRL_REG_RX_EN_BIT<sp/>((uint32_t)2)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_CTRL_REG_RX_EN_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_CTRL_REG_RX_EN_MASK<sp/>((uint32_t)0x4)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_CTRL_REG_SS_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_CTRL_REG_SS_BIT<sp/>((uint32_t)0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_CTRL_REG_SS_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_CTRL_REG_SS_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_RXA_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_RXA_FLAG<sp/>((uint32_t)0x20)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_RXE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_RXE_FLAG<sp/>((uint32_t)0x4)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_RXF_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_RXF_FLAG<sp/>((uint32_t)0x8)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_BIT<sp/>((uint32_t)0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_BIT<sp/>((uint32_t)0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT<sp/>((uint32_t)0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_RX_A_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_RX_A_BIT<sp/>((uint32_t)5)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_RX_A_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_RX_A_MASK<sp/>((uint32_t)0x20)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_RX_E_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_RX_E_BIT<sp/>((uint32_t)2)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_RX_E_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_RX_E_MASK<sp/>((uint32_t)0x4)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_RX_F_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_RX_F_BIT<sp/>((uint32_t)3)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_RX_F_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_RX_F_MASK<sp/>((uint32_t)0x8)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_TX_B_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_TX_B_BIT<sp/>((uint32_t)4)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_TX_B_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_TX_B_MASK<sp/>((uint32_t)0x10)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_TX_E_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_TX_E_BIT<sp/>((uint32_t)0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_TX_E_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_TX_E_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_TX_F_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_TX_F_BIT<sp/>((uint32_t)1)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_STATUS_REG_TX_F_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_STATUS_REG_TX_F_MASK<sp/>((uint32_t)0x2)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_TXB_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_TXB_FLAG<sp/>((uint32_t)0x10)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_TXE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_TXE_FLAG<sp/>((uint32_t)0x1)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_TXF_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_TXF_FLAG<sp/>((uint32_t)0x2)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_BIT<sp/>((uint32_t)0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_BIT<sp/>((uint32_t)0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT<sp/>((uint32_t)0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`IO_TYPES`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>IO_TYPES<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`__R`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>__R<sp/>volatile<sp/>const<sp/>uint32_t</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`__RW`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>__RW<sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`__W`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>__W<sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

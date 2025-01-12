@@ -145,6 +145,8 @@ Functions</h2></td></tr>
 <tr class="separator:a83c5fa1a6e95392f2b3ab02661f40dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f3ae4eb3cca3c9892bf0fd2ea1af96e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___s_p_i_8c.html#a8f3ae4eb3cca3c9892bf0fd2ea1af96e">EF_SPI_getMIS</a> (<a class="el" href="_e_f___s_p_i__regs_8h.html#ab51eaba59e1d37581be74b95ac7b4b20">EF_SPI_TYPE_PTR</a> spi, uint32_t *mask)</td></tr>
 <tr class="separator:a8f3ae4eb3cca3c9892bf0fd2ea1af96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd18073e3f75287527f0ee881546b2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___s_p_i_8c.html#a1bd18073e3f75287527f0ee881546b2a">EF_SPI_setICR</a> (<a class="el" href="_e_f___s_p_i__regs_8h.html#ab51eaba59e1d37581be74b95ac7b4b20">EF_SPI_TYPE_PTR</a> spi, uint32_t mask)</td></tr>
+<tr class="separator:a1bd18073e3f75287527f0ee881546b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C file for SPI APIs which contains the function Implementations. </p>
@@ -644,6 +646,50 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">spi</td><td>An <a class="el" href="_e_f___s_p_i__regs_8h.html#a13327a2a72e415754d4174d9e8c1ce84">EF_SPI_TYPE</a> pointer, which points to the base memory address of SPI registers. <a class="el" href="_e_f___s_p_i__regs_8h.html#a13327a2a72e415754d4174d9e8c1ce84">EF_SPI_TYPE</a> is a structure that contains the SPI registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value of the GCLK enable bit</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status A value of type <a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> : returns a success or error code </dd></dl>
+
+</div>
+</div>
+<a id="a1bd18073e3f75287527f0ee881546b2a" name="a1bd18073e3f75287527f0ee881546b2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bd18073e3f75287527f0ee881546b2a">&#9670;&#160;</a></span>EF_SPI_setICR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_SPI_setICR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_e_f___s_p_i__regs_8h.html#ab51eaba59e1d37581be74b95ac7b4b20">EF_SPI_TYPE_PTR</a>&#160;</td>
+          <td class="paramname"><em>spi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>sets the value of the Interrupt Clear Register; which clears the interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt</p><ul>
+<li>bit 0 TXE : Transmit FIFO is Empty.</li>
+<li>bit 1 TXF : Transmit FIFO is Full.</li>
+<li>bit 2 RXE : Receive FIFO is Empty.</li>
+<li>bit 3 RXF : Receive FIFO is Full.</li>
+<li>bit 4 TXB : Transmit FIFO level is Below Threshold.</li>
+<li>bit 5 RXA : Receive FIFO level is Above Threshold.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">spi</td><td>An <a class="el" href="_e_f___s_p_i__regs_8h.html#a13327a2a72e415754d4174d9e8c1ce84">EF_SPI_TYPE</a> pointer, which points to the base memory address of SPI registers. <a class="el" href="_e_f___s_p_i__regs_8h.html#a13327a2a72e415754d4174d9e8c1ce84">EF_SPI_TYPE</a> is a structure that contains the SPI registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>The required mask value</td></tr>
   </table>
   </dd>
 </dl>

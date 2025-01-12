@@ -1,0 +1,1157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="md__r_e_a_d_m_e" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>API Reference</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md1">
+<title>Header files</title>
+<para><itemizedlist>
+<listitem><para>EF_Driver_Common.h</para>
+</listitem><listitem><para>EF_SPI.h</para>
+</listitem><listitem><para>EF_SPI_regs.h</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md2">
+<title>File EF_Driver_Common.h</title>
+<para><emphasis>C header file for common driver definitions and types.</emphasis></para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md3">
+<title>Structures and Types</title>
+<para><table rows="2" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>typedef uint32_t   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_STATUS** <linebreak/>
+<emphasis>A type that is used to return the status of the driver functions.</emphasis>   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md4">
+<title>Macros</title>
+<para><table rows="8" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR** ((uint32_t)1)<linebreak/>
+<emphasis>Unspecified error.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR\_BUSY** ((uint32_t)2)<linebreak/>
+<emphasis>Driver is busy.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR\_PARAMETER** ((uint32_t)5)<linebreak/>
+<emphasis>Parameter error.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR\_SPECIFIC** ((uint32_t)6)<linebreak/>
+<emphasis>Start of driver specific errors.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR\_TIMEOUT** ((uint32_t)3)<linebreak/>
+<emphasis>Timeout occurred.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR\_UNSUPPORTED** ((uint32_t)4)<linebreak/>
+<emphasis>Operation not supported.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_OK** ((uint32_t)0)<linebreak/>
+<emphasis>Operation succeeded.</emphasis>   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md5">
+<title>Structures and Types Documentation</title>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md6">
+<title>typedef &lt;tt&gt;EF_DRIVER_STATUS&lt;/tt&gt;</title>
+<para><emphasis>A type that is used to return the status of the driver functions.</emphasis> <programlisting filename=".c"><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref>;</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md7">
+<title>Macros Documentation</title>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md8">
+<title>define &lt;tt&gt;EF_DRIVER_ERROR&lt;/tt&gt;</title>
+<para><emphasis>Unspecified error.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR<sp/>((uint32_t)1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md9">
+<title>define &lt;tt&gt;EF_DRIVER_ERROR_BUSY&lt;/tt&gt;</title>
+<para><emphasis>Driver is busy.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR_BUSY<sp/>((uint32_t)2)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md10">
+<title>define &lt;tt&gt;EF_DRIVER_ERROR_PARAMETER&lt;/tt&gt;</title>
+<para><emphasis>Parameter error.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>((uint32_t)5)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md11">
+<title>define &lt;tt&gt;EF_DRIVER_ERROR_SPECIFIC&lt;/tt&gt;</title>
+<para><emphasis>Start of driver specific errors.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR_SPECIFIC<sp/>((uint32_t)6)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md12">
+<title>define &lt;tt&gt;EF_DRIVER_ERROR_TIMEOUT&lt;/tt&gt;</title>
+<para><emphasis>Timeout occurred.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR_TIMEOUT<sp/>((uint32_t)3)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md13">
+<title>define &lt;tt&gt;EF_DRIVER_ERROR_UNSUPPORTED&lt;/tt&gt;</title>
+<para><emphasis>Operation not supported.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR_UNSUPPORTED<sp/>((uint32_t)4)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md14">
+<title>define &lt;tt&gt;EF_DRIVER_OK&lt;/tt&gt;</title>
+<para><emphasis>Operation succeeded.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_OK<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md15">
+<title>File EF_SPI.h</title>
+<para><emphasis>C header file for SPI APIs which contains the function prototypes.</emphasis></para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md16">
+<title>Functions</title>
+<para><table rows="22" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_FifoRxFlush** (**EF\_SPI\_TYPE\_PTR** spi) <linebreak/>
+<emphasis>flushes the RX FIFO by writing to the RX FIFO FLUSH register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_assertCs** (**EF\_SPI\_TYPE\_PTR** spi) <linebreak/>
+<emphasis>asserts the CS line by setting the SS bit in the CTRL register to 1, asserts the CS line to start a transaction with the slave</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_deassertCs** (**EF\_SPI\_TYPE\_PTR** spi) <linebreak/>
+<emphasis>deasserts the CS line by setting the SS bit in the CTRL register to 0, deasserts the CS line to end a transaction with the slave</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_disable** (**EF\_SPI\_TYPE\_PTR** spi) <linebreak/>
+<emphasis>disables the SPI by setting the enable bit in the CTRL register to 0, disables spi master pulse generation</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_disableRx** (**EF\_SPI\_TYPE\_PTR** spi) <linebreak/>
+<emphasis>disables the RX by setting the RX enable bit in the CTRL register to 0, disables storing bytes recieved from slave in RX FIFO</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_enable** (**EF\_SPI\_TYPE\_PTR** spi) <linebreak/>
+<emphasis>enables the SPI by setting the enable bit in the CTRL register to 1, enables spi master pulse generation</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_enableRx** (**EF\_SPI\_TYPE\_PTR** spi) <linebreak/>
+<emphasis>enables the RX by setting the RX enable bit in the CTRL register to 1, enables storing bytes recieved from slave in RX FIFO</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_getIM** (**EF\_SPI\_TYPE\_PTR** spi, uint32_t *mask) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_getMIS** (**EF\_SPI\_TYPE\_PTR** spi, uint32_t *mask) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_getRIS** (**EF\_SPI\_TYPE\_PTR** spi, uint32_t *mask) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_readData** (**EF\_SPI\_TYPE\_PTR** spi, uint32_t *data) <linebreak/>
+<emphasis>reads a byte of data from the RXDATA register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_readRxFifoEmpty** (**EF\_SPI\_TYPE\_PTR** spi, uint32_t *RXfifo_state) <linebreak/>
+<emphasis>reads the RX FIFO empty flag from the STATUS register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_readTxFifoEmpty** (**EF\_SPI\_TYPE\_PTR** spi, uint32_t *TXfifo_state) <linebreak/>
+<emphasis>reads the TX FIFO empty flag from the STATUS register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_setGclkEnable** (**EF\_SPI\_TYPE\_PTR** spi, uint32_t value) <linebreak/>
+<emphasis>sets the GCLK enable bit in the SPI register to a certain value</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_setICR** (**EF\_SPI\_TYPE\_PTR** spi, uint32_t mask) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_setIM** (**EF\_SPI\_TYPE\_PTR** spi, uint32_t mask) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_waitRxFifoNotEmpty** (**EF\_SPI\_TYPE\_PTR** spi) <linebreak/>
+<emphasis>waits for the RX FIFO to be not empty by polling the RX FIFO empty flag in the STATUS register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_waitTxFifoEmpty** (**EF\_SPI\_TYPE\_PTR** spi) <linebreak/>
+<emphasis>waits for the TX FIFO to be empty by polling the TX FIFO empty flag in the STATUS register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_writeData** (**EF\_SPI\_TYPE\_PTR** spi, uint32_t data) <linebreak/>
+<emphasis>writes a byte of data to the TXDATA register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_writePhase** (**EF\_SPI\_TYPE\_PTR** spi, bool phase) <linebreak/>
+<emphasis>sets the clock phase of the SPI in the CFG register to a certain value</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_writepolarity** (**EF\_SPI\_TYPE\_PTR** spi, bool polarity) <linebreak/>
+<emphasis>sets the clock polarity of the SPI in the CFG register to a certain value</emphasis>   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md17">
+<title>Functions Documentation</title>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md18">
+<title>function &lt;tt&gt;EF_SPI_FifoRxFlush&lt;/tt&gt;</title>
+<para><emphasis>flushes the RX FIFO by writing to the RX FIFO FLUSH register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1af5ad666ce47ff6bd16cff1627c33372a" kindref="member">EF_SPI_FifoRxFlush</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md19">
+<title>function &lt;tt&gt;EF_SPI_assertCs&lt;/tt&gt;</title>
+<para><emphasis>asserts the CS line by setting the SS bit in the CTRL register to 1, asserts the CS line to start a transaction with the slave</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a8b4118aeb52c24b0b9b20518c920d414" kindref="member">EF_SPI_assertCs</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md20">
+<title>function &lt;tt&gt;EF_SPI_deassertCs&lt;/tt&gt;</title>
+<para><emphasis>deasserts the CS line by setting the SS bit in the CTRL register to 0, deasserts the CS line to end a transaction with the slave</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae" kindref="member">EF_SPI_deassertCs</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md21">
+<title>function &lt;tt&gt;EF_SPI_disable&lt;/tt&gt;</title>
+<para><emphasis>disables the SPI by setting the enable bit in the CTRL register to 0, disables spi master pulse generation</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a779126c0c77ab36a9747aa8fe113c08d" kindref="member">EF_SPI_disable</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md22">
+<title>function &lt;tt&gt;EF_SPI_disableRx&lt;/tt&gt;</title>
+<para><emphasis>disables the RX by setting the RX enable bit in the CTRL register to 0, disables storing bytes recieved from slave in RX FIFO</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a3c26e6c7e5aa70bb44ee388a811aa762" kindref="member">EF_SPI_disableRx</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md23">
+<title>function &lt;tt&gt;EF_SPI_enable&lt;/tt&gt;</title>
+<para><emphasis>enables the SPI by setting the enable bit in the CTRL register to 1, enables spi master pulse generation</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a17bb022c768cb9acb92e540dd0d5dcce" kindref="member">EF_SPI_enable</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md24">
+<title>function &lt;tt&gt;EF_SPI_enableRx&lt;/tt&gt;</title>
+<para><emphasis>enables the RX by setting the RX enable bit in the CTRL register to 1, enables storing bytes recieved from slave in RX FIFO</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a9b5b4e72c33af4b4a7fc3ab0cdadde2e" kindref="member">EF_SPI_enableRx</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md25">
+<title>function &lt;tt&gt;EF_SPI_getIM&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a0cbec2da38446744274c64e9585e846c" kindref="member">EF_SPI_getIM</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para>gets the value of the Interrupts Masking Register; which enable and disables interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 TXF : Transmit FIFO is Full.</para>
+</listitem><listitem><para>bit 2 RXE : Receive FIFO is Empty.</para>
+</listitem><listitem><para>bit 3 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 4 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 5 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>mask</computeroutput> The required mask value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md26">
+<title>function &lt;tt&gt;EF_SPI_getMIS&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a8f3ae4eb3cca3c9892bf0fd2ea1af96e" kindref="member">EF_SPI_getMIS</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para>gets the value of the Masked Interrupt Status Register; which shows the status of the interrupts after masking (ANDing) RIS by IM. The mask value is a 6-bit value, where each bit corresponds to a specific interrupt</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 TXF : Transmit FIFO is Full.</para>
+</listitem><listitem><para>bit 2 RXE : Receive FIFO is Empty.</para>
+</listitem><listitem><para>bit 3 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 4 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 5 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>mask</computeroutput> The required mask value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md27">
+<title>function &lt;tt&gt;EF_SPI_getRIS&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a83c5fa1a6e95392f2b3ab02661f40dec" kindref="member">EF_SPI_getRIS</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para>gets the value of the Raw Interrupt Status Register; which shows the status of the interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 TXF : Transmit FIFO is Full.</para>
+</listitem><listitem><para>bit 2 RXE : Receive FIFO is Empty.</para>
+</listitem><listitem><para>bit 3 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 4 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 5 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>mask</computeroutput> The required mask value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md28">
+<title>function &lt;tt&gt;EF_SPI_readData&lt;/tt&gt;</title>
+<para><emphasis>reads a byte of data from the RXDATA register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a76b8a68e19fbf8c73de0f0c6a2f1ffa0" kindref="member">EF_SPI_readData</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*data</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>data</computeroutput> The data read from the RXDATA register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md29">
+<title>function &lt;tt&gt;EF_SPI_readRxFifoEmpty&lt;/tt&gt;</title>
+<para><emphasis>reads the RX FIFO empty flag from the STATUS register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a143d8c3d4948fe4b3b673d4f7d37dc22" kindref="member">EF_SPI_readRxFifoEmpty</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*RXfifo_state</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>RXfifo_state</computeroutput> The RX FIFO empty flag value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md30">
+<title>function &lt;tt&gt;EF_SPI_readTxFifoEmpty&lt;/tt&gt;</title>
+<para><emphasis>reads the TX FIFO empty flag from the STATUS register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a5ba73cb278ddca9c4e4d7e2de81d086c" kindref="member">EF_SPI_readTxFifoEmpty</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*TXfifo_state</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>TXfifo_state</computeroutput> The TX FIFO empty flag value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md31">
+<title>function &lt;tt&gt;EF_SPI_setGclkEnable&lt;/tt&gt;</title>
+<para><emphasis>sets the GCLK enable bit in the SPI register to a certain value</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a825604b02b3136b2ae6b57cd74f7f885" kindref="member">EF_SPI_setGclkEnable</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>value</computeroutput> The value of the GCLK enable bit</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md32">
+<title>function &lt;tt&gt;EF_SPI_setICR&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a1bd18073e3f75287527f0ee881546b2a" kindref="member">EF_SPI_setICR</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para>sets the value of the Interrupt Clear Register; which clears the interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 TXF : Transmit FIFO is Full.</para>
+</listitem><listitem><para>bit 2 RXE : Receive FIFO is Empty.</para>
+</listitem><listitem><para>bit 3 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 4 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 5 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>mask</computeroutput> The required mask value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md33">
+<title>function &lt;tt&gt;EF_SPI_setIM&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a475700f9498d9ab54b03d3e81ace1f0a" kindref="member">EF_SPI_setIM</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para>sets the value of the Interrupts Masking Register; which enable and disables interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 TXF : Transmit FIFO is Full.</para>
+</listitem><listitem><para>bit 2 RXE : Receive FIFO is Empty.</para>
+</listitem><listitem><para>bit 3 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 4 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 5 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>mask</computeroutput> The required mask value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md34">
+<title>function &lt;tt&gt;EF_SPI_waitRxFifoNotEmpty&lt;/tt&gt;</title>
+<para><emphasis>waits for the RX FIFO to be not empty by polling the RX FIFO empty flag in the STATUS register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a07fa3d20aee584b19921035cd715b71b" kindref="member">EF_SPI_waitRxFifoNotEmpty</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md35">
+<title>function &lt;tt&gt;EF_SPI_waitTxFifoEmpty&lt;/tt&gt;</title>
+<para><emphasis>waits for the TX FIFO to be empty by polling the TX FIFO empty flag in the STATUS register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a37d6919aa636f75a7ad383d5c03a6595" kindref="member">EF_SPI_waitTxFifoEmpty</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md36">
+<title>function &lt;tt&gt;EF_SPI_writeData&lt;/tt&gt;</title>
+<para><emphasis>writes a byte of data to the TXDATA register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a1e57164045e2dc6ba9f3ebffc30f5985" kindref="member">EF_SPI_writeData</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>data</computeroutput> The data to be written to the TXDATA register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md37">
+<title>function &lt;tt&gt;EF_SPI_writePhase&lt;/tt&gt;</title>
+<para><emphasis>sets the clock phase of the SPI in the CFG register to a certain value</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a0391f44435674dff1569e37997485578" kindref="member">EF_SPI_writePhase</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>phase</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>phase</computeroutput> The clock phase value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md38">
+<title>function &lt;tt&gt;EF_SPI_writepolarity&lt;/tt&gt;</title>
+<para><emphasis>sets the clock polarity of the SPI in the CFG register to a certain value</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1af12037c75dc828ac46a94b871bce315f" kindref="member">EF_SPI_writepolarity</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>polarity</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>spi</computeroutput> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</para>
+</listitem><listitem><para><computeroutput>polarity</computeroutput> The clock polarity value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code</para>
+</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md39">
+<title>File EF_SPI_regs.h</title>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md40">
+<title>Structures and Types</title>
+<para><table rows="4" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>typedef struct **\_EF\_SPI\_TYPE\_**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_TYPE** <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>typedef **EF\_SPI\_TYPE** *   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_TYPE\_PTR** <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>struct   </para>
+</entry><entry thead="no" align='left'><para>**\_EF\_SPI\_TYPE\_** <linebreak/>
+   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md41">
+<title>Macros</title>
+<para><table rows="45" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_CFG\_REG\_CPHA\_BIT** ((uint32_t)1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_CFG\_REG\_CPHA\_MASK** ((uint32_t)0x2)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_CFG\_REG\_CPOL\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_CFG\_REG\_CPOL\_MASK** ((uint32_t)0x1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_CTRL\_REG\_ENABLE\_BIT** ((uint32_t)1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_CTRL\_REG\_ENABLE\_MASK** ((uint32_t)0x2)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_CTRL\_REG\_RX\_EN\_BIT** ((uint32_t)2)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_CTRL\_REG\_RX\_EN\_MASK** ((uint32_t)0x4)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_CTRL\_REG\_SS\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_CTRL\_REG\_SS\_MASK** ((uint32_t)0x1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_RXA\_FLAG** ((uint32_t)0x20)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_RXE\_FLAG** ((uint32_t)0x4)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_RXF\_FLAG** ((uint32_t)0x8)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK** ((uint32_t)0x1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK** ((uint32_t)0xf)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK** ((uint32_t)0xf)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_RX\_A\_BIT** ((uint32_t)5)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_RX\_A\_MASK** ((uint32_t)0x20)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_RX\_E\_BIT** ((uint32_t)2)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_RX\_E\_MASK** ((uint32_t)0x4)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_RX\_F\_BIT** ((uint32_t)3)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_RX\_F\_MASK** ((uint32_t)0x8)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_TX\_B\_BIT** ((uint32_t)4)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_TX\_B\_MASK** ((uint32_t)0x10)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_TX\_E\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_TX\_E\_MASK** ((uint32_t)0x1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_TX\_F\_BIT** ((uint32_t)1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_STATUS\_REG\_TX\_F\_MASK** ((uint32_t)0x2)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_TXB\_FLAG** ((uint32_t)0x10)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_TXE\_FLAG** ((uint32_t)0x1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_TXF\_FLAG** ((uint32_t)0x2)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK** ((uint32_t)0x1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK** ((uint32_t)0xf)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_SPI\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK** ((uint32_t)0xf)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**IO\_TYPES** <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**\_\_R** volatile const uint32_t<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**\_\_RW** volatile uint32_t<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**\_\_W** volatile uint32_t<linebreak/>
+   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md42">
+<title>Structures and Types Documentation</title>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md43">
+<title>typedef &lt;tt&gt;EF_SPI_TYPE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">_EF_SPI_TYPE_</ref><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE</ref>;</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md44">
+<title>typedef &lt;tt&gt;EF_SPI_TYPE_PTR&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE</ref>*<sp/><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref>;</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md45">
+<title>struct &lt;tt&gt;_EF_SPI_TYPE_&lt;/tt&gt;</title>
+<para>Variables:</para>
+<para><itemizedlist>
+<listitem><para>**\_\_W** CFG <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** CTRL <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** GCLK <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** IC <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_RW** IM <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** MIS <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** PR <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** RIS <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** RXDATA <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** RX_FIFO_FLUSH <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** RX_FIFO_LEVEL <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** RX_FIFO_THRESHOLD <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** STATUS <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** TXDATA <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** TX_FIFO_FLUSH <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** TX_FIFO_LEVEL <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** TX_FIFO_THRESHOLD <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** reserved_0 <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** reserved_1 <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** reserved_2 <linebreak/>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md46">
+<title>Macros Documentation</title>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md47">
+<title>define &lt;tt&gt;EF_SPI_CFG_REG_CPHA_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_CFG_REG_CPHA_BIT<sp/>((uint32_t)1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md48">
+<title>define &lt;tt&gt;EF_SPI_CFG_REG_CPHA_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_CFG_REG_CPHA_MASK<sp/>((uint32_t)0x2)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md49">
+<title>define &lt;tt&gt;EF_SPI_CFG_REG_CPOL_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_CFG_REG_CPOL_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md50">
+<title>define &lt;tt&gt;EF_SPI_CFG_REG_CPOL_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_CFG_REG_CPOL_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md51">
+<title>define &lt;tt&gt;EF_SPI_CTRL_REG_ENABLE_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_CTRL_REG_ENABLE_BIT<sp/>((uint32_t)1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md52">
+<title>define &lt;tt&gt;EF_SPI_CTRL_REG_ENABLE_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_CTRL_REG_ENABLE_MASK<sp/>((uint32_t)0x2)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md53">
+<title>define &lt;tt&gt;EF_SPI_CTRL_REG_RX_EN_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_CTRL_REG_RX_EN_BIT<sp/>((uint32_t)2)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md54">
+<title>define &lt;tt&gt;EF_SPI_CTRL_REG_RX_EN_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_CTRL_REG_RX_EN_MASK<sp/>((uint32_t)0x4)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md55">
+<title>define &lt;tt&gt;EF_SPI_CTRL_REG_SS_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_CTRL_REG_SS_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md56">
+<title>define &lt;tt&gt;EF_SPI_CTRL_REG_SS_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_CTRL_REG_SS_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md57">
+<title>define &lt;tt&gt;EF_SPI_RXA_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_RXA_FLAG<sp/>((uint32_t)0x20)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md58">
+<title>define &lt;tt&gt;EF_SPI_RXE_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_RXE_FLAG<sp/>((uint32_t)0x4)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md59">
+<title>define &lt;tt&gt;EF_SPI_RXF_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_RXF_FLAG<sp/>((uint32_t)0x8)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md60">
+<title>define &lt;tt&gt;EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md61">
+<title>define &lt;tt&gt;EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_RX_FIFO_FLUSH_REG_FLUSH_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md62">
+<title>define &lt;tt&gt;EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md63">
+<title>define &lt;tt&gt;EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md64">
+<title>define &lt;tt&gt;EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md65">
+<title>define &lt;tt&gt;EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md66">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_RX_A_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_RX_A_BIT<sp/>((uint32_t)5)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md67">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_RX_A_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_RX_A_MASK<sp/>((uint32_t)0x20)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md68">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_RX_E_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_RX_E_BIT<sp/>((uint32_t)2)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md69">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_RX_E_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_RX_E_MASK<sp/>((uint32_t)0x4)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md70">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_RX_F_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_RX_F_BIT<sp/>((uint32_t)3)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md71">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_RX_F_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_RX_F_MASK<sp/>((uint32_t)0x8)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md72">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_TX_B_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_TX_B_BIT<sp/>((uint32_t)4)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md73">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_TX_B_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_TX_B_MASK<sp/>((uint32_t)0x10)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md74">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_TX_E_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_TX_E_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md75">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_TX_E_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_TX_E_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md76">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_TX_F_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_TX_F_BIT<sp/>((uint32_t)1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md77">
+<title>define &lt;tt&gt;EF_SPI_STATUS_REG_TX_F_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_STATUS_REG_TX_F_MASK<sp/>((uint32_t)0x2)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md78">
+<title>define &lt;tt&gt;EF_SPI_TXB_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_TXB_FLAG<sp/>((uint32_t)0x10)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md79">
+<title>define &lt;tt&gt;EF_SPI_TXE_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_TXE_FLAG<sp/>((uint32_t)0x1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md80">
+<title>define &lt;tt&gt;EF_SPI_TXF_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_TXF_FLAG<sp/>((uint32_t)0x2)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md81">
+<title>define &lt;tt&gt;EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md82">
+<title>define &lt;tt&gt;EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_TX_FIFO_FLUSH_REG_FLUSH_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md83">
+<title>define &lt;tt&gt;EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md84">
+<title>define &lt;tt&gt;EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_TX_FIFO_LEVEL_REG_LEVEL_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md85">
+<title>define &lt;tt&gt;EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md86">
+<title>define &lt;tt&gt;EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md87">
+<title>define &lt;tt&gt;IO_TYPES&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>IO_TYPES<sp/></highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md88">
+<title>define &lt;tt&gt;__R&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>__R<sp/>volatile<sp/>const<sp/>uint32_t</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md89">
+<title>define &lt;tt&gt;__RW&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>__RW<sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md90">
+<title>define &lt;tt&gt;__W&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>__W<sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t</highlight></codeline>
+</programlisting> </para>
+</sect2>
+</sect1>
+    </detaileddescription>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

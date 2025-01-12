@@ -1,0 +1,1079 @@
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Header files}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyItemize}
+\item EF\+\_\+\+Driver\+\_\+\+Common.h
+\item EF\+\_\+\+SPI.h
+\item EF\+\_\+\+SPI\+\_\+regs.h
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{File EF\+\_\+\+Driver\+\_\+\+Common.\+h}\label{md__r_e_a_d_m_e_autotoc_md2}
+{\itshape C header file for common driver definitions and types.}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Structures and Types}\label{md__r_e_a_d_m_e_autotoc_md3}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft typedef uint32\+\_\+t   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ ~\newline
+{\itshape A type that is used to return the status of the driver functions.}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Macros}\label{md__r_e_a_d_m_e_autotoc_md4}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR$\ast$$\ast$ ((uint32\+\_\+t)1)~\newline
+{\itshape Unspecified error.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+BUSY$\ast$$\ast$ ((uint32\+\_\+t)2)~\newline
+{\itshape Driver is busy.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+PARAMETER$\ast$$\ast$ ((uint32\+\_\+t)5)~\newline
+{\itshape Parameter error.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+SPECIFIC$\ast$$\ast$ ((uint32\+\_\+t)6)~\newline
+{\itshape Start of driver specific errors.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+TIMEOUT$\ast$$\ast$ ((uint32\+\_\+t)3)~\newline
+{\itshape Timeout occurred.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+UNSUPPORTED$\ast$$\ast$ ((uint32\+\_\+t)4)~\newline
+{\itshape Operation not supported.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+OK$\ast$$\ast$ ((uint32\+\_\+t)0)~\newline
+{\itshape Operation succeeded.}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{Structures and Types Documentation}\label{md__r_e_a_d_m_e_autotoc_md5}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{typedef $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+STATUS$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md6}
+{\itshape A type that is used to return the status of the driver functions.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ uint32\_t\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{Macros Documentation}\label{md__r_e_a_d_m_e_autotoc_md7}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md8}
+{\itshape Unspecified error.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\ ((uint32\_t)1)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+BUSY$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md9}
+{\itshape Driver is busy.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\_BUSY\ ((uint32\_t)2)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+PARAMETER$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md10}
+{\itshape Parameter error.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\_PARAMETER\ ((uint32\_t)5)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+SPECIFIC$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md11}
+{\itshape Start of driver specific errors.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\_SPECIFIC\ ((uint32\_t)6)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+TIMEOUT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md12}
+{\itshape Timeout occurred.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\_TIMEOUT\ ((uint32\_t)3)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+UNSUPPORTED$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md13}
+{\itshape Operation not supported.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\_UNSUPPORTED\ ((uint32\_t)4)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+OK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md14}
+{\itshape Operation succeeded.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_OK\ ((uint32\_t)0)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysection{File EF\+\_\+\+SPI.\+h}\label{md__r_e_a_d_m_e_autotoc_md15}
+{\itshape C header file for SPI APIs which contains the function prototypes.}\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysection{Functions}\label{md__r_e_a_d_m_e_autotoc_md16}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+Fifo\+Rx\+Flush$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi) ~\newline
+{\itshape flushes the RX FIFO by writing to the RX FIFO FLUSH register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+assert\+Cs$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi) ~\newline
+{\itshape asserts the CS line by setting the SS bit in the CTRL register to 1, asserts the CS line to start a transaction with the slave}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+deassert\+Cs$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi) ~\newline
+{\itshape deasserts the CS line by setting the SS bit in the CTRL register to 0, deasserts the CS line to end a transaction with the slave}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+disable$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi) ~\newline
+{\itshape disables the SPI by setting the enable bit in the CTRL register to 0, disables spi master pulse generation}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+disable\+Rx$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi) ~\newline
+{\itshape disables the RX by setting the RX enable bit in the CTRL register to 0, disables storing bytes recieved from slave in RX FIFO}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+enable$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi) ~\newline
+{\itshape enables the SPI by setting the enable bit in the CTRL register to 1, enables spi master pulse generation}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+enable\+Rx$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi) ~\newline
+{\itshape enables the RX by setting the RX enable bit in the CTRL register to 1, enables storing bytes recieved from slave in RX FIFO}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+get\+IM$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, uint32\+\_\+t $\ast$mask) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+get\+MIS$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, uint32\+\_\+t $\ast$mask) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+get\+RIS$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, uint32\+\_\+t $\ast$mask) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+read\+Data$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, uint32\+\_\+t $\ast$data) ~\newline
+{\itshape reads a byte of data from the RXDATA register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+read\+Rx\+Fifo\+Empty$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, uint32\+\_\+t $\ast$\+RXfifo\+\_\+state) ~\newline
+{\itshape reads the RX FIFO empty flag from the STATUS register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+read\+Tx\+Fifo\+Empty$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, uint32\+\_\+t $\ast$\+TXfifo\+\_\+state) ~\newline
+{\itshape reads the TX FIFO empty flag from the STATUS register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+set\+Gclk\+Enable$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, uint32\+\_\+t value) ~\newline
+{\itshape sets the GCLK enable bit in the SPI register to a certain value}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+set\+ICR$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, uint32\+\_\+t mask) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+set\+IM$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, uint32\+\_\+t mask) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+wait\+Rx\+Fifo\+Not\+Empty$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi) ~\newline
+{\itshape waits for the RX FIFO to be not empty by polling the RX FIFO empty flag in the STATUS register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+wait\+Tx\+Fifo\+Empty$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi) ~\newline
+{\itshape waits for the TX FIFO to be empty by polling the TX FIFO empty flag in the STATUS register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+write\+Data$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, uint32\+\_\+t data) ~\newline
+{\itshape writes a byte of data to the TXDATA register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+write\+Phase$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, bool phase) ~\newline
+{\itshape sets the clock phase of the SPI in the CFG register to a certain value}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+writepolarity$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ spi, bool polarity) ~\newline
+{\itshape sets the clock polarity of the SPI in the CFG register to a certain value}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysection{Functions Documentation}\label{md__r_e_a_d_m_e_autotoc_md17}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+Fifo\+Rx\+Flush$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md18}
+{\itshape flushes the RX FIFO by writing to the RX FIFO FLUSH register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_af5ad666ce47ff6bd16cff1627c33372a}{EF\_SPI\_FifoRxFlush}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md19}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+assert\+Cs$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md19}
+{\itshape asserts the CS line by setting the SS bit in the CTRL register to 1, asserts the CS line to start a transaction with the slave} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a8b4118aeb52c24b0b9b20518c920d414}{EF\_SPI\_assertCs}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md20}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+deassert\+Cs$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md20}
+{\itshape deasserts the CS line by setting the SS bit in the CTRL register to 0, deasserts the CS line to end a transaction with the slave} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae}{EF\_SPI\_deassertCs}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md21}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+disable$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md21}
+{\itshape disables the SPI by setting the enable bit in the CTRL register to 0, disables spi master pulse generation} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a779126c0c77ab36a9747aa8fe113c08d}{EF\_SPI\_disable}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md22}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+disable\+Rx$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md22}
+{\itshape disables the RX by setting the RX enable bit in the CTRL register to 0, disables storing bytes recieved from slave in RX FIFO} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a3c26e6c7e5aa70bb44ee388a811aa762}{EF\_SPI\_disableRx}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md23}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+enable$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md23}
+{\itshape enables the SPI by setting the enable bit in the CTRL register to 1, enables spi master pulse generation} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a17bb022c768cb9acb92e540dd0d5dcce}{EF\_SPI\_enable}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md24}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+enable\+Rx$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md24}
+{\itshape enables the RX by setting the RX enable bit in the CTRL register to 1, enables storing bytes recieved from slave in RX FIFO} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a9b5b4e72c33af4b4a7fc3ab0cdadde2e}{EF\_SPI\_enableRx}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md25}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+get\+IM$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md25}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a0cbec2da38446744274c64e9585e846c}{EF\_SPI\_getIM}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *mask}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+gets the value of the Interrupts Masking Register; which enable and disables interrupts The mask value is a 6-\/bit value, where each bit corresponds to a specific interrupt
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 TXF \+: Transmit FIFO is Full.
+\item bit 2 RXE \+: Receive FIFO is Empty.
+\item bit 3 RXF \+: Receive FIFO is Full.
+\item bit 4 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 5 RXA \+: Receive FIFO level is Above Threshold.
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily mask} The required mask value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md26}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+get\+MIS$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md26}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a8f3ae4eb3cca3c9892bf0fd2ea1af96e}{EF\_SPI\_getMIS}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *mask}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+gets the value of the Masked Interrupt Status Register; which shows the status of the interrupts after masking (ANDing) RIS by IM. The mask value is a 6-\/bit value, where each bit corresponds to a specific interrupt
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 TXF \+: Transmit FIFO is Full.
+\item bit 2 RXE \+: Receive FIFO is Empty.
+\item bit 3 RXF \+: Receive FIFO is Full.
+\item bit 4 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 5 RXA \+: Receive FIFO level is Above Threshold.
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily mask} The required mask value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md27}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+get\+RIS$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md27}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a83c5fa1a6e95392f2b3ab02661f40dec}{EF\_SPI\_getRIS}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *mask}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+gets the value of the Raw Interrupt Status Register; which shows the status of the interrupts The mask value is a 6-\/bit value, where each bit corresponds to a specific interrupt
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 TXF \+: Transmit FIFO is Full.
+\item bit 2 RXE \+: Receive FIFO is Empty.
+\item bit 3 RXF \+: Receive FIFO is Full.
+\item bit 4 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 5 RXA \+: Receive FIFO level is Above Threshold.
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily mask} The required mask value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md28}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+read\+Data$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md28}
+{\itshape reads a byte of data from the RXDATA register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a76b8a68e19fbf8c73de0f0c6a2f1ffa0}{EF\_SPI\_readData}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *data}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily data} The data read from the RXDATA register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md29}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+read\+Rx\+Fifo\+Empty$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md29}
+{\itshape reads the RX FIFO empty flag from the STATUS register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a143d8c3d4948fe4b3b673d4f7d37dc22}{EF\_SPI\_readRxFifoEmpty}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *RXfifo\_state}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily RXfifo\+\_\+state} The RX FIFO empty flag value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md30}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+read\+Tx\+Fifo\+Empty$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md30}
+{\itshape reads the TX FIFO empty flag from the STATUS register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a5ba73cb278ddca9c4e4d7e2de81d086c}{EF\_SPI\_readTxFifoEmpty}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *TXfifo\_state}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily TXfifo\+\_\+state} The TX FIFO empty flag value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md31}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+set\+Gclk\+Enable$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md31}
+{\itshape sets the GCLK enable bit in the SPI register to a certain value} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a825604b02b3136b2ae6b57cd74f7f885}{EF\_SPI\_setGclkEnable}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily value} The value of the GCLK enable bit
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md32}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+set\+ICR$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md32}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a1bd18073e3f75287527f0ee881546b2a}{EF\_SPI\_setICR}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ mask}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+sets the value of the Interrupt Clear Register; which clears the interrupts The mask value is a 6-\/bit value, where each bit corresponds to a specific interrupt
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 TXF \+: Transmit FIFO is Full.
+\item bit 2 RXE \+: Receive FIFO is Empty.
+\item bit 3 RXF \+: Receive FIFO is Full.
+\item bit 4 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 5 RXA \+: Receive FIFO level is Above Threshold.
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily mask} The required mask value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md33}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+set\+IM$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md33}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a475700f9498d9ab54b03d3e81ace1f0a}{EF\_SPI\_setIM}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ mask}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+sets the value of the Interrupts Masking Register; which enable and disables interrupts The mask value is a 6-\/bit value, where each bit corresponds to a specific interrupt
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 TXF \+: Transmit FIFO is Full.
+\item bit 2 RXE \+: Receive FIFO is Empty.
+\item bit 3 RXF \+: Receive FIFO is Full.
+\item bit 4 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 5 RXA \+: Receive FIFO level is Above Threshold.
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily mask} The required mask value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md34}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+wait\+Rx\+Fifo\+Not\+Empty$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md34}
+{\itshape waits for the RX FIFO to be not empty by polling the RX FIFO empty flag in the STATUS register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a07fa3d20aee584b19921035cd715b71b}{EF\_SPI\_waitRxFifoNotEmpty}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md35}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+wait\+Tx\+Fifo\+Empty$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md35}
+{\itshape waits for the TX FIFO to be empty by polling the TX FIFO empty flag in the STATUS register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a37d6919aa636f75a7ad383d5c03a6595}{EF\_SPI\_waitTxFifoEmpty}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md36}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+write\+Data$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md36}
+{\itshape writes a byte of data to the TXDATA register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a1e57164045e2dc6ba9f3ebffc30f5985}{EF\_SPI\_writeData}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ data}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily data} The data to be written to the TXDATA register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md37}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+write\+Phase$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md37}
+{\itshape sets the clock phase of the SPI in the CFG register to a certain value} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_a0391f44435674dff1569e37997485578}{EF\_SPI\_writePhase}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ phase}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily phase} The clock phase value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md38}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+SPI\+\_\+writepolarity$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md38}
+{\itshape sets the clock polarity of the SPI in the CFG register to a certain value} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___s_p_i_8c_af12037c75dc828ac46a94b871bce315f}{EF\_SPI\_writepolarity}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE\_PTR}}\ spi,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ polarity}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily spi} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of SPI registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the SPI registers.
+\item {\ttfamily polarity} The clock polarity value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code\hypertarget{md__r_e_a_d_m_e_autotoc_md39}{}\doxysection{File EF\+\_\+\+SPI\+\_\+regs.\+h}\label{md__r_e_a_d_m_e_autotoc_md39}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md40}{}\doxysection{Structures and Types}\label{md__r_e_a_d_m_e_autotoc_md40}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft typedef struct $\ast$$\ast$\textbackslash{}\+\_\+\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft typedef $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft struct   &$\ast$$\ast$\textbackslash{}\+\_\+\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+$\ast$$\ast$ ~\newline
+   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md41}{}\doxysection{Macros}\label{md__r_e_a_d_m_e_autotoc_md41}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+CPHA\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)1)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+CPHA\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x2)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+CPOL\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)0)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+CPOL\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x1)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+ENABLE\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)1)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+ENABLE\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x2)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+EN\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)2)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+EN\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x4)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+SS\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)0)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+SS\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x1)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+RXA\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ ((uint32\+\_\+t)0x20)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+RXE\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ ((uint32\+\_\+t)0x4)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+RXF\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ ((uint32\+\_\+t)0x8)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)0)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x1)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)0)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0xf)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)0)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0xf)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+A\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)5)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+A\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x20)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+E\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)2)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+E\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x4)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+F\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)3)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+F\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x8)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+B\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)4)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+B\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x10)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+E\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)0)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+E\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x1)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+F\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)1)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+STATUS\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+F\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x2)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TXB\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ ((uint32\+\_\+t)0x10)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TXE\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ ((uint32\+\_\+t)0x1)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TXF\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ ((uint32\+\_\+t)0x2)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)0)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0x1)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)0)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0xf)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ ((uint32\+\_\+t)0)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+SPI\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ ((uint32\+\_\+t)0xf)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+IO\textbackslash{}\+\_\+\+TYPES$\ast$$\ast$ ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ volatile const uint32\+\_\+t~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+\+RW$\ast$$\ast$ volatile uint32\+\_\+t~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ volatile uint32\+\_\+t~\newline
+   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md42}{}\doxysection{Structures and Types Documentation}\label{md__r_e_a_d_m_e_autotoc_md42}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md43}{}\doxysubsection{typedef $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+TYPE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md43}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{\_EF\_SPI\_TYPE\_}}\ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE}};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md44}{}\doxysubsection{typedef $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md44}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE}}*\ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\_SPI\_TYPE\_PTR}};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md45}{}\doxysubsection{struct $<$tt$>$\+\_\+\+EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md45}
+Variables\+:
+
+
+\begin{DoxyItemize}
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ CFG ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ CTRL ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ GCLK ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ IC ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+\+RW$\ast$$\ast$ IM ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ MIS ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ PR ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ RIS ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ RXDATA ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ RX\+\_\+\+FIFO\+\_\+\+FLUSH ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ RX\+\_\+\+FIFO\+\_\+\+LEVEL ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ RX\+\_\+\+FIFO\+\_\+\+THRESHOLD ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ STATUS ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ TXDATA ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ TX\+\_\+\+FIFO\+\_\+\+FLUSH ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ TX\+\_\+\+FIFO\+\_\+\+LEVEL ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ TX\+\_\+\+FIFO\+\_\+\+THRESHOLD ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ reserved\+\_\+0 ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ reserved\+\_\+1 ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ reserved\+\_\+2 ~\newline
+
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md46}{}\doxysection{Macros Documentation}\label{md__r_e_a_d_m_e_autotoc_md46}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md47}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+CFG\+\_\+\+REG\+\_\+\+CPHA\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md47}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_CFG\_REG\_CPHA\_BIT\ ((uint32\_t)1)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md48}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+CFG\+\_\+\+REG\+\_\+\+CPHA\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md48}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_CFG\_REG\_CPHA\_MASK\ ((uint32\_t)0x2)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md49}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+CFG\+\_\+\+REG\+\_\+\+CPOL\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md49}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_CFG\_REG\_CPOL\_BIT\ ((uint32\_t)0)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md50}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+CFG\+\_\+\+REG\+\_\+\+CPOL\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md50}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_CFG\_REG\_CPOL\_MASK\ ((uint32\_t)0x1)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md51}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+ENABLE\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md51}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_ENABLE\_BIT\ ((uint32\_t)1)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md52}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+ENABLE\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md52}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_ENABLE\_MASK\ ((uint32\_t)0x2)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md53}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RX\+\_\+\+EN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md53}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_RX\_EN\_BIT\ ((uint32\_t)2)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md54}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RX\+\_\+\+EN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md54}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_RX\_EN\_MASK\ ((uint32\_t)0x4)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md55}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+SS\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md55}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_SS\_BIT\ ((uint32\_t)0)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md56}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+SS\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md56}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_SS\_MASK\ ((uint32\_t)0x1)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md57}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+RXA\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md57}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_RXA\_FLAG\ ((uint32\_t)0x20)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md58}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+RXE\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md58}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_RXE\_FLAG\ ((uint32\_t)0x4)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md59}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+RXF\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md59}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_RXF\_FLAG\ ((uint32\_t)0x8)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md60}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md60}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT\ ((uint32\_t)0)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md61}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md61}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK\ ((uint32\_t)0x1)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md62}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md62}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT\ ((uint32\_t)0)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md63}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md63}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK\ ((uint32\_t)0xf)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md64}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md64}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT\ ((uint32\_t)0)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md65}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md65}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK\ ((uint32\_t)0xf)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md66}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+RX\+\_\+\+A\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md66}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_A\_BIT\ ((uint32\_t)5)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md67}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+RX\+\_\+\+A\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md67}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_A\_MASK\ ((uint32\_t)0x20)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md68}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+RX\+\_\+\+E\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md68}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_E\_BIT\ ((uint32\_t)2)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md69}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+RX\+\_\+\+E\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md69}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_E\_MASK\ ((uint32\_t)0x4)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md70}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+RX\+\_\+\+F\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md70}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_F\_BIT\ ((uint32\_t)3)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md71}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+RX\+\_\+\+F\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md71}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_F\_MASK\ ((uint32\_t)0x8)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md72}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+TX\+\_\+\+B\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md72}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_B\_BIT\ ((uint32\_t)4)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md73}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+TX\+\_\+\+B\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md73}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_B\_MASK\ ((uint32\_t)0x10)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md74}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+TX\+\_\+\+E\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md74}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_E\_BIT\ ((uint32\_t)0)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md75}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+TX\+\_\+\+E\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md75}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_E\_MASK\ ((uint32\_t)0x1)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md76}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+TX\+\_\+\+F\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md76}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_F\_BIT\ ((uint32\_t)1)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md77}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+TX\+\_\+\+F\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md77}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_F\_MASK\ ((uint32\_t)0x2)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md78}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+TXB\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md78}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_TXB\_FLAG\ ((uint32\_t)0x10)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md79}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+TXE\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md79}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_TXE\_FLAG\ ((uint32\_t)0x1)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md80}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+TXF\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md80}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_TXF\_FLAG\ ((uint32\_t)0x2)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md81}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md81}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT\ ((uint32\_t)0)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md82}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md82}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK\ ((uint32\_t)0x1)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md83}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md83}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT\ ((uint32\_t)0)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md84}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md84}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK\ ((uint32\_t)0xf)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md85}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md85}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT\ ((uint32\_t)0)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md86}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+SPI\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md86}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK\ ((uint32\_t)0xf)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md87}{}\doxysubsection{define $<$tt$>$\+IO\+\_\+\+TYPES$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md87}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ IO\_TYPES\ }}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md88}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+R$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md88}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ \_\_R\ volatile\ const\ uint32\_t}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md89}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+RW$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md89}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ \_\_RW\ volatile\ \ \ \ \ \ \ uint32\_t}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md90}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+W$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md90}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ \_\_W\ volatile\ \ \ \ \ \ \ uint32\_t}}
+
+\end{DoxyCode}
+ 
