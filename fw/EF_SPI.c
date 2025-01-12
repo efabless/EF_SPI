@@ -280,18 +280,78 @@ EF_DRIVER_STATUS EF_SPI_deassertCs(EF_SPI_TYPE_PTR spi){
 }
 
 
-EF_DRIVER_STATUS EF_SPI_setInterruptMask(EF_SPI_TYPE_PTR spi, uint32_t mask){
+EF_DRIVER_STATUS EF_SPI_setIM(EF_SPI_TYPE_PTR spi, uint32_t mask){
 
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
 
     if (spi == NULL){
         status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
     }else{
-        // bit 0: Done
+        
         spi->IM = mask;
     }
     return status;
 }
+
+EF_DRIVER_STATUS EF_SPI_getIM(EF_SPI_TYPE_PTR spi, uint32_t *mask){
+
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else if (mask == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if mask is NULL
+                                                // i.e. there is no memory location to store the value
+    }else{
+        *mask = spi->IM;
+    }
+    return status;
+}
+
+
+EF_DRIVER_STATUS EF_SPI_getRIS(EF_SPI_TYPE_PTR spi, uint32_t *mask){
+
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else if (mask == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if mask is NULL
+                                                // i.e. there is no memory location to store the value
+    }else{
+        *mask = spi->STATUS;
+    }
+    return status;
+}
+
+EF_DRIVER_STATUS EF_SPI_getMIS(EF_SPI_TYPE_PTR spi, uint32_t *mask){
+
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else if (mask == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if mask is NULL
+                                                // i.e. there is no memory location to store the value
+    }else{
+        *mask = spi->STATUS & spi->IM;
+    }
+    return status;
+}
+
+
+EF_DRIVER_STATUS EF_SPI_setICR(EF_SPI_TYPE_PTR spi, uint32_t mask){
+
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (spi == NULL){
+        status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if spi is NULL
+    }else {
+        spi->IC = mask;                       // Set the IC register with the required mask value
+    }
+    return status;
+}
+
 
 
 /******************************************************************************
