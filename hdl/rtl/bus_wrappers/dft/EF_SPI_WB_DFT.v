@@ -76,30 +76,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-module EF_SPI_AHBL #(
+module EF_SPI_WB #(
     parameter CDW = 8,
     FAW = 4
 ) (
@@ -107,16 +84,17 @@ module EF_SPI_AHBL #(
 
 
 
-    input  wire         HCLK,
-    input  wire         HRESETn,
-    input  wire         HWRITE,
-    input  wire [ 31:0] HWDATA,
-    input  wire [ 31:0] HADDR,
-    input  wire [  1:0] HTRANS,
-    input  wire         HSEL,
-    input  wire         HREADY,
-    output wire         HREADYOUT,
-    output wire [ 31:0] HRDATA,
+    input  wire         sc_testmode,
+    input  wire         clk_i,
+    input  wire         rst_i,
+    input  wire [ 31:0] adr_i,
+    input  wire [ 31:0] dat_i,
+    output wire [ 31:0] dat_o,
+    input  wire [  3:0] sel_i,
+    input  wire         cyc_i,
+    input  wire         stb_i,
+    output reg          ack_o,
+    input  wire         we_i,
     output wire         IRQ,
     input  wire [1-1:0] miso,
     output wire [1-1:0] mosi,
@@ -144,91 +122,76 @@ module EF_SPI_AHBL #(
   reg [0:0] GCLK_REG;
   wire clk_g;
 
-  wire clk_gated_en = GCLK_REG[0];
+  wire clk_gated_en = sc_testmode ? 1'b1 : GCLK_REG[0];
   ef_util_gating_cell clk_gate_cell (
 
 
 
       // USE_POWER_PINS
-      .clk(HCLK),
+      .clk(clk_i),
       .clk_en(clk_gated_en),
       .clk_o(clk_g)
   );
 
-  wire clk = clk_g;
-  wire rst_n = HRESETn;
+  wire           clk = clk_g;
+  wire           rst_n = (~rst_i);
 
 
-  reg last_HSEL, last_HWRITE;
-  reg [31:0] last_HADDR;
-  reg [ 1:0] last_HTRANS;
-  always @(posedge HCLK or negedge HRESETn) begin
-    if (~HRESETn) begin
-      last_HSEL   <= 1'b0;
-      last_HADDR  <= 1'b0;
-      last_HWRITE <= 1'b0;
-      last_HTRANS <= 1'b0;
-    end else if (HREADY) begin
-      last_HSEL   <= HSEL;
-      last_HADDR  <= HADDR;
-      last_HWRITE <= HWRITE;
-      last_HTRANS <= HTRANS;
-    end
-  end
-  wire    ahbl_valid = last_HSEL & last_HTRANS[1];
-  wire ahbl_we = last_HWRITE & ahbl_valid;
-  wire ahbl_re = ~last_HWRITE & ahbl_valid;
+  wire           wb_valid = cyc_i & stb_i;
+  wire           wb_we = we_i & wb_valid;
+  wire           wb_re = ~we_i & wb_valid;
+  wire [    3:0] wb_byte_sel = sel_i & {4{wb_we}};
 
-  wire [1-1:0] CPOL;
-  wire [1-1:0] CPHA;
+  wire [  1-1:0] CPOL;
+  wire [  1-1:0] CPHA;
   wire [CDW-1:0] clk_divider;
-  wire [1-1:0] wr;
-  wire [1-1:0] rd;
-  wire [8-1:0] datai;
-  wire [8-1:0] datao;
-  wire [1-1:0] rx_en;
-  wire [1-1:0] rx_flush;
+  wire [  1-1:0] wr;
+  wire [  1-1:0] rd;
+  wire [  8-1:0] datai;
+  wire [  8-1:0] datao;
+  wire [  1-1:0] rx_en;
+  wire [  1-1:0] rx_flush;
   wire [FAW-1:0] rx_threshold;
-  wire [1-1:0] rx_empty;
-  wire [1-1:0] rx_full;
-  wire [1-1:0] rx_level_above;
+  wire [  1-1:0] rx_empty;
+  wire [  1-1:0] rx_full;
+  wire [  1-1:0] rx_level_above;
   wire [FAW-1:0] rx_level;
-  wire [1-1:0] tx_flush;
+  wire [  1-1:0] tx_flush;
   wire [FAW-1:0] tx_threshold;
-  wire [1-1:0] tx_empty;
-  wire [1-1:0] tx_full;
-  wire [1-1:0] tx_level_below;
+  wire [  1-1:0] tx_empty;
+  wire [  1-1:0] tx_full;
+  wire [  1-1:0] tx_level_below;
   wire [FAW-1:0] tx_level;
-  wire [1-1:0] ss;
-  wire [1-1:0] enable;
-  wire [1-1:0] done;
-  wire [1-1:0] busy;
+  wire [  1-1:0] ss;
+  wire [  1-1:0] enable;
+  wire [  1-1:0] done;
+  wire [  1-1:0] busy;
 
   // Register Definitions
-  wire [8-1:0] RXDATA_WIRE;
+  wire [  8-1:0] RXDATA_WIRE;
 
-  wire [8-1:0] TXDATA_WIRE;
+  wire [  8-1:0] TXDATA_WIRE;
 
-  reg [1:0] CFG_REG;
+  reg  [    1:0] CFG_REG;
   assign CPOL = CFG_REG[0 : 0];
   assign CPHA = CFG_REG[1 : 1];
-  always @(posedge HCLK or negedge HRESETn)
-    if (~HRESETn) CFG_REG <= 0;
-    else if (ahbl_we & (last_HADDR[16-1:0] == CFG_REG_OFFSET)) CFG_REG <= HWDATA[2-1:0];
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) CFG_REG <= 0;
+    else if (wb_we & (adr_i[16-1:0] == CFG_REG_OFFSET)) CFG_REG <= dat_i[2-1:0];
 
   reg [2:0] CTRL_REG;
   assign ss = CTRL_REG[0 : 0];
   assign enable = CTRL_REG[1 : 1];
   assign rx_en = CTRL_REG[2 : 2];
-  always @(posedge HCLK or negedge HRESETn)
-    if (~HRESETn) CTRL_REG <= 0;
-    else if (ahbl_we & (last_HADDR[16-1:0] == CTRL_REG_OFFSET)) CTRL_REG <= HWDATA[3-1:0];
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) CTRL_REG <= 0;
+    else if (wb_we & (adr_i[16-1:0] == CTRL_REG_OFFSET)) CTRL_REG <= dat_i[3-1:0];
 
   reg [CDW-1:0] PR_REG;
   assign clk_divider = PR_REG;
-  always @(posedge HCLK or negedge HRESETn)
-    if (~HRESETn) PR_REG <= 'h2;
-    else if (ahbl_we & (last_HADDR[16-1:0] == PR_REG_OFFSET)) PR_REG <= HWDATA[CDW-1:0];
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) PR_REG <= 'h2;
+    else if (wb_we & (adr_i[16-1:0] == PR_REG_OFFSET)) PR_REG <= dat_i[CDW-1:0];
 
   wire [8-1:0] STATUS_WIRE;
   assign STATUS_WIRE[0 : 0] = tx_empty;
@@ -245,17 +208,16 @@ module EF_SPI_AHBL #(
 
   reg [FAW-1:0] RX_FIFO_THRESHOLD_REG;
   assign rx_threshold = RX_FIFO_THRESHOLD_REG[(FAW-1) : 0];
-  always @(posedge HCLK or negedge HRESETn)
-    if (~HRESETn) RX_FIFO_THRESHOLD_REG <= 0;
-    else if (ahbl_we & (last_HADDR[16-1:0] == RX_FIFO_THRESHOLD_REG_OFFSET))
-      RX_FIFO_THRESHOLD_REG <= HWDATA[FAW-1:0];
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) RX_FIFO_THRESHOLD_REG <= 0;
+    else if (wb_we & (adr_i[16-1:0] == RX_FIFO_THRESHOLD_REG_OFFSET))
+      RX_FIFO_THRESHOLD_REG <= dat_i[FAW-1:0];
 
   reg [0:0] RX_FIFO_FLUSH_REG;
   assign rx_flush = RX_FIFO_FLUSH_REG[0 : 0];
-  always @(posedge HCLK or negedge HRESETn)
-    if (~HRESETn) RX_FIFO_FLUSH_REG <= 0;
-    else if (ahbl_we & (last_HADDR[16-1:0] == RX_FIFO_FLUSH_REG_OFFSET))
-      RX_FIFO_FLUSH_REG <= HWDATA[1-1:0];
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) RX_FIFO_FLUSH_REG <= 0;
+    else if (wb_we & (adr_i[16-1:0] == RX_FIFO_FLUSH_REG_OFFSET)) RX_FIFO_FLUSH_REG <= dat_i[1-1:0];
     else RX_FIFO_FLUSH_REG <= 1'h0 & RX_FIFO_FLUSH_REG;
 
   wire [FAW-1:0] TX_FIFO_LEVEL_WIRE;
@@ -263,35 +225,34 @@ module EF_SPI_AHBL #(
 
   reg [FAW-1:0] TX_FIFO_THRESHOLD_REG;
   assign tx_threshold = TX_FIFO_THRESHOLD_REG[(FAW-1) : 0];
-  always @(posedge HCLK or negedge HRESETn)
-    if (~HRESETn) TX_FIFO_THRESHOLD_REG <= 0;
-    else if (ahbl_we & (last_HADDR[16-1:0] == TX_FIFO_THRESHOLD_REG_OFFSET))
-      TX_FIFO_THRESHOLD_REG <= HWDATA[FAW-1:0];
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) TX_FIFO_THRESHOLD_REG <= 0;
+    else if (wb_we & (adr_i[16-1:0] == TX_FIFO_THRESHOLD_REG_OFFSET))
+      TX_FIFO_THRESHOLD_REG <= dat_i[FAW-1:0];
 
   reg [0:0] TX_FIFO_FLUSH_REG;
   assign tx_flush = TX_FIFO_FLUSH_REG[0 : 0];
-  always @(posedge HCLK or negedge HRESETn)
-    if (~HRESETn) TX_FIFO_FLUSH_REG <= 0;
-    else if (ahbl_we & (last_HADDR[16-1:0] == TX_FIFO_FLUSH_REG_OFFSET))
-      TX_FIFO_FLUSH_REG <= HWDATA[1-1:0];
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) TX_FIFO_FLUSH_REG <= 0;
+    else if (wb_we & (adr_i[16-1:0] == TX_FIFO_FLUSH_REG_OFFSET)) TX_FIFO_FLUSH_REG <= dat_i[1-1:0];
     else TX_FIFO_FLUSH_REG <= 1'h0 & TX_FIFO_FLUSH_REG;
 
   localparam GCLK_REG_OFFSET = 16'hFF10;
-  always @(posedge HCLK or negedge HRESETn)
-    if (~HRESETn) GCLK_REG <= 0;
-    else if (ahbl_we & (last_HADDR[16-1:0] == GCLK_REG_OFFSET)) GCLK_REG <= HWDATA[1-1:0];
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) GCLK_REG <= 0;
+    else if (wb_we & (adr_i[16-1:0] == GCLK_REG_OFFSET)) GCLK_REG <= dat_i[1-1:0];
 
   reg  [  5:0] IM_REG;
   reg  [  5:0] IC_REG;
   reg  [  5:0] RIS_REG;
 
   wire [6-1:0] MIS_REG = RIS_REG & IM_REG;
-  always @(posedge HCLK or negedge HRESETn)
-    if (~HRESETn) IM_REG <= 0;
-    else if (ahbl_we & (last_HADDR[16-1:0] == IM_REG_OFFSET)) IM_REG <= HWDATA[6-1:0];
-  always @(posedge HCLK or negedge HRESETn)
-    if (~HRESETn) IC_REG <= 6'b0;
-    else if (ahbl_we & (last_HADDR[16-1:0] == IC_REG_OFFSET)) IC_REG <= HWDATA[6-1:0];
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) IM_REG <= 0;
+    else if (wb_we & (adr_i[16-1:0] == IM_REG_OFFSET)) IM_REG <= dat_i[6-1:0];
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) IC_REG <= 6'b0;
+    else if (wb_we & (adr_i[16-1:0] == IC_REG_OFFSET)) IC_REG <= dat_i[6-1:0];
     else IC_REG <= 6'd0;
 
   wire [0:0] TXE = tx_empty;
@@ -303,8 +264,8 @@ module EF_SPI_AHBL #(
 
 
   integer _i_;
-  always @(posedge HCLK or negedge HRESETn)
-    if (~HRESETn) RIS_REG <= 0;
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) RIS_REG <= 0;
     else begin
       for (_i_ = 0; _i_ < 1; _i_ = _i_ + 1) begin
         if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0;
@@ -370,29 +331,31 @@ module EF_SPI_AHBL #(
       .sclk(sclk)
   );
 
-  assign	HRDATA = 
-			(last_HADDR[16-1:0] == RXDATA_REG_OFFSET)	? RXDATA_WIRE :
-			(last_HADDR[16-1:0] == TXDATA_REG_OFFSET)	? TXDATA_WIRE :
-			(last_HADDR[16-1:0] == CFG_REG_OFFSET)	? CFG_REG :
-			(last_HADDR[16-1:0] == CTRL_REG_OFFSET)	? CTRL_REG :
-			(last_HADDR[16-1:0] == PR_REG_OFFSET)	? PR_REG :
-			(last_HADDR[16-1:0] == STATUS_REG_OFFSET)	? STATUS_WIRE :
-			(last_HADDR[16-1:0] == RX_FIFO_LEVEL_REG_OFFSET)	? RX_FIFO_LEVEL_WIRE :
-			(last_HADDR[16-1:0] == RX_FIFO_THRESHOLD_REG_OFFSET)	? RX_FIFO_THRESHOLD_REG :
-			(last_HADDR[16-1:0] == RX_FIFO_FLUSH_REG_OFFSET)	? RX_FIFO_FLUSH_REG :
-			(last_HADDR[16-1:0] == TX_FIFO_LEVEL_REG_OFFSET)	? TX_FIFO_LEVEL_WIRE :
-			(last_HADDR[16-1:0] == TX_FIFO_THRESHOLD_REG_OFFSET)	? TX_FIFO_THRESHOLD_REG :
-			(last_HADDR[16-1:0] == TX_FIFO_FLUSH_REG_OFFSET)	? TX_FIFO_FLUSH_REG :
-			(last_HADDR[16-1:0] == IM_REG_OFFSET)	? IM_REG :
-			(last_HADDR[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
-			(last_HADDR[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
-			(last_HADDR[16-1:0] == GCLK_REG_OFFSET)	? GCLK_REG :
+  assign	dat_o = 
+			(adr_i[16-1:0] == RXDATA_REG_OFFSET)	? RXDATA_WIRE :
+			(adr_i[16-1:0] == TXDATA_REG_OFFSET)	? TXDATA_WIRE :
+			(adr_i[16-1:0] == CFG_REG_OFFSET)	? CFG_REG :
+			(adr_i[16-1:0] == CTRL_REG_OFFSET)	? CTRL_REG :
+			(adr_i[16-1:0] == PR_REG_OFFSET)	? PR_REG :
+			(adr_i[16-1:0] == STATUS_REG_OFFSET)	? STATUS_WIRE :
+			(adr_i[16-1:0] == RX_FIFO_LEVEL_REG_OFFSET)	? RX_FIFO_LEVEL_WIRE :
+			(adr_i[16-1:0] == RX_FIFO_THRESHOLD_REG_OFFSET)	? RX_FIFO_THRESHOLD_REG :
+			(adr_i[16-1:0] == RX_FIFO_FLUSH_REG_OFFSET)	? RX_FIFO_FLUSH_REG :
+			(adr_i[16-1:0] == TX_FIFO_LEVEL_REG_OFFSET)	? TX_FIFO_LEVEL_WIRE :
+			(adr_i[16-1:0] == TX_FIFO_THRESHOLD_REG_OFFSET)	? TX_FIFO_THRESHOLD_REG :
+			(adr_i[16-1:0] == TX_FIFO_FLUSH_REG_OFFSET)	? TX_FIFO_FLUSH_REG :
+			(adr_i[16-1:0] == IM_REG_OFFSET)	? IM_REG :
+			(adr_i[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
+			(adr_i[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
+			(adr_i[16-1:0] == IC_REG_OFFSET)	? IC_REG :
 			32'hDEADBEEF;
 
-  assign HREADYOUT = 1'b1;
-
+  always @(posedge clk_i or posedge rst_i)
+    if (rst_i) ack_o <= 1'b0;
+    else if (wb_valid & ~ack_o) ack_o <= 1'b1;
+    else ack_o <= 1'b0;
   assign RXDATA_WIRE = datao;
-  assign rd = (ahbl_re & (last_HADDR[16-1:0] == RXDATA_REG_OFFSET));
-  assign datai = HWDATA;
-  assign wr = (ahbl_we & (last_HADDR[16-1:0] == TXDATA_REG_OFFSET));
+  assign rd = ack_o & (wb_re & (adr_i[16-1:0] == RXDATA_REG_OFFSET));
+  assign datai = dat_i;
+  assign wr = ack_o & (wb_we & (adr_i[16-1:0] == TXDATA_REG_OFFSET));
 endmodule
