@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct___e_f___s_p_i___t_y_p_e__" kind="struct" language="C++" prot="public">
+    <compoundname>_EF_SPI_TYPE_</compoundname>
+    <includes refid="_e_f___s_p_i__regs_8h" local="no">EF_SPI_regs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1a0262003dd1dff3a1dcf49b0c08c40ba9" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_SPI_TYPE_::RXDATA</definition>
+        <argsstring></argsstring>
+        <name>RXDATA</name>
+        <qualifiedname>_EF_SPI_TYPE_::RXDATA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="86" column="5" bodyfile="EF_SPI_regs.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1aac1ffd4b085fe901755a2ad1b5f41528" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_SPI_TYPE_::TXDATA</definition>
+        <argsstring></argsstring>
+        <name>TXDATA</name>
+        <qualifiedname>_EF_SPI_TYPE_::TXDATA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="87" column="5" bodyfile="EF_SPI_regs.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1a31964268b25903ca7a37be5ba5c9b854" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_SPI_TYPE_::CFG</definition>
+        <argsstring></argsstring>
+        <name>CFG</name>
+        <qualifiedname>_EF_SPI_TYPE_::CFG</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="88" column="5" bodyfile="EF_SPI_regs.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1ae89353e226b09310f76d5a3de109088f" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_SPI_TYPE_::CTRL</definition>
+        <argsstring></argsstring>
+        <name>CTRL</name>
+        <qualifiedname>_EF_SPI_TYPE_::CTRL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="89" column="5" bodyfile="EF_SPI_regs.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1afa42966f653fd86a90d8343bd36634c2" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_SPI_TYPE_::PR</definition>
+        <argsstring></argsstring>
+        <name>PR</name>
+        <qualifiedname>_EF_SPI_TYPE_::PR</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="90" column="5" bodyfile="EF_SPI_regs.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1adce0731ad3a0f1e0903d2c28a98aac98" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_SPI_TYPE_::STATUS</definition>
+        <argsstring></argsstring>
+        <name>STATUS</name>
+        <qualifiedname>_EF_SPI_TYPE_::STATUS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="91" column="5" bodyfile="EF_SPI_regs.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1ad3484cafc190c0d0df83f0a945a99699" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_SPI_TYPE_::reserved_0[16250]</definition>
+        <argsstring>[16250]</argsstring>
+        <name>reserved_0</name>
+        <qualifiedname>_EF_SPI_TYPE_::reserved_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="92" column="5" bodyfile="EF_SPI_regs.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1acdaa1e9c52f9af8f44ff4a8cdaabce9c" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_SPI_TYPE_::RX_FIFO_LEVEL</definition>
+        <argsstring></argsstring>
+        <name>RX_FIFO_LEVEL</name>
+        <qualifiedname>_EF_SPI_TYPE_::RX_FIFO_LEVEL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="93" column="5" bodyfile="EF_SPI_regs.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1ab94b3f3550b7dabb3032012d0628ef30" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_SPI_TYPE_::RX_FIFO_THRESHOLD</definition>
+        <argsstring></argsstring>
+        <name>RX_FIFO_THRESHOLD</name>
+        <qualifiedname>_EF_SPI_TYPE_::RX_FIFO_THRESHOLD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="94" column="5" bodyfile="EF_SPI_regs.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1ad0e9f953a48f16f8d2297993e2763f34" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_SPI_TYPE_::RX_FIFO_FLUSH</definition>
+        <argsstring></argsstring>
+        <name>RX_FIFO_FLUSH</name>
+        <qualifiedname>_EF_SPI_TYPE_::RX_FIFO_FLUSH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="95" column="5" bodyfile="EF_SPI_regs.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1ace31e2375b8ba37742f0d5e224a6203a" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_SPI_TYPE_::reserved_1[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>reserved_1</name>
+        <qualifiedname>_EF_SPI_TYPE_::reserved_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="96" column="5" bodyfile="EF_SPI_regs.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1a47066d2e4989448fefa0668b0dcf7dc0" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_SPI_TYPE_::TX_FIFO_LEVEL</definition>
+        <argsstring></argsstring>
+        <name>TX_FIFO_LEVEL</name>
+        <qualifiedname>_EF_SPI_TYPE_::TX_FIFO_LEVEL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="97" column="5" bodyfile="EF_SPI_regs.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1a8db011b9afb9e6e91ec787b854299637" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_SPI_TYPE_::TX_FIFO_THRESHOLD</definition>
+        <argsstring></argsstring>
+        <name>TX_FIFO_THRESHOLD</name>
+        <qualifiedname>_EF_SPI_TYPE_::TX_FIFO_THRESHOLD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="98" column="5" bodyfile="EF_SPI_regs.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1a0d7abd6e9e3b681d50fe3929df9026e0" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_SPI_TYPE_::TX_FIFO_FLUSH</definition>
+        <argsstring></argsstring>
+        <name>TX_FIFO_FLUSH</name>
+        <qualifiedname>_EF_SPI_TYPE_::TX_FIFO_FLUSH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="99" column="5" bodyfile="EF_SPI_regs.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1a2f46338a1b1524a35b3d897e3a952eea" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_SPI_TYPE_::reserved_2[57]</definition>
+        <argsstring>[57]</argsstring>
+        <name>reserved_2</name>
+        <qualifiedname>_EF_SPI_TYPE_::reserved_2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="100" column="5" bodyfile="EF_SPI_regs.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1a5b8438e77bc688c9be746edd82a41a33" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1a81f369079976a46554fd9798ab035697" kindref="member">__RW</ref></type>
+        <definition>__RW _EF_SPI_TYPE_::IM</definition>
+        <argsstring></argsstring>
+        <name>IM</name>
+        <qualifiedname>_EF_SPI_TYPE_::IM</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="101" column="5" bodyfile="EF_SPI_regs.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1abb579ebf283e3ea70d567ea17ca7fc25" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_SPI_TYPE_::MIS</definition>
+        <argsstring></argsstring>
+        <name>MIS</name>
+        <qualifiedname>_EF_SPI_TYPE_::MIS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="102" column="5" bodyfile="EF_SPI_regs.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1a939c9eabb0a5f81f07549a6328fd9941" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_SPI_TYPE_::RIS</definition>
+        <argsstring></argsstring>
+        <name>RIS</name>
+        <qualifiedname>_EF_SPI_TYPE_::RIS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="103" column="5" bodyfile="EF_SPI_regs.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1aed0d63b563874f4b6c1b4b32dbe10140" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_SPI_TYPE_::IC</definition>
+        <argsstring></argsstring>
+        <name>IC</name>
+        <qualifiedname>_EF_SPI_TYPE_::IC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="104" column="5" bodyfile="EF_SPI_regs.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___s_p_i___t_y_p_e___1a37453b637f735bea892bdba6031a4abc" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___s_p_i__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_SPI_TYPE_::GCLK</definition>
+        <argsstring></argsstring>
+        <name>GCLK</name>
+        <qualifiedname>_EF_SPI_TYPE_::GCLK</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI_regs.h" line="105" column="5" bodyfile="EF_SPI_regs.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="EF_SPI_regs.h" line="85" column="1" bodyfile="EF_SPI_regs.h" bodystart="85" bodyend="106"/>
+    <listofallmembers>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1a31964268b25903ca7a37be5ba5c9b854" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>CFG</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1ae89353e226b09310f76d5a3de109088f" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>CTRL</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1a37453b637f735bea892bdba6031a4abc" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>GCLK</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1aed0d63b563874f4b6c1b4b32dbe10140" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>IC</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1a5b8438e77bc688c9be746edd82a41a33" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>IM</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1abb579ebf283e3ea70d567ea17ca7fc25" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>MIS</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1afa42966f653fd86a90d8343bd36634c2" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>PR</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1ad3484cafc190c0d0df83f0a945a99699" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>reserved_0</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1ace31e2375b8ba37742f0d5e224a6203a" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>reserved_1</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1a2f46338a1b1524a35b3d897e3a952eea" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>reserved_2</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1a939c9eabb0a5f81f07549a6328fd9941" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>RIS</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1ad0e9f953a48f16f8d2297993e2763f34" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>RX_FIFO_FLUSH</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1acdaa1e9c52f9af8f44ff4a8cdaabce9c" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>RX_FIFO_LEVEL</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1ab94b3f3550b7dabb3032012d0628ef30" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>RX_FIFO_THRESHOLD</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1a0262003dd1dff3a1dcf49b0c08c40ba9" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>RXDATA</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1adce0731ad3a0f1e0903d2c28a98aac98" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>STATUS</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1a0d7abd6e9e3b681d50fe3929df9026e0" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>TX_FIFO_FLUSH</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1a47066d2e4989448fefa0668b0dcf7dc0" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>TX_FIFO_LEVEL</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1a8db011b9afb9e6e91ec787b854299637" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>TX_FIFO_THRESHOLD</name></member>
+      <member refid="struct___e_f___s_p_i___t_y_p_e___1aac1ffd4b085fe901755a2ad1b5f41528" prot="public" virt="non-virtual"><scope>_EF_SPI_TYPE_</scope><name>TXDATA</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

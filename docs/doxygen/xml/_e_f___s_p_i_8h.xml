@@ -1,0 +1,1005 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_e_f___s_p_i_8h" kind="file" language="C++">
+    <compoundname>EF_SPI.h</compoundname>
+    <includes refid="_e_f___s_p_i__regs_8h" local="yes">EF_SPI_regs.h</includes>
+    <includes refid="_e_f___driver___common_8h" local="yes">EF_Driver_Common.h</includes>
+    <includedby refid="_e_f___s_p_i_8c" local="yes">EF_SPI.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>EF_Driver_Common.h</label>
+        <link refid="_e_f___driver___common_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>EF_SPI.h</label>
+        <link refid="_e_f___s_p_i_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>EF_SPI_regs.h</label>
+        <link refid="_e_f___s_p_i__regs_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>EF_SPI.c</label>
+        <link refid="_e_f___s_p_i_8c"/>
+      </node>
+      <node id="1">
+        <label>EF_SPI.h</label>
+        <link refid="_e_f___s_p_i_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a825604b02b3136b2ae6b57cd74f7f885" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_setGclkEnable</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t value)</argsstring>
+        <name>EF_SPI_setGclkEnable</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>sets the GCLK enable bit in the SPI register to a certain value </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the GCLK enable bit</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="53" column="18" bodyfile="EF_SPI.c" bodystart="58" bodyend="71" declfile="EF_SPI.h" declline="53" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a1e57164045e2dc6ba9f3ebffc30f5985" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_writeData</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t data)</argsstring>
+        <name>EF_SPI_writeData</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>writes a byte of data to the TXDATA register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to be written to the TXDATA register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="62" column="18" bodyfile="EF_SPI.c" bodystart="73" bodyend="85" declfile="EF_SPI.h" declline="62" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a76b8a68e19fbf8c73de0f0c6a2f1ffa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_readData</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t *data)</argsstring>
+        <name>EF_SPI_readData</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>reads a byte of data from the RXDATA register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data read from the RXDATA register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="71" column="18" bodyfile="EF_SPI.c" bodystart="87" bodyend="100" declfile="EF_SPI.h" declline="71" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1af12037c75dc828ac46a94b871bce315f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_writepolarity</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, bool polarity)</argsstring>
+        <name>EF_SPI_writepolarity</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>polarity</declname>
+        </param>
+        <briefdescription>
+<para>sets the clock polarity of the SPI in the CFG register to a certain value </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">polarity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The clock polarity value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="80" column="18" bodyfile="EF_SPI.c" bodystart="102" bodyend="116" declfile="EF_SPI.h" declline="80" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a0391f44435674dff1569e37997485578" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_writePhase</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, bool phase)</argsstring>
+        <name>EF_SPI_writePhase</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>phase</declname>
+        </param>
+        <briefdescription>
+<para>sets the clock phase of the SPI in the CFG register to a certain value </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">phase</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The clock phase value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="89" column="18" bodyfile="EF_SPI.c" bodystart="118" bodyend="133" declfile="EF_SPI.h" declline="89" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a5ba73cb278ddca9c4e4d7e2de81d086c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_readTxFifoEmpty</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state)</argsstring>
+        <name>EF_SPI_readTxFifoEmpty</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>TXfifo_state</declname>
+        </param>
+        <briefdescription>
+<para>reads the TX FIFO empty flag from the STATUS register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">TXfifo_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The TX FIFO empty flag value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="98" column="18" bodyfile="EF_SPI.c" bodystart="136" bodyend="150" declfile="EF_SPI.h" declline="98" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a143d8c3d4948fe4b3b673d4f7d37dc22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_readRxFifoEmpty</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state)</argsstring>
+        <name>EF_SPI_readRxFifoEmpty</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>RXfifo_state</declname>
+        </param>
+        <briefdescription>
+<para>reads the RX FIFO empty flag from the STATUS register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">RXfifo_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The RX FIFO empty flag value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="107" column="18" bodyfile="EF_SPI.c" bodystart="152" bodyend="165" declfile="EF_SPI.h" declline="107" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a37d6919aa636f75a7ad383d5c03a6595" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_waitTxFifoEmpty</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi)</argsstring>
+        <name>EF_SPI_waitTxFifoEmpty</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>waits for the TX FIFO to be empty by polling the TX FIFO empty flag in the STATUS register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="115" column="18" bodyfile="EF_SPI.c" bodystart="168" bodyend="181" declfile="EF_SPI.h" declline="115" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a07fa3d20aee584b19921035cd715b71b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_waitRxFifoNotEmpty</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi)</argsstring>
+        <name>EF_SPI_waitRxFifoNotEmpty</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>waits for the RX FIFO to be not empty by polling the RX FIFO empty flag in the STATUS register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="123" column="18" bodyfile="EF_SPI.c" bodystart="183" bodyend="196" declfile="EF_SPI.h" declline="123" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1af5ad666ce47ff6bd16cff1627c33372a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_FifoRxFlush</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi)</argsstring>
+        <name>EF_SPI_FifoRxFlush</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>flushes the RX FIFO by writing to the RX FIFO FLUSH register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="131" column="18" bodyfile="EF_SPI.c" bodystart="198" bodyend="208" declfile="EF_SPI.h" declline="131" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a17bb022c768cb9acb92e540dd0d5dcce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_enable</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi)</argsstring>
+        <name>EF_SPI_enable</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>enables the SPI by setting the enable bit in the CTRL register to 1, enables spi master pulse generation </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="139" column="18" bodyfile="EF_SPI.c" bodystart="210" bodyend="220" declfile="EF_SPI.h" declline="139" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a779126c0c77ab36a9747aa8fe113c08d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_disable</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi)</argsstring>
+        <name>EF_SPI_disable</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>disables the SPI by setting the enable bit in the CTRL register to 0, disables spi master pulse generation </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="147" column="18" bodyfile="EF_SPI.c" bodystart="222" bodyend="232" declfile="EF_SPI.h" declline="147" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a9b5b4e72c33af4b4a7fc3ab0cdadde2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_enableRx</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi)</argsstring>
+        <name>EF_SPI_enableRx</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>enables the RX by setting the RX enable bit in the CTRL register to 1, enables storing bytes recieved from slave in RX FIFO </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="155" column="18" bodyfile="EF_SPI.c" bodystart="234" bodyend="244" declfile="EF_SPI.h" declline="155" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a3c26e6c7e5aa70bb44ee388a811aa762" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_disableRx</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi)</argsstring>
+        <name>EF_SPI_disableRx</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>disables the RX by setting the RX enable bit in the CTRL register to 0, disables storing bytes recieved from slave in RX FIFO </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="163" column="18" bodyfile="EF_SPI.c" bodystart="246" bodyend="256" declfile="EF_SPI.h" declline="163" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a8b4118aeb52c24b0b9b20518c920d414" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_assertCs</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi)</argsstring>
+        <name>EF_SPI_assertCs</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>asserts the CS line by setting the SS bit in the CTRL register to 1, asserts the CS line to start a transaction with the slave </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="171" column="18" bodyfile="EF_SPI.c" bodystart="258" bodyend="268" declfile="EF_SPI.h" declline="171" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_deassertCs</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi)</argsstring>
+        <name>EF_SPI_deassertCs</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <briefdescription>
+<para>deasserts the CS line by setting the SS bit in the CTRL register to 0, deasserts the CS line to end a transaction with the slave </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="179" column="18" bodyfile="EF_SPI.c" bodystart="270" bodyend="280" declfile="EF_SPI.h" declline="179" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a475700f9498d9ab54b03d3e81ace1f0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_setIM</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t mask)</argsstring>
+        <name>EF_SPI_setIM</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the value of the Interrupts Masking Register; which enable and disables interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 TXF : Transmit FIFO is Full.</para>
+</listitem><listitem><para>bit 2 RXE : Receive FIFO is Empty.</para>
+</listitem><listitem><para>bit 3 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 4 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 5 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="195" column="18" bodyfile="EF_SPI.c" bodystart="283" bodyend="294" declfile="EF_SPI.h" declline="195" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a0cbec2da38446744274c64e9585e846c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_getIM</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t *mask)</argsstring>
+        <name>EF_SPI_getIM</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>gets the value of the Interrupts Masking Register; which enable and disables interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 TXF : Transmit FIFO is Full.</para>
+</listitem><listitem><para>bit 2 RXE : Receive FIFO is Empty.</para>
+</listitem><listitem><para>bit 3 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 4 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 5 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="215" column="18" bodyfile="EF_SPI.c" bodystart="296" bodyend="309" declfile="EF_SPI.h" declline="215" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a83c5fa1a6e95392f2b3ab02661f40dec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_getRIS</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t *mask)</argsstring>
+        <name>EF_SPI_getRIS</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>gets the value of the Raw Interrupt Status Register; which shows the status of the interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 TXF : Transmit FIFO is Full.</para>
+</listitem><listitem><para>bit 2 RXE : Receive FIFO is Empty.</para>
+</listitem><listitem><para>bit 3 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 4 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 5 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="231" column="18" bodyfile="EF_SPI.c" bodystart="312" bodyend="325" declfile="EF_SPI.h" declline="231" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a8f3ae4eb3cca3c9892bf0fd2ea1af96e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_getMIS</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t *mask)</argsstring>
+        <name>EF_SPI_getMIS</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>gets the value of the Masked Interrupt Status Register; which shows the status of the interrupts after masking (ANDing) RIS by IM. The mask value is a 6-bit value, where each bit corresponds to a specific interrupt<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 TXF : Transmit FIFO is Full.</para>
+</listitem><listitem><para>bit 2 RXE : Receive FIFO is Empty.</para>
+</listitem><listitem><para>bit 3 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 4 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 5 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="249" column="18" bodyfile="EF_SPI.c" bodystart="327" bodyend="340" declfile="EF_SPI.h" declline="249" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a1bd18073e3f75287527f0ee881546b2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_SPI_setICR</definition>
+        <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t mask)</argsstring>
+        <name>EF_SPI_setICR</name>
+        <param>
+          <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
+          <declname>spi</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the value of the Interrupt Clear Register; which clears the interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 TXF : Transmit FIFO is Full.</para>
+</listitem><listitem><para>bit 2 RXE : Receive FIFO is Empty.</para>
+</listitem><listitem><para>bit 3 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 4 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 5 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> pointer, which points to the base memory address of SPI registers. <ref refid="_e_f___s_p_i__regs_8h_1a13327a2a72e415754d4174d9e8c1ce84" kindref="member">EF_SPI_TYPE</ref> is a structure that contains the SPI registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="268" column="18" declfile="EF_SPI.h" declline="268" declcolumn="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>C header file for SPI APIs which contains the function prototypes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Copyright<sp/>2025<sp/>Efabless<sp/>Corp.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"></highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EF_SPI_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_SPI_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*<sp/>Includes</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_e_f___s_p_i__regs_8h" kindref="compound">EF_SPI_regs.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_e_f___driver___common_8h" kindref="compound">EF_Driver_Common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">*<sp/>Macros<sp/>and<sp/>Constants</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">*<sp/>Typedefs<sp/>and<sp/>Enums</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">*<sp/>Function<sp/>Prototypes</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a825604b02b3136b2ae6b57cd74f7f885" kindref="member">EF_SPI_setGclkEnable</ref><sp/>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a1e57164045e2dc6ba9f3ebffc30f5985" kindref="member">EF_SPI_writeData</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>data);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a76b8a68e19fbf8c73de0f0c6a2f1ffa0" kindref="member">EF_SPI_readData</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*data);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1af12037c75dc828ac46a94b871bce315f" kindref="member">EF_SPI_writepolarity</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>polarity);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a0391f44435674dff1569e37997485578" kindref="member">EF_SPI_writePhase</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>phase);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a5ba73cb278ddca9c4e4d7e2de81d086c" kindref="member">EF_SPI_readTxFifoEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*TXfifo_state);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a143d8c3d4948fe4b3b673d4f7d37dc22" kindref="member">EF_SPI_readRxFifoEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*RXfifo_state);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a37d6919aa636f75a7ad383d5c03a6595" kindref="member">EF_SPI_waitTxFifoEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a07fa3d20aee584b19921035cd715b71b" kindref="member">EF_SPI_waitRxFifoNotEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1af5ad666ce47ff6bd16cff1627c33372a" kindref="member">EF_SPI_FifoRxFlush</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a17bb022c768cb9acb92e540dd0d5dcce" kindref="member">EF_SPI_enable</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a779126c0c77ab36a9747aa8fe113c08d" kindref="member">EF_SPI_disable</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a9b5b4e72c33af4b4a7fc3ab0cdadde2e" kindref="member">EF_SPI_enableRx</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a3c26e6c7e5aa70bb44ee388a811aa762" kindref="member">EF_SPI_disableRx</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a8b4118aeb52c24b0b9b20518c920d414" kindref="member">EF_SPI_assertCs</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae" kindref="member">EF_SPI_deassertCs</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a475700f9498d9ab54b03d3e81ace1f0a" kindref="member">EF_SPI_setIM</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>mask);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>functions<sp/>are<sp/>not<sp/>verified<sp/>yet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a0cbec2da38446744274c64e9585e846c" kindref="member">EF_SPI_getIM</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*mask);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a83c5fa1a6e95392f2b3ab02661f40dec" kindref="member">EF_SPI_getRIS</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*mask);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a8f3ae4eb3cca3c9892bf0fd2ea1af96e" kindref="member">EF_SPI_getMIS</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*mask);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268" refid="_e_f___s_p_i_8h_1a1bd18073e3f75287527f0ee881546b2a" refkind="member"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a1bd18073e3f75287527f0ee881546b2a" kindref="member">EF_SPI_setICR</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>mask);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="272"><highlight class="comment">*<sp/>External<sp/>Variables</highlight></codeline>
+<codeline lineno="273"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EF_SPI_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="281"><highlight class="comment">*<sp/>End<sp/>of<sp/>File</highlight></codeline>
+<codeline lineno="282"><highlight class="comment">******************************************************************************/</highlight></codeline>
+    </programlisting>
+    <location file="EF_SPI.h"/>
+  </compounddef>
+</doxygen>

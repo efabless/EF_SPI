@@ -1,0 +1,132 @@
+\hypertarget{_e_f___s_p_i__regs_8h_source}{}\doxysection{EF\+\_\+\+SPI\+\_\+regs.\+h}
+\mbox{\hyperlink{_e_f___s_p_i__regs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Copyright\ 2024\ Efabless\ Corp.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ \ \ Author:\ Mohamed\ Shalan\ (mshalan@efabless.com)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ \ \ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ \ \ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ \ \ \ \ \ \ www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00011\ \textcolor{comment}{}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ \ \ \ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ \ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{}}
+\DoxyCodeLine{00018\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ EF\_SPIREGS\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ EF\_SPIREGS\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_f___driver___common_8h}{EF\_Driver\_Common.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ Macros\ and\ Constants}}
+\DoxyCodeLine{00031\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ IO\_TYPES}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ IO\_TYPES}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ \ \ \_\_R\ \ \ \ \ volatile\ const\ uint32\_t}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ \ \ \_\_W\ \ \ \ \ volatile\ \ \ \ \ \ \ uint32\_t}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ \ \ \_\_RW\ \ \ \ volatile\ \ \ \ \ \ \ uint32\_t}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ EF\_SPI\_CFG\_REG\_CPOL\_BIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ EF\_SPI\_CFG\_REG\_CPOL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x1)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ EF\_SPI\_CFG\_REG\_CPHA\_BIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)1)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ EF\_SPI\_CFG\_REG\_CPHA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x2)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_SS\_BIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_SS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x1)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_ENABLE\_BIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)1)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_ENABLE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x2)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_RX\_EN\_BIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)2)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ EF\_SPI\_CTRL\_REG\_RX\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x4)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_E\_BIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_E\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x1)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_F\_BIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)1)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_F\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x2)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_E\_BIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)2)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_E\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x4)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_F\_BIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)3)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_F\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x8)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_B\_BIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)4)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_TX\_B\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x10)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_A\_BIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)5)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ EF\_SPI\_STATUS\_REG\_RX\_A\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x20)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK\ \ \ \ \ \ \ \ \ ((uint32\_t)0xf)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT\ \ ((uint32\_t)0)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK\ ((uint32\_t)0xf)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ EF\_SPI\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK\ \ \ \ \ \ \ \ \ ((uint32\_t)0x1)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK\ \ \ \ \ \ \ \ \ ((uint32\_t)0xf)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT\ \ ((uint32\_t)0)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK\ ((uint32\_t)0xf)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ EF\_SPI\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK\ \ \ \ \ \ \ \ \ ((uint32\_t)0x1)}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ EF\_SPI\_TXE\_FLAG\ ((uint32\_t)0x1)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ EF\_SPI\_TXF\_FLAG\ ((uint32\_t)0x2)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ EF\_SPI\_RXE\_FLAG\ ((uint32\_t)0x4)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ EF\_SPI\_RXF\_FLAG\ ((uint32\_t)0x8)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ EF\_SPI\_TXB\_FLAG\ ((uint32\_t)0x10)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ EF\_SPI\_RXA\_FLAG\ ((uint32\_t)0x20)}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00083\ \textcolor{comment}{*\ Typedefs\ and\ Enums}}
+\DoxyCodeLine{00084\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00085\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{\_EF\_SPI\_TYPE\_}}\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___a0262003dd1dff3a1dcf49b0c08c40ba9}{RXDATA}};}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___aac1ffd4b085fe901755a2ad1b5f41528}{TXDATA}};}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___a31964268b25903ca7a37be5ba5c9b854}{CFG}};}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___ae89353e226b09310f76d5a3de109088f}{CTRL}};}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___afa42966f653fd86a90d8343bd36634c2}{PR}};}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___adce0731ad3a0f1e0903d2c28a98aac98}{STATUS}};}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___ad3484cafc190c0d0df83f0a945a99699}{reserved\_0}}[16250];}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___acdaa1e9c52f9af8f44ff4a8cdaabce9c}{RX\_FIFO\_LEVEL}};}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___ab94b3f3550b7dabb3032012d0628ef30}{RX\_FIFO\_THRESHOLD}};}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___ad0e9f953a48f16f8d2297993e2763f34}{RX\_FIFO\_FLUSH}};}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___ace31e2375b8ba37742f0d5e224a6203a}{reserved\_1}}[1];}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___a47066d2e4989448fefa0668b0dcf7dc0}{TX\_FIFO\_LEVEL}};}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___a8db011b9afb9e6e91ec787b854299637}{TX\_FIFO\_THRESHOLD}};}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___a0d7abd6e9e3b681d50fe3929df9026e0}{TX\_FIFO\_FLUSH}};}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___a2f46338a1b1524a35b3d897e3a952eea}{reserved\_2}}[57];}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a81f369079976a46554fd9798ab035697}{\_\_RW}}\ \ \ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___a5b8438e77bc688c9be746edd82a41a33}{IM}};}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___abb579ebf283e3ea70d567ea17ca7fc25}{MIS}};}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___a939c9eabb0a5f81f07549a6328fd9941}{RIS}};}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___aed0d63b563874f4b6c1b4b32dbe10140}{IC}};}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e___a37453b637f735bea892bdba6031a4abc}{GCLK}};}
+\DoxyCodeLine{00106\ \}\ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\_SPI\_TYPE}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct___e_f___s_p_i___t_y_p_e__}{EF\_SPI\_TYPE}}*\ \mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\_SPI\_TYPE\_PTR}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00111\ \textcolor{comment}{*\ Function\ Prototypes}}
+\DoxyCodeLine{00112\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00117\ \textcolor{comment}{*\ External\ Variables}}
+\DoxyCodeLine{00118\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EF\_SPIREGS\_H}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00126\ \textcolor{comment}{*\ End\ of\ File}}
+\DoxyCodeLine{00127\ \textcolor{comment}{******************************************************************************/}}
+
+\end{DoxyCode}
