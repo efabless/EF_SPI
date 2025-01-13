@@ -21,91 +21,10 @@
 
 `timescale 1ns / 1ps `default_nettype none
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// PRINT_LICENSE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module EF_SPI_AHBL #(
     parameter CDW = 8,
     FAW = 4
 ) (
-
-
-
 
     input  wire         HCLK,
     input  wire         HRESETn,
@@ -147,8 +66,6 @@ module EF_SPI_AHBL #(
   wire clk_gated_en = GCLK_REG[0];
   ef_util_gating_cell clk_gate_cell (
 
-
-
       // USE_POWER_PINS
       .clk(HCLK),
       .clk_en(clk_gated_en),
@@ -157,7 +74,6 @@ module EF_SPI_AHBL #(
 
   wire clk = clk_g;
   wire rst_n = HRESETn;
-
 
   reg last_HSEL, last_HWRITE;
   reg [31:0] last_HADDR;
@@ -300,7 +216,6 @@ module EF_SPI_AHBL #(
   wire [0:0] RXF = rx_full;
   wire [0:0] TXB = tx_level_below;
   wire [0:0] RXA = rx_level_above;
-
 
   integer _i_;
   always @(posedge HCLK or negedge HRESETn)

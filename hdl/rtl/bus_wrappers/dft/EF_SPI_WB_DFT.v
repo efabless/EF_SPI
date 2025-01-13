@@ -21,68 +21,10 @@
 
 `timescale 1ns / 1ps `default_nettype none
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// PRINT_LICENSE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module EF_SPI_WB #(
     parameter CDW = 8,
     FAW = 4
 ) (
-
-
-
 
     input  wire         sc_testmode,
     input  wire         clk_i,
@@ -125,8 +67,6 @@ module EF_SPI_WB #(
   wire clk_gated_en = sc_testmode ? 1'b1 : GCLK_REG[0];
   ef_util_gating_cell clk_gate_cell (
 
-
-
       // USE_POWER_PINS
       .clk(clk_i),
       .clk_en(clk_gated_en),
@@ -135,7 +75,6 @@ module EF_SPI_WB #(
 
   wire           clk = clk_g;
   wire           rst_n = (~rst_i);
-
 
   wire           wb_valid = cyc_i & stb_i;
   wire           wb_we = we_i & wb_valid;
@@ -261,7 +200,6 @@ module EF_SPI_WB #(
   wire [0:0] RXF = rx_full;
   wire [0:0] TXB = tx_level_below;
   wire [0:0] RXA = rx_level_above;
-
 
   integer _i_;
   always @(posedge clk_i or posedge rst_i)
