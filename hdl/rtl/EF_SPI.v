@@ -85,13 +85,13 @@ module EF_SPI #(parameter
 
     assign      csb = ~ss;
     
-    aucohl_ped done_ed (
+    ef_util_ped done_ed (
         .clk(clk),
         .in(done),
         .out(done_pe)
     );
 
-    aucohl_fifo #(
+    ef_util_fifo #(
         .DW(FDW), 
         .AW(FAW)
     ) rx_fifo (
@@ -107,7 +107,7 @@ module EF_SPI #(parameter
         .level(rx_level)    
     );
 
-    aucohl_fifo #(
+    ef_util_fifo #(
         .DW(FDW), 
         .AW(FAW)
     ) tx_fifo (

@@ -4,7 +4,7 @@ MODULE   ?= top_module
 AHB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_SPI_AHBL.v
 APB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_SPI_APB.v
 WB_FILES ?=$(PWD)/../../hdl/rtl/bus_wrappers/EF_SPI_WB.v
-HDL_FILES ?= $(PWD)/../../ip/EF_IP_UTIL/rtl/aucohl_lib.v $(PWD)/../../ip/EF_IP_UTIL/rtl/aucohl_rtl.vh  $(PWD)/../../hdl/rtl/spi_master.v $(PWD)/../../hdl/rtl/EF_SPI.v 
+HDL_FILES ?= $(PWD)/../../ip/EF_IP_UTIL/hdl/ef_util_lib.v  $(PWD)/../../hdl/rtl/spi_master.v $(PWD)/../../hdl/rtl/EF_SPI.v 
 
 VERILOG_SOURCES ?=  $(PWD)/top.v $(AHB_FILES) $(APB_FILES) $(WB_FILES) $(HDL_FILES)
 RTL_MACROS += ""
