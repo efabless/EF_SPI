@@ -1,7 +1,7 @@
 /*
 	Copyright 2024 Efabless Corp.
 
-	Author: Mohamed Shalan (mshalan@efabless.com)
+	Author: Efabless Corp. (ip_admin@efabless.com)
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -49,6 +49,10 @@
 #define EF_SPI_STATUS_REG_TX_B_MASK	0x10
 #define EF_SPI_STATUS_REG_RX_A_BIT	5
 #define EF_SPI_STATUS_REG_RX_A_MASK	0x20
+#define EF_SPI_STATUS_REG_BUSY_BIT	6
+#define EF_SPI_STATUS_REG_BUSY_MASK	0x40
+#define EF_SPI_STATUS_REG_DONE_BIT	7
+#define EF_SPI_STATUS_REG_DONE_MASK	0x80
 #define EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_BIT	0
 #define EF_SPI_RX_FIFO_LEVEL_REG_LEVEL_MASK	0xf
 #define EF_SPI_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT	0
