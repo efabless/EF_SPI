@@ -437,7 +437,7 @@
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md29">
 <title>function &lt;tt&gt;EF_SPI_readRxFifoEmpty&lt;/tt&gt;</title>
-<para><emphasis>reads the RX FIFO empty flag from the STATUS register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a143d8c3d4948fe4b3b673d4f7d37dc22" kindref="member">EF_SPI_readRxFifoEmpty</ref><sp/>(</highlight></codeline>
+<para><emphasis>reads the RX FIFO empty flag from the STATUS register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>EF_SPI_readRxFifoEmpty<sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*RXfifo_state</highlight></codeline>
 <codeline><highlight class="normal">)<sp/></highlight></codeline>
@@ -453,7 +453,7 @@
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md30">
 <title>function &lt;tt&gt;EF_SPI_readTxFifoEmpty&lt;/tt&gt;</title>
-<para><emphasis>reads the TX FIFO empty flag from the STATUS register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a5ba73cb278ddca9c4e4d7e2de81d086c" kindref="member">EF_SPI_readTxFifoEmpty</ref><sp/>(</highlight></codeline>
+<para><emphasis>reads the TX FIFO empty flag from the STATUS register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>EF_SPI_readTxFifoEmpty<sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*TXfifo_state</highlight></codeline>
 <codeline><highlight class="normal">)<sp/></highlight></codeline>
@@ -581,7 +581,7 @@
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md37">
 <title>function &lt;tt&gt;EF_SPI_writePhase&lt;/tt&gt;</title>
-<para><emphasis>sets the clock phase of the SPI in the CFG register to a certain value</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1a0391f44435674dff1569e37997485578" kindref="member">EF_SPI_writePhase</ref><sp/>(</highlight></codeline>
+<para><emphasis>sets the clock phase of the SPI in the CFG register to a certain value</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>EF_SPI_writePhase<sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>phase</highlight></codeline>
 <codeline><highlight class="normal">)<sp/></highlight></codeline>
@@ -597,7 +597,7 @@
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md38">
 <title>function &lt;tt&gt;EF_SPI_writepolarity&lt;/tt&gt;</title>
-<para><emphasis>sets the clock polarity of the SPI in the CFG register to a certain value</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8c_1af12037c75dc828ac46a94b871bce315f" kindref="member">EF_SPI_writepolarity</ref><sp/>(</highlight></codeline>
+<para><emphasis>sets the clock polarity of the SPI in the CFG register to a certain value</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>EF_SPI_writepolarity<sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>polarity</highlight></codeline>
 <codeline><highlight class="normal">)<sp/></highlight></codeline>

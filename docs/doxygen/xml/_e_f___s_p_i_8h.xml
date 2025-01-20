@@ -52,6 +52,19 @@
         </childnode>
       </node>
     </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_e_f___s_p_i_8h_1a5e9071558e9f7bd171d07d7f5fc207fe" prot="public" static="no">
+        <name>EF_SPI_TXDATA_MAX_VALUE</name>
+        <initializer>((uint32_t)0x000000FF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_SPI.h" line="35" column="9" bodyfile="EF_SPI.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a825604b02b3136b2ae6b57cd74f7f885" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -93,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="53" column="18" bodyfile="EF_SPI.c" bodystart="58" bodyend="71" declfile="EF_SPI.h" declline="53" declcolumn="18"/>
+        <location file="EF_SPI.h" line="54" column="18" bodyfile="EF_SPI.c" bodystart="57" bodyend="70" declfile="EF_SPI.h" declline="54" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a1e57164045e2dc6ba9f3ebffc30f5985" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -135,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="62" column="18" bodyfile="EF_SPI.c" bodystart="73" bodyend="85" declfile="EF_SPI.h" declline="62" declcolumn="18"/>
+        <location file="EF_SPI.h" line="63" column="18" bodyfile="EF_SPI.c" bodystart="72" bodyend="84" declfile="EF_SPI.h" declline="63" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a76b8a68e19fbf8c73de0f0c6a2f1ffa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -177,13 +190,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="71" column="18" bodyfile="EF_SPI.c" bodystart="87" bodyend="100" declfile="EF_SPI.h" declline="71" declcolumn="18"/>
+        <location file="EF_SPI.h" line="72" column="18" bodyfile="EF_SPI.c" bodystart="86" bodyend="99" declfile="EF_SPI.h" declline="72" declcolumn="18"/>
       </memberdef>
-      <memberdef kind="function" id="_e_f___s_p_i_8h_1af12037c75dc828ac46a94b871bce315f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a2de32a4b70b1cc8100b2b21c38097920" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
-        <definition>EF_DRIVER_STATUS EF_SPI_writepolarity</definition>
+        <definition>EF_DRIVER_STATUS EF_SPI_setpolarity</definition>
         <argsstring>(EF_SPI_TYPE_PTR spi, bool polarity)</argsstring>
-        <name>EF_SPI_writepolarity</name>
+        <name>EF_SPI_setpolarity</name>
         <param>
           <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
           <declname>spi</declname>
@@ -219,13 +232,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="80" column="18" bodyfile="EF_SPI.c" bodystart="102" bodyend="116" declfile="EF_SPI.h" declline="80" declcolumn="18"/>
+        <location file="EF_SPI.h" line="81" column="18" bodyfile="EF_SPI.c" bodystart="101" bodyend="115" declfile="EF_SPI.h" declline="81" declcolumn="18"/>
       </memberdef>
-      <memberdef kind="function" id="_e_f___s_p_i_8h_1a0391f44435674dff1569e37997485578" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a3daea3a2fbd4ff7af8c3f5f724bab261" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
-        <definition>EF_DRIVER_STATUS EF_SPI_writePhase</definition>
+        <definition>EF_DRIVER_STATUS EF_SPI_setPhase</definition>
         <argsstring>(EF_SPI_TYPE_PTR spi, bool phase)</argsstring>
-        <name>EF_SPI_writePhase</name>
+        <name>EF_SPI_setPhase</name>
         <param>
           <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
           <declname>spi</declname>
@@ -261,13 +274,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="89" column="18" bodyfile="EF_SPI.c" bodystart="118" bodyend="133" declfile="EF_SPI.h" declline="89" declcolumn="18"/>
+        <location file="EF_SPI.h" line="90" column="18" bodyfile="EF_SPI.c" bodystart="117" bodyend="132" declfile="EF_SPI.h" declline="90" declcolumn="18"/>
       </memberdef>
-      <memberdef kind="function" id="_e_f___s_p_i_8h_1a5ba73cb278ddca9c4e4d7e2de81d086c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a06a0b363219530d0d0085a34feabecac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
-        <definition>EF_DRIVER_STATUS EF_SPI_readTxFifoEmpty</definition>
+        <definition>EF_DRIVER_STATUS EF_SPI_isTxFifoEmpty</definition>
         <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state)</argsstring>
-        <name>EF_SPI_readTxFifoEmpty</name>
+        <name>EF_SPI_isTxFifoEmpty</name>
         <param>
           <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
           <declname>spi</declname>
@@ -303,13 +316,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="98" column="18" bodyfile="EF_SPI.c" bodystart="136" bodyend="150" declfile="EF_SPI.h" declline="98" declcolumn="18"/>
+        <location file="EF_SPI.h" line="99" column="18" bodyfile="EF_SPI.c" bodystart="135" bodyend="149" declfile="EF_SPI.h" declline="99" declcolumn="18"/>
       </memberdef>
-      <memberdef kind="function" id="_e_f___s_p_i_8h_1a143d8c3d4948fe4b3b673d4f7d37dc22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_e_f___s_p_i_8h_1a89a76154116f5074c66d2cc1cb695e9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
-        <definition>EF_DRIVER_STATUS EF_SPI_readRxFifoEmpty</definition>
+        <definition>EF_DRIVER_STATUS EF_SPI_isRxFifoEmpty</definition>
         <argsstring>(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state)</argsstring>
-        <name>EF_SPI_readRxFifoEmpty</name>
+        <name>EF_SPI_isRxFifoEmpty</name>
         <param>
           <type><ref refid="_e_f___s_p_i__regs_8h_1ab51eaba59e1d37581be74b95ac7b4b20" kindref="member">EF_SPI_TYPE_PTR</ref></type>
           <declname>spi</declname>
@@ -345,7 +358,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="107" column="18" bodyfile="EF_SPI.c" bodystart="152" bodyend="165" declfile="EF_SPI.h" declline="107" declcolumn="18"/>
+        <location file="EF_SPI.h" line="108" column="18" bodyfile="EF_SPI.c" bodystart="151" bodyend="164" declfile="EF_SPI.h" declline="108" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a37d6919aa636f75a7ad383d5c03a6595" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -375,7 +388,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="115" column="18" bodyfile="EF_SPI.c" bodystart="168" bodyend="181" declfile="EF_SPI.h" declline="115" declcolumn="18"/>
+        <location file="EF_SPI.h" line="116" column="18" bodyfile="EF_SPI.c" bodystart="167" bodyend="180" declfile="EF_SPI.h" declline="116" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a07fa3d20aee584b19921035cd715b71b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -405,7 +418,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="123" column="18" bodyfile="EF_SPI.c" bodystart="183" bodyend="196" declfile="EF_SPI.h" declline="123" declcolumn="18"/>
+        <location file="EF_SPI.h" line="124" column="18" bodyfile="EF_SPI.c" bodystart="182" bodyend="195" declfile="EF_SPI.h" declline="124" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1af5ad666ce47ff6bd16cff1627c33372a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -435,7 +448,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="131" column="18" bodyfile="EF_SPI.c" bodystart="198" bodyend="208" declfile="EF_SPI.h" declline="131" declcolumn="18"/>
+        <location file="EF_SPI.h" line="132" column="18" bodyfile="EF_SPI.c" bodystart="197" bodyend="207" declfile="EF_SPI.h" declline="132" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a17bb022c768cb9acb92e540dd0d5dcce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -465,7 +478,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="139" column="18" bodyfile="EF_SPI.c" bodystart="210" bodyend="220" declfile="EF_SPI.h" declline="139" declcolumn="18"/>
+        <location file="EF_SPI.h" line="140" column="18" bodyfile="EF_SPI.c" bodystart="209" bodyend="219" declfile="EF_SPI.h" declline="140" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a779126c0c77ab36a9747aa8fe113c08d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -495,7 +508,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="147" column="18" bodyfile="EF_SPI.c" bodystart="222" bodyend="232" declfile="EF_SPI.h" declline="147" declcolumn="18"/>
+        <location file="EF_SPI.h" line="148" column="18" bodyfile="EF_SPI.c" bodystart="221" bodyend="231" declfile="EF_SPI.h" declline="148" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a9b5b4e72c33af4b4a7fc3ab0cdadde2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -525,7 +538,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="155" column="18" bodyfile="EF_SPI.c" bodystart="234" bodyend="244" declfile="EF_SPI.h" declline="155" declcolumn="18"/>
+        <location file="EF_SPI.h" line="156" column="18" bodyfile="EF_SPI.c" bodystart="233" bodyend="243" declfile="EF_SPI.h" declline="156" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a3c26e6c7e5aa70bb44ee388a811aa762" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -555,7 +568,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="163" column="18" bodyfile="EF_SPI.c" bodystart="246" bodyend="256" declfile="EF_SPI.h" declline="163" declcolumn="18"/>
+        <location file="EF_SPI.h" line="164" column="18" bodyfile="EF_SPI.c" bodystart="245" bodyend="255" declfile="EF_SPI.h" declline="164" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a8b4118aeb52c24b0b9b20518c920d414" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -585,7 +598,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="171" column="18" bodyfile="EF_SPI.c" bodystart="258" bodyend="268" declfile="EF_SPI.h" declline="171" declcolumn="18"/>
+        <location file="EF_SPI.h" line="172" column="18" bodyfile="EF_SPI.c" bodystart="257" bodyend="267" declfile="EF_SPI.h" declline="172" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -615,7 +628,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="179" column="18" bodyfile="EF_SPI.c" bodystart="270" bodyend="280" declfile="EF_SPI.h" declline="179" declcolumn="18"/>
+        <location file="EF_SPI.h" line="180" column="18" bodyfile="EF_SPI.c" bodystart="269" bodyend="279" declfile="EF_SPI.h" declline="180" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a475700f9498d9ab54b03d3e81ace1f0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -665,7 +678,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="195" column="18" bodyfile="EF_SPI.c" bodystart="283" bodyend="294" declfile="EF_SPI.h" declline="195" declcolumn="18"/>
+        <location file="EF_SPI.h" line="196" column="18" bodyfile="EF_SPI.c" bodystart="282" bodyend="293" declfile="EF_SPI.h" declline="196" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a0cbec2da38446744274c64e9585e846c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -715,7 +728,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="215" column="18" bodyfile="EF_SPI.c" bodystart="296" bodyend="309" declfile="EF_SPI.h" declline="215" declcolumn="18"/>
+        <location file="EF_SPI.h" line="216" column="18" bodyfile="EF_SPI.c" bodystart="295" bodyend="308" declfile="EF_SPI.h" declline="216" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a83c5fa1a6e95392f2b3ab02661f40dec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -765,7 +778,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="231" column="18" bodyfile="EF_SPI.c" bodystart="312" bodyend="325" declfile="EF_SPI.h" declline="231" declcolumn="18"/>
+        <location file="EF_SPI.h" line="232" column="18" bodyfile="EF_SPI.c" bodystart="311" bodyend="324" declfile="EF_SPI.h" declline="232" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a8f3ae4eb3cca3c9892bf0fd2ea1af96e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -815,7 +828,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="249" column="18" bodyfile="EF_SPI.c" bodystart="327" bodyend="340" declfile="EF_SPI.h" declline="249" declcolumn="18"/>
+        <location file="EF_SPI.h" line="250" column="18" bodyfile="EF_SPI.c" bodystart="326" bodyend="339" declfile="EF_SPI.h" declline="250" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___s_p_i_8h_1a1bd18073e3f75287527f0ee881546b2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -865,7 +878,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_SPI.h" line="268" column="18" bodyfile="EF_SPI.c" bodystart="343" bodyend="353" declfile="EF_SPI.h" declline="268" declcolumn="18"/>
+        <location file="EF_SPI.h" line="269" column="18" bodyfile="EF_SPI.c" bodystart="342" bodyend="352" declfile="EF_SPI.h" declline="269" declcolumn="18"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -903,102 +916,103 @@
 <codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
 <codeline lineno="33"><highlight class="comment">*<sp/>Macros<sp/>and<sp/>Constants</highlight></codeline>
 <codeline lineno="34"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
-<codeline lineno="37"><highlight class="comment">*<sp/>Typedefs<sp/>and<sp/>Enums</highlight></codeline>
-<codeline lineno="38"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="_e_f___s_p_i_8h_1a5e9071558e9f7bd171d07d7f5fc207fe" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_SPI_TXDATA_MAX_VALUE<sp/>((uint32_t)0x000000FF)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">*<sp/>Typedefs<sp/>and<sp/>Enums</highlight></codeline>
+<codeline lineno="39"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
-<codeline lineno="43"><highlight class="comment">*<sp/>Function<sp/>Prototypes</highlight></codeline>
-<codeline lineno="44"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a825604b02b3136b2ae6b57cd74f7f885" kindref="member">EF_SPI_setGclkEnable</ref><sp/>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>value);</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a1e57164045e2dc6ba9f3ebffc30f5985" kindref="member">EF_SPI_writeData</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>data);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a76b8a68e19fbf8c73de0f0c6a2f1ffa0" kindref="member">EF_SPI_readData</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*data);</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1af12037c75dc828ac46a94b871bce315f" kindref="member">EF_SPI_writepolarity</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>polarity);</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a0391f44435674dff1569e37997485578" kindref="member">EF_SPI_writePhase</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>phase);</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a5ba73cb278ddca9c4e4d7e2de81d086c" kindref="member">EF_SPI_readTxFifoEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*TXfifo_state);</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a143d8c3d4948fe4b3b673d4f7d37dc22" kindref="member">EF_SPI_readRxFifoEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*RXfifo_state);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a37d6919aa636f75a7ad383d5c03a6595" kindref="member">EF_SPI_waitTxFifoEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a07fa3d20aee584b19921035cd715b71b" kindref="member">EF_SPI_waitRxFifoNotEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1af5ad666ce47ff6bd16cff1627c33372a" kindref="member">EF_SPI_FifoRxFlush</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a17bb022c768cb9acb92e540dd0d5dcce" kindref="member">EF_SPI_enable</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"></highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a779126c0c77ab36a9747aa8fe113c08d" kindref="member">EF_SPI_disable</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a9b5b4e72c33af4b4a7fc3ab0cdadde2e" kindref="member">EF_SPI_enableRx</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal"></highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a3c26e6c7e5aa70bb44ee388a811aa762" kindref="member">EF_SPI_disableRx</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"></highlight></codeline>
-<codeline lineno="166"><highlight class="normal"></highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a8b4118aeb52c24b0b9b20518c920d414" kindref="member">EF_SPI_assertCs</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"></highlight></codeline>
-<codeline lineno="174"><highlight class="normal"></highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae" kindref="member">EF_SPI_deassertCs</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"></highlight></codeline>
-<codeline lineno="189"><highlight class="normal"></highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a475700f9498d9ab54b03d3e81ace1f0a" kindref="member">EF_SPI_setIM</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>mask);</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"></highlight></codeline>
-<codeline lineno="197"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>functions<sp/>are<sp/>not<sp/>verified<sp/>yet</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="198"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">*<sp/>Function<sp/>Prototypes</highlight></codeline>
+<codeline lineno="45"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a825604b02b3136b2ae6b57cd74f7f885" kindref="member">EF_SPI_setGclkEnable</ref><sp/>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a1e57164045e2dc6ba9f3ebffc30f5985" kindref="member">EF_SPI_writeData</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>data);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a76b8a68e19fbf8c73de0f0c6a2f1ffa0" kindref="member">EF_SPI_readData</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*data);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a2de32a4b70b1cc8100b2b21c38097920" kindref="member">EF_SPI_setpolarity</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>polarity);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a3daea3a2fbd4ff7af8c3f5f724bab261" kindref="member">EF_SPI_setPhase</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>phase);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a06a0b363219530d0d0085a34feabecac" kindref="member">EF_SPI_isTxFifoEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*TXfifo_state);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a89a76154116f5074c66d2cc1cb695e9a" kindref="member">EF_SPI_isRxFifoEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*RXfifo_state);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a37d6919aa636f75a7ad383d5c03a6595" kindref="member">EF_SPI_waitTxFifoEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a07fa3d20aee584b19921035cd715b71b" kindref="member">EF_SPI_waitRxFifoNotEmpty</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1af5ad666ce47ff6bd16cff1627c33372a" kindref="member">EF_SPI_FifoRxFlush</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a17bb022c768cb9acb92e540dd0d5dcce" kindref="member">EF_SPI_enable</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a779126c0c77ab36a9747aa8fe113c08d" kindref="member">EF_SPI_disable</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a9b5b4e72c33af4b4a7fc3ab0cdadde2e" kindref="member">EF_SPI_enableRx</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a3c26e6c7e5aa70bb44ee388a811aa762" kindref="member">EF_SPI_disableRx</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a8b4118aeb52c24b0b9b20518c920d414" kindref="member">EF_SPI_assertCs</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae" kindref="member">EF_SPI_deassertCs</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a475700f9498d9ab54b03d3e81ace1f0a" kindref="member">EF_SPI_setIM</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>mask);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>functions<sp/>are<sp/>not<sp/>verified<sp/>yet</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="199"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="200"><highlight class="normal"></highlight></codeline>
-<codeline lineno="209"><highlight class="normal"></highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a0cbec2da38446744274c64e9585e846c" kindref="member">EF_SPI_getIM</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*mask);</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"></highlight></codeline>
-<codeline lineno="225"><highlight class="normal"></highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a83c5fa1a6e95392f2b3ab02661f40dec" kindref="member">EF_SPI_getRIS</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*mask);</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a0cbec2da38446744274c64e9585e846c" kindref="member">EF_SPI_getIM</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*mask);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a83c5fa1a6e95392f2b3ab02661f40dec" kindref="member">EF_SPI_getRIS</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*mask);</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"></highlight></codeline>
 <codeline lineno="234"><highlight class="normal"></highlight></codeline>
-<codeline lineno="243"><highlight class="normal"></highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a8f3ae4eb3cca3c9892bf0fd2ea1af96e" kindref="member">EF_SPI_getMIS</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*mask);</highlight></codeline>
-<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a8f3ae4eb3cca3c9892bf0fd2ea1af96e" kindref="member">EF_SPI_getMIS</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>*mask);</highlight></codeline>
 <codeline lineno="251"><highlight class="normal"></highlight></codeline>
 <codeline lineno="252"><highlight class="normal"></highlight></codeline>
 <codeline lineno="253"><highlight class="normal"></highlight></codeline>
-<codeline lineno="262"><highlight class="normal"></highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a1bd18073e3f75287527f0ee881546b2a" kindref="member">EF_SPI_setICR</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>mask);</highlight></codeline>
-<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___s_p_i_8h_1a1bd18073e3f75287527f0ee881546b2a" kindref="member">EF_SPI_setICR</ref>(<ref refid="struct___e_f___s_p_i___t_y_p_e__" kindref="compound">EF_SPI_TYPE_PTR</ref><sp/>spi,<sp/>uint32_t<sp/>mask);</highlight></codeline>
 <codeline lineno="270"><highlight class="normal"></highlight></codeline>
-<codeline lineno="271"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
-<codeline lineno="272"><highlight class="comment">*<sp/>External<sp/>Variables</highlight></codeline>
-<codeline lineno="273"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="273"><highlight class="comment">*<sp/>External<sp/>Variables</highlight></codeline>
+<codeline lineno="274"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="275"><highlight class="normal"></highlight></codeline>
 <codeline lineno="276"><highlight class="normal"></highlight></codeline>
 <codeline lineno="277"><highlight class="normal"></highlight></codeline>
-<codeline lineno="278"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EF_SPI_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="279"><highlight class="normal"></highlight></codeline>
-<codeline lineno="280"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
-<codeline lineno="281"><highlight class="comment">*<sp/>End<sp/>of<sp/>File</highlight></codeline>
-<codeline lineno="282"><highlight class="comment">******************************************************************************/</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EF_SPI_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="282"><highlight class="comment">*<sp/>End<sp/>of<sp/>File</highlight></codeline>
+<codeline lineno="283"><highlight class="comment">******************************************************************************/</highlight></codeline>
     </programlisting>
     <location file="EF_SPI.h"/>
   </compounddef>

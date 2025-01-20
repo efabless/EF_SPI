@@ -46,7 +46,7 @@ var searchData=
   ['ef_5fspi_5ftx_5ffifo_5fthreshold_5freg_5fthreshold_5fbit_43',['EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT',['../_e_f___s_p_i__regs_8h.html#afcd4de96a4fdbbdf0bfb2d1ef0b36ee1',1,'EF_SPI_regs.h']]],
   ['ef_5fspi_5ftx_5ffifo_5fthreshold_5freg_5fthreshold_5fmask_44',['EF_SPI_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK',['../_e_f___s_p_i__regs_8h.html#a2c5706ed052b899f8f35f9f430bd6cf8',1,'EF_SPI_regs.h']]],
   ['ef_5fspi_5ftxb_5fflag_45',['EF_SPI_TXB_FLAG',['../_e_f___s_p_i__regs_8h.html#a483437ca3282104510a46bf4c389372d',1,'EF_SPI_regs.h']]],
-  ['ef_5fspi_5ftxdata_5fmax_5fvalue_46',['EF_SPI_TXDATA_MAX_VALUE',['../_e_f___s_p_i_8c.html#a5e9071558e9f7bd171d07d7f5fc207fe',1,'EF_SPI.c']]],
+  ['ef_5fspi_5ftxdata_5fmax_5fvalue_46',['EF_SPI_TXDATA_MAX_VALUE',['../_e_f___s_p_i_8h.html#a5e9071558e9f7bd171d07d7f5fc207fe',1,'EF_SPI.h']]],
   ['ef_5fspi_5ftxe_5fflag_47',['EF_SPI_TXE_FLAG',['../_e_f___s_p_i__regs_8h.html#a4666ce8d0e4296894dee3ac12aa24ed9',1,'EF_SPI_regs.h']]],
   ['ef_5fspi_5ftxf_5fflag_48',['EF_SPI_TXF_FLAG',['../_e_f___s_p_i__regs_8h.html#a42ba708fcfbcd66c33b691df220600a0',1,'EF_SPI_regs.h']]]
 ];

@@ -115,18 +115,23 @@ _C header file for SPI APIs which contains the function prototypes._
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_getIM**](#function-ef_spi_getim) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t \*mask) <br> |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_getMIS**](#function-ef_spi_getmis) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t \*mask) <br> |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_getRIS**](#function-ef_spi_getris) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t \*mask) <br> |
+|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_isRxFifoEmpty**](#function-ef_spi_isrxfifoempty) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t \*RXfifo\_state) <br>_reads the RX FIFO empty flag from the STATUS register_ |
+|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_isTxFifoEmpty**](#function-ef_spi_istxfifoempty) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t \*TXfifo\_state) <br>_reads the TX FIFO empty flag from the STATUS register_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_readData**](#function-ef_spi_readdata) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t \*data) <br>_reads a byte of data from the RXDATA register_ |
-|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_readRxFifoEmpty**](#function-ef_spi_readrxfifoempty) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t \*RXfifo\_state) <br>_reads the RX FIFO empty flag from the STATUS register_ |
-|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_readTxFifoEmpty**](#function-ef_spi_readtxfifoempty) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t \*TXfifo\_state) <br>_reads the TX FIFO empty flag from the STATUS register_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_setGclkEnable**](#function-ef_spi_setgclkenable) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t value) <br>_sets the GCLK enable bit in the SPI register to a certain value_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_setICR**](#function-ef_spi_seticr) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t mask) <br> |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_setIM**](#function-ef_spi_setim) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t mask) <br> |
+|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_setPhase**](#function-ef_spi_setphase) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, bool phase) <br>_sets the clock phase of the SPI in the CFG register to a certain value_ |
+|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_setpolarity**](#function-ef_spi_setpolarity) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, bool polarity) <br>_sets the clock polarity of the SPI in the CFG register to a certain value_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_waitRxFifoNotEmpty**](#function-ef_spi_waitrxfifonotempty) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi) <br>_waits for the RX FIFO to be not empty by polling the RX FIFO empty flag in the STATUS register_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_waitTxFifoEmpty**](#function-ef_spi_waittxfifoempty) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi) <br>_waits for the TX FIFO to be empty by polling the TX FIFO empty flag in the STATUS register_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_writeData**](#function-ef_spi_writedata) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, uint32\_t data) <br>_writes a byte of data to the TXDATA register_ |
-|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_writePhase**](#function-ef_spi_writephase) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, bool phase) <br>_sets the clock phase of the SPI in the CFG register to a certain value_ |
-|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_SPI\_writepolarity**](#function-ef_spi_writepolarity) ([**EF\_SPI\_TYPE\_PTR**](#typedef-ef_spi_type_ptr) spi, bool polarity) <br>_sets the clock polarity of the SPI in the CFG register to a certain value_ |
 
+## Macros
+
+| Type | Name |
+| ---: | :--- |
+| define  | [**EF\_SPI\_TXDATA\_MAX\_VALUE**](#define-ef_spi_txdata_max_value)  ((uint32\_t)0x000000FF)<br> |
 
 
 ## Functions Documentation
@@ -357,32 +362,11 @@ gets the value of the Raw Interrupt Status Register; which shows the status of t
 **Returns:**
 
 status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
-### function `EF_SPI_readData`
-
-_reads a byte of data from the RXDATA register_
-```c
-EF_DRIVER_STATUS EF_SPI_readData (
-    EF_SPI_TYPE_PTR spi,
-    uint32_t *data
-) 
-```
-
-
-**Parameters:**
-
-
-* `spi` An [**EF\_SPI\_TYPE**](#typedef-ef_spi_type) pointer, which points to the base memory address of SPI registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type) is a structure that contains the SPI registers.
-* `data` The data read from the RXDATA register
-
-
-**Returns:**
-
-status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
-### function `EF_SPI_readRxFifoEmpty`
+### function `EF_SPI_isRxFifoEmpty`
 
 _reads the RX FIFO empty flag from the STATUS register_
 ```c
-EF_DRIVER_STATUS EF_SPI_readRxFifoEmpty (
+EF_DRIVER_STATUS EF_SPI_isRxFifoEmpty (
     EF_SPI_TYPE_PTR spi,
     uint32_t *RXfifo_state
 ) 
@@ -399,11 +383,11 @@ EF_DRIVER_STATUS EF_SPI_readRxFifoEmpty (
 **Returns:**
 
 status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
-### function `EF_SPI_readTxFifoEmpty`
+### function `EF_SPI_isTxFifoEmpty`
 
 _reads the TX FIFO empty flag from the STATUS register_
 ```c
-EF_DRIVER_STATUS EF_SPI_readTxFifoEmpty (
+EF_DRIVER_STATUS EF_SPI_isTxFifoEmpty (
     EF_SPI_TYPE_PTR spi,
     uint32_t *TXfifo_state
 ) 
@@ -415,6 +399,27 @@ EF_DRIVER_STATUS EF_SPI_readTxFifoEmpty (
 
 * `spi` An [**EF\_SPI\_TYPE**](#typedef-ef_spi_type) pointer, which points to the base memory address of SPI registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type) is a structure that contains the SPI registers.
 * `TXfifo_state` The TX FIFO empty flag value
+
+
+**Returns:**
+
+status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
+### function `EF_SPI_readData`
+
+_reads a byte of data from the RXDATA register_
+```c
+EF_DRIVER_STATUS EF_SPI_readData (
+    EF_SPI_TYPE_PTR spi,
+    uint32_t *data
+) 
+```
+
+
+**Parameters:**
+
+
+* `spi` An [**EF\_SPI\_TYPE**](#typedef-ef_spi_type) pointer, which points to the base memory address of SPI registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type) is a structure that contains the SPI registers.
+* `data` The data read from the RXDATA register
 
 
 **Returns:**
@@ -503,6 +508,48 @@ sets the value of the Interrupts Masking Register; which enable and disables int
 **Returns:**
 
 status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
+### function `EF_SPI_setPhase`
+
+_sets the clock phase of the SPI in the CFG register to a certain value_
+```c
+EF_DRIVER_STATUS EF_SPI_setPhase (
+    EF_SPI_TYPE_PTR spi,
+    bool phase
+) 
+```
+
+
+**Parameters:**
+
+
+* `spi` An [**EF\_SPI\_TYPE**](#typedef-ef_spi_type) pointer, which points to the base memory address of SPI registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type) is a structure that contains the SPI registers.
+* `phase` The clock phase value
+
+
+**Returns:**
+
+status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
+### function `EF_SPI_setpolarity`
+
+_sets the clock polarity of the SPI in the CFG register to a certain value_
+```c
+EF_DRIVER_STATUS EF_SPI_setpolarity (
+    EF_SPI_TYPE_PTR spi,
+    bool polarity
+) 
+```
+
+
+**Parameters:**
+
+
+* `spi` An [**EF\_SPI\_TYPE**](#typedef-ef_spi_type) pointer, which points to the base memory address of SPI registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type) is a structure that contains the SPI registers.
+* `polarity` The clock polarity value
+
+
+**Returns:**
+
+status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
 ### function `EF_SPI_waitRxFifoNotEmpty`
 
 _waits for the RX FIFO to be not empty by polling the RX FIFO empty flag in the STATUS register_
@@ -562,48 +609,14 @@ EF_DRIVER_STATUS EF_SPI_writeData (
 **Returns:**
 
 status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
-### function `EF_SPI_writePhase`
 
-_sets the clock phase of the SPI in the CFG register to a certain value_
+## Macros Documentation
+
+### define `EF_SPI_TXDATA_MAX_VALUE`
+
 ```c
-EF_DRIVER_STATUS EF_SPI_writePhase (
-    EF_SPI_TYPE_PTR spi,
-    bool phase
-) 
+#define EF_SPI_TXDATA_MAX_VALUE ((uint32_t)0x000000FF)
 ```
-
-
-**Parameters:**
-
-
-* `spi` An [**EF\_SPI\_TYPE**](#typedef-ef_spi_type) pointer, which points to the base memory address of SPI registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type) is a structure that contains the SPI registers.
-* `phase` The clock phase value
-
-
-**Returns:**
-
-status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
-### function `EF_SPI_writepolarity`
-
-_sets the clock polarity of the SPI in the CFG register to a certain value_
-```c
-EF_DRIVER_STATUS EF_SPI_writepolarity (
-    EF_SPI_TYPE_PTR spi,
-    bool polarity
-) 
-```
-
-
-**Parameters:**
-
-
-* `spi` An [**EF\_SPI\_TYPE**](#typedef-ef_spi_type) pointer, which points to the base memory address of SPI registers.[**EF\_SPI\_TYPE**](#typedef-ef_spi_type) is a structure that contains the SPI registers.
-* `polarity` The clock polarity value
-
-
-**Returns:**
-
-status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
 
 
 ## File EF_SPI_regs.h

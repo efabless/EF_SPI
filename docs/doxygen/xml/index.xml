@@ -34,14 +34,13 @@
   </compound>
   <compound refid="_e_f___s_p_i_8c" kind="file"><name>EF_SPI.c</name>
     <member refid="_e_f___s_p_i_8c_1a978c9c8ed8e2e80672c5cc0a612cc869" kind="define"><name>EF_SPI_C</name></member>
-    <member refid="_e_f___s_p_i_8c_1a5e9071558e9f7bd171d07d7f5fc207fe" kind="define"><name>EF_SPI_TXDATA_MAX_VALUE</name></member>
     <member refid="_e_f___s_p_i_8c_1a825604b02b3136b2ae6b57cd74f7f885" kind="function"><name>EF_SPI_setGclkEnable</name></member>
     <member refid="_e_f___s_p_i_8c_1a1e57164045e2dc6ba9f3ebffc30f5985" kind="function"><name>EF_SPI_writeData</name></member>
     <member refid="_e_f___s_p_i_8c_1a76b8a68e19fbf8c73de0f0c6a2f1ffa0" kind="function"><name>EF_SPI_readData</name></member>
-    <member refid="_e_f___s_p_i_8c_1af12037c75dc828ac46a94b871bce315f" kind="function"><name>EF_SPI_writepolarity</name></member>
-    <member refid="_e_f___s_p_i_8c_1a0391f44435674dff1569e37997485578" kind="function"><name>EF_SPI_writePhase</name></member>
-    <member refid="_e_f___s_p_i_8c_1a5ba73cb278ddca9c4e4d7e2de81d086c" kind="function"><name>EF_SPI_readTxFifoEmpty</name></member>
-    <member refid="_e_f___s_p_i_8c_1a143d8c3d4948fe4b3b673d4f7d37dc22" kind="function"><name>EF_SPI_readRxFifoEmpty</name></member>
+    <member refid="_e_f___s_p_i_8c_1a2de32a4b70b1cc8100b2b21c38097920" kind="function"><name>EF_SPI_setpolarity</name></member>
+    <member refid="_e_f___s_p_i_8c_1a3daea3a2fbd4ff7af8c3f5f724bab261" kind="function"><name>EF_SPI_setPhase</name></member>
+    <member refid="_e_f___s_p_i_8c_1a06a0b363219530d0d0085a34feabecac" kind="function"><name>EF_SPI_isTxFifoEmpty</name></member>
+    <member refid="_e_f___s_p_i_8c_1a89a76154116f5074c66d2cc1cb695e9a" kind="function"><name>EF_SPI_isRxFifoEmpty</name></member>
     <member refid="_e_f___s_p_i_8c_1a37d6919aa636f75a7ad383d5c03a6595" kind="function"><name>EF_SPI_waitTxFifoEmpty</name></member>
     <member refid="_e_f___s_p_i_8c_1a07fa3d20aee584b19921035cd715b71b" kind="function"><name>EF_SPI_waitRxFifoNotEmpty</name></member>
     <member refid="_e_f___s_p_i_8c_1af5ad666ce47ff6bd16cff1627c33372a" kind="function"><name>EF_SPI_FifoRxFlush</name></member>
@@ -58,13 +57,14 @@
     <member refid="_e_f___s_p_i_8c_1a1bd18073e3f75287527f0ee881546b2a" kind="function"><name>EF_SPI_setICR</name></member>
   </compound>
   <compound refid="_e_f___s_p_i_8h" kind="file"><name>EF_SPI.h</name>
+    <member refid="_e_f___s_p_i_8h_1a5e9071558e9f7bd171d07d7f5fc207fe" kind="define"><name>EF_SPI_TXDATA_MAX_VALUE</name></member>
     <member refid="_e_f___s_p_i_8h_1a825604b02b3136b2ae6b57cd74f7f885" kind="function"><name>EF_SPI_setGclkEnable</name></member>
     <member refid="_e_f___s_p_i_8h_1a1e57164045e2dc6ba9f3ebffc30f5985" kind="function"><name>EF_SPI_writeData</name></member>
     <member refid="_e_f___s_p_i_8h_1a76b8a68e19fbf8c73de0f0c6a2f1ffa0" kind="function"><name>EF_SPI_readData</name></member>
-    <member refid="_e_f___s_p_i_8h_1af12037c75dc828ac46a94b871bce315f" kind="function"><name>EF_SPI_writepolarity</name></member>
-    <member refid="_e_f___s_p_i_8h_1a0391f44435674dff1569e37997485578" kind="function"><name>EF_SPI_writePhase</name></member>
-    <member refid="_e_f___s_p_i_8h_1a5ba73cb278ddca9c4e4d7e2de81d086c" kind="function"><name>EF_SPI_readTxFifoEmpty</name></member>
-    <member refid="_e_f___s_p_i_8h_1a143d8c3d4948fe4b3b673d4f7d37dc22" kind="function"><name>EF_SPI_readRxFifoEmpty</name></member>
+    <member refid="_e_f___s_p_i_8h_1a2de32a4b70b1cc8100b2b21c38097920" kind="function"><name>EF_SPI_setpolarity</name></member>
+    <member refid="_e_f___s_p_i_8h_1a3daea3a2fbd4ff7af8c3f5f724bab261" kind="function"><name>EF_SPI_setPhase</name></member>
+    <member refid="_e_f___s_p_i_8h_1a06a0b363219530d0d0085a34feabecac" kind="function"><name>EF_SPI_isTxFifoEmpty</name></member>
+    <member refid="_e_f___s_p_i_8h_1a89a76154116f5074c66d2cc1cb695e9a" kind="function"><name>EF_SPI_isRxFifoEmpty</name></member>
     <member refid="_e_f___s_p_i_8h_1a37d6919aa636f75a7ad383d5c03a6595" kind="function"><name>EF_SPI_waitTxFifoEmpty</name></member>
     <member refid="_e_f___s_p_i_8h_1a07fa3d20aee584b19921035cd715b71b" kind="function"><name>EF_SPI_waitRxFifoNotEmpty</name></member>
     <member refid="_e_f___s_p_i_8h_1af5ad666ce47ff6bd16cff1627c33372a" kind="function"><name>EF_SPI_FifoRxFlush</name></member>

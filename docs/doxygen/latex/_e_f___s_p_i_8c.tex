@@ -10,8 +10,6 @@ C file for SPI APIs which contains the function Implementations.
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{_e_f___s_p_i_8c_a978c9c8ed8e2e80672c5cc0a612cc869}{EF\+\_\+\+SPI\+\_\+C}}
-\item 
-\#define \mbox{\hyperlink{_e_f___s_p_i_8c_a5e9071558e9f7bd171d07d7f5fc207fe}{EF\+\_\+\+SPI\+\_\+\+TXDATA\+\_\+\+MAX\+\_\+\+VALUE}}~0x000000\+FF
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -22,13 +20,13 @@ C file for SPI APIs which contains the function Implementations.
 \begin{DoxyCompactList}\small\item\em writes a byte of data to the TXDATA register \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a76b8a68e19fbf8c73de0f0c6a2f1ffa0}{EF\+\_\+\+SPI\+\_\+read\+Data}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, uint32\+\_\+t $\ast$data)
 \begin{DoxyCompactList}\small\item\em reads a byte of data from the RXDATA register \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_af12037c75dc828ac46a94b871bce315f}{EF\+\_\+\+SPI\+\_\+writepolarity}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, bool polarity)
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a2de32a4b70b1cc8100b2b21c38097920}{EF\+\_\+\+SPI\+\_\+setpolarity}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, bool polarity)
 \begin{DoxyCompactList}\small\item\em sets the clock polarity of the SPI in the CFG register to a certain value \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a0391f44435674dff1569e37997485578}{EF\+\_\+\+SPI\+\_\+write\+Phase}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, bool phase)
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a3daea3a2fbd4ff7af8c3f5f724bab261}{EF\+\_\+\+SPI\+\_\+set\+Phase}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, bool phase)
 \begin{DoxyCompactList}\small\item\em sets the clock phase of the SPI in the CFG register to a certain value \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a5ba73cb278ddca9c4e4d7e2de81d086c}{EF\+\_\+\+SPI\+\_\+read\+Tx\+Fifo\+Empty}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, uint32\+\_\+t $\ast$TXfifo\+\_\+state)
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a06a0b363219530d0d0085a34feabecac}{EF\+\_\+\+SPI\+\_\+is\+Tx\+Fifo\+Empty}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, uint32\+\_\+t $\ast$TXfifo\+\_\+state)
 \begin{DoxyCompactList}\small\item\em reads the TX FIFO empty flag from the STATUS register \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a143d8c3d4948fe4b3b673d4f7d37dc22}{EF\+\_\+\+SPI\+\_\+read\+Rx\+Fifo\+Empty}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, uint32\+\_\+t $\ast$RXfifo\+\_\+state)
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a89a76154116f5074c66d2cc1cb695e9a}{EF\+\_\+\+SPI\+\_\+is\+Rx\+Fifo\+Empty}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi, uint32\+\_\+t $\ast$RXfifo\+\_\+state)
 \begin{DoxyCompactList}\small\item\em reads the RX FIFO empty flag from the STATUS register \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___s_p_i_8c_a37d6919aa636f75a7ad383d5c03a6595}{EF\+\_\+\+SPI\+\_\+wait\+Tx\+Fifo\+Empty}} (\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}} spi)
 \begin{DoxyCompactList}\small\item\em waits for the TX FIFO to be empty by polling the TX FIFO empty flag in the STATUS register \end{DoxyCompactList}\item 
@@ -71,12 +69,6 @@ C file for SPI APIs which contains the function Implementations.
 \index{EF\_SPI\_C@{EF\_SPI\_C}!EF\_SPI.c@{EF\_SPI.c}}
 \doxysubsubsection{\texorpdfstring{EF\_SPI\_C}{EF\_SPI\_C}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+SPI\+\_\+C}
-
-\mbox{\Hypertarget{_e_f___s_p_i_8c_a5e9071558e9f7bd171d07d7f5fc207fe}\label{_e_f___s_p_i_8c_a5e9071558e9f7bd171d07d7f5fc207fe}} 
-\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_TXDATA\_MAX\_VALUE@{EF\_SPI\_TXDATA\_MAX\_VALUE}}
-\index{EF\_SPI\_TXDATA\_MAX\_VALUE@{EF\_SPI\_TXDATA\_MAX\_VALUE}!EF\_SPI.c@{EF\_SPI.c}}
-\doxysubsubsection{\texorpdfstring{EF\_SPI\_TXDATA\_MAX\_VALUE}{EF\_SPI\_TXDATA\_MAX\_VALUE}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+SPI\+\_\+\+TXDATA\+\_\+\+MAX\+\_\+\+VALUE~0x000000\+FF}
 
 
 
@@ -285,31 +277,11 @@ gets the value of the Raw Interrupt Status Register; which shows the status of t
 \begin{DoxyReturn}{Returns}
 status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
 \end{DoxyReturn}
-\mbox{\Hypertarget{_e_f___s_p_i_8c_a76b8a68e19fbf8c73de0f0c6a2f1ffa0}\label{_e_f___s_p_i_8c_a76b8a68e19fbf8c73de0f0c6a2f1ffa0}} 
-\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_readData@{EF\_SPI\_readData}}
-\index{EF\_SPI\_readData@{EF\_SPI\_readData}!EF\_SPI.c@{EF\_SPI.c}}
-\doxysubsubsection{\texorpdfstring{EF\_SPI\_readData()}{EF\_SPI\_readData()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+SPI\+\_\+read\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}}}]{spi,  }\item[{uint32\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
-
-
-
-reads a byte of data from the RXDATA register 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em spi} & An \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} pointer, which points to the base memory address of SPI registers. \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} is a structure that contains the SPI registers. \\
-\hline
-\mbox{\texttt{ out}}  & {\em data} & The data read from the RXDATA register\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
-\end{DoxyReturn}
-\mbox{\Hypertarget{_e_f___s_p_i_8c_a143d8c3d4948fe4b3b673d4f7d37dc22}\label{_e_f___s_p_i_8c_a143d8c3d4948fe4b3b673d4f7d37dc22}} 
-\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_readRxFifoEmpty@{EF\_SPI\_readRxFifoEmpty}}
-\index{EF\_SPI\_readRxFifoEmpty@{EF\_SPI\_readRxFifoEmpty}!EF\_SPI.c@{EF\_SPI.c}}
-\doxysubsubsection{\texorpdfstring{EF\_SPI\_readRxFifoEmpty()}{EF\_SPI\_readRxFifoEmpty()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+SPI\+\_\+read\+Rx\+Fifo\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}}}]{spi,  }\item[{uint32\+\_\+t $\ast$}]{RXfifo\+\_\+state }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{_e_f___s_p_i_8c_a89a76154116f5074c66d2cc1cb695e9a}\label{_e_f___s_p_i_8c_a89a76154116f5074c66d2cc1cb695e9a}} 
+\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_isRxFifoEmpty@{EF\_SPI\_isRxFifoEmpty}}
+\index{EF\_SPI\_isRxFifoEmpty@{EF\_SPI\_isRxFifoEmpty}!EF\_SPI.c@{EF\_SPI.c}}
+\doxysubsubsection{\texorpdfstring{EF\_SPI\_isRxFifoEmpty()}{EF\_SPI\_isRxFifoEmpty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+SPI\+\_\+is\+Rx\+Fifo\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}}}]{spi,  }\item[{uint32\+\_\+t $\ast$}]{RXfifo\+\_\+state }\end{DoxyParamCaption})}
 
 
 
@@ -325,11 +297,11 @@ reads the RX FIFO empty flag from the STATUS register
 \begin{DoxyReturn}{Returns}
 status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
 \end{DoxyReturn}
-\mbox{\Hypertarget{_e_f___s_p_i_8c_a5ba73cb278ddca9c4e4d7e2de81d086c}\label{_e_f___s_p_i_8c_a5ba73cb278ddca9c4e4d7e2de81d086c}} 
-\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_readTxFifoEmpty@{EF\_SPI\_readTxFifoEmpty}}
-\index{EF\_SPI\_readTxFifoEmpty@{EF\_SPI\_readTxFifoEmpty}!EF\_SPI.c@{EF\_SPI.c}}
-\doxysubsubsection{\texorpdfstring{EF\_SPI\_readTxFifoEmpty()}{EF\_SPI\_readTxFifoEmpty()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+SPI\+\_\+read\+Tx\+Fifo\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}}}]{spi,  }\item[{uint32\+\_\+t $\ast$}]{TXfifo\+\_\+state }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{_e_f___s_p_i_8c_a06a0b363219530d0d0085a34feabecac}\label{_e_f___s_p_i_8c_a06a0b363219530d0d0085a34feabecac}} 
+\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_isTxFifoEmpty@{EF\_SPI\_isTxFifoEmpty}}
+\index{EF\_SPI\_isTxFifoEmpty@{EF\_SPI\_isTxFifoEmpty}!EF\_SPI.c@{EF\_SPI.c}}
+\doxysubsubsection{\texorpdfstring{EF\_SPI\_isTxFifoEmpty()}{EF\_SPI\_isTxFifoEmpty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+SPI\+\_\+is\+Tx\+Fifo\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}}}]{spi,  }\item[{uint32\+\_\+t $\ast$}]{TXfifo\+\_\+state }\end{DoxyParamCaption})}
 
 
 
@@ -340,6 +312,26 @@ reads the TX FIFO empty flag from the STATUS register
 \mbox{\texttt{ in}}  & {\em spi} & An \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} pointer, which points to the base memory address of SPI registers. \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} is a structure that contains the SPI registers. \\
 \hline
 \mbox{\texttt{ out}}  & {\em TXfifo\+\_\+state} & The TX FIFO empty flag value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___s_p_i_8c_a76b8a68e19fbf8c73de0f0c6a2f1ffa0}\label{_e_f___s_p_i_8c_a76b8a68e19fbf8c73de0f0c6a2f1ffa0}} 
+\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_readData@{EF\_SPI\_readData}}
+\index{EF\_SPI\_readData@{EF\_SPI\_readData}!EF\_SPI.c@{EF\_SPI.c}}
+\doxysubsubsection{\texorpdfstring{EF\_SPI\_readData()}{EF\_SPI\_readData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+SPI\+\_\+read\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}}}]{spi,  }\item[{uint32\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+reads a byte of data from the RXDATA register 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em spi} & An \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} pointer, which points to the base memory address of SPI registers. \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} is a structure that contains the SPI registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & The data read from the RXDATA register\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -417,6 +409,46 @@ sets the value of the Interrupts Masking Register; which enable and disables int
 \begin{DoxyReturn}{Returns}
 status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
 \end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___s_p_i_8c_a3daea3a2fbd4ff7af8c3f5f724bab261}\label{_e_f___s_p_i_8c_a3daea3a2fbd4ff7af8c3f5f724bab261}} 
+\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_setPhase@{EF\_SPI\_setPhase}}
+\index{EF\_SPI\_setPhase@{EF\_SPI\_setPhase}!EF\_SPI.c@{EF\_SPI.c}}
+\doxysubsubsection{\texorpdfstring{EF\_SPI\_setPhase()}{EF\_SPI\_setPhase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+SPI\+\_\+set\+Phase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}}}]{spi,  }\item[{bool}]{phase }\end{DoxyParamCaption})}
+
+
+
+sets the clock phase of the SPI in the CFG register to a certain value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em spi} & An \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} pointer, which points to the base memory address of SPI registers. \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} is a structure that contains the SPI registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em phase} & The clock phase value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___s_p_i_8c_a2de32a4b70b1cc8100b2b21c38097920}\label{_e_f___s_p_i_8c_a2de32a4b70b1cc8100b2b21c38097920}} 
+\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_setpolarity@{EF\_SPI\_setpolarity}}
+\index{EF\_SPI\_setpolarity@{EF\_SPI\_setpolarity}!EF\_SPI.c@{EF\_SPI.c}}
+\doxysubsubsection{\texorpdfstring{EF\_SPI\_setpolarity()}{EF\_SPI\_setpolarity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+SPI\+\_\+setpolarity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}}}]{spi,  }\item[{bool}]{polarity }\end{DoxyParamCaption})}
+
+
+
+sets the clock polarity of the SPI in the CFG register to a certain value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em spi} & An \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} pointer, which points to the base memory address of SPI registers. \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} is a structure that contains the SPI registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em polarity} & The clock polarity value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
 \mbox{\Hypertarget{_e_f___s_p_i_8c_a07fa3d20aee584b19921035cd715b71b}\label{_e_f___s_p_i_8c_a07fa3d20aee584b19921035cd715b71b}} 
 \index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_waitRxFifoNotEmpty@{EF\_SPI\_waitRxFifoNotEmpty}}
 \index{EF\_SPI\_waitRxFifoNotEmpty@{EF\_SPI\_waitRxFifoNotEmpty}!EF\_SPI.c@{EF\_SPI.c}}
@@ -468,46 +500,6 @@ writes a byte of data to the TXDATA register
 \mbox{\texttt{ in}}  & {\em spi} & An \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} pointer, which points to the base memory address of SPI registers. \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} is a structure that contains the SPI registers. \\
 \hline
 \mbox{\texttt{ in}}  & {\em data} & The data to be written to the TXDATA register\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
-\end{DoxyReturn}
-\mbox{\Hypertarget{_e_f___s_p_i_8c_a0391f44435674dff1569e37997485578}\label{_e_f___s_p_i_8c_a0391f44435674dff1569e37997485578}} 
-\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_writePhase@{EF\_SPI\_writePhase}}
-\index{EF\_SPI\_writePhase@{EF\_SPI\_writePhase}!EF\_SPI.c@{EF\_SPI.c}}
-\doxysubsubsection{\texorpdfstring{EF\_SPI\_writePhase()}{EF\_SPI\_writePhase()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+SPI\+\_\+write\+Phase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}}}]{spi,  }\item[{bool}]{phase }\end{DoxyParamCaption})}
-
-
-
-sets the clock phase of the SPI in the CFG register to a certain value 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em spi} & An \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} pointer, which points to the base memory address of SPI registers. \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} is a structure that contains the SPI registers. \\
-\hline
-\mbox{\texttt{ in}}  & {\em phase} & The clock phase value\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
-\end{DoxyReturn}
-\mbox{\Hypertarget{_e_f___s_p_i_8c_af12037c75dc828ac46a94b871bce315f}\label{_e_f___s_p_i_8c_af12037c75dc828ac46a94b871bce315f}} 
-\index{EF\_SPI.c@{EF\_SPI.c}!EF\_SPI\_writepolarity@{EF\_SPI\_writepolarity}}
-\index{EF\_SPI\_writepolarity@{EF\_SPI\_writepolarity}!EF\_SPI.c@{EF\_SPI.c}}
-\doxysubsubsection{\texorpdfstring{EF\_SPI\_writepolarity()}{EF\_SPI\_writepolarity()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+SPI\+\_\+writepolarity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___s_p_i__regs_8h_ab51eaba59e1d37581be74b95ac7b4b20}{EF\+\_\+\+SPI\+\_\+\+TYPE\+\_\+\+PTR}}}]{spi,  }\item[{bool}]{polarity }\end{DoxyParamCaption})}
-
-
-
-sets the clock polarity of the SPI in the CFG register to a certain value 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em spi} & An \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} pointer, which points to the base memory address of SPI registers. \mbox{\hyperlink{_e_f___s_p_i__regs_8h_a13327a2a72e415754d4174d9e8c1ce84}{EF\+\_\+\+SPI\+\_\+\+TYPE}} is a structure that contains the SPI registers. \\
-\hline
-\mbox{\texttt{ in}}  & {\em polarity} & The clock polarity value\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

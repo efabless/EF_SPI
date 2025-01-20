@@ -226,7 +226,7 @@ function &lt;tt&gt;EF_SPI_FifoRxFlush&lt;/tt&gt;</h2>
 <p><em>flushes the RX FIFO by writing to the RX FIFO FLUSH register</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#af5ad666ce47ff6bd16cff1627c33372a">EF_SPI_FifoRxFlush</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_af5ad666ce47ff6bd16cff1627c33372a"><div class="ttname"><a href="_e_f___s_p_i_8c.html#af5ad666ce47ff6bd16cff1627c33372a">EF_SPI_FifoRxFlush</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_FifoRxFlush(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">flushes the RX FIFO by writing to the RX FIFO FLUSH register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:198</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_af5ad666ce47ff6bd16cff1627c33372a"><div class="ttname"><a href="_e_f___s_p_i_8c.html#af5ad666ce47ff6bd16cff1627c33372a">EF_SPI_FifoRxFlush</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_FifoRxFlush(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">flushes the RX FIFO by writing to the RX FIFO FLUSH register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:197</div></div>
 <div class="ttc" id="astruct___e_f___s_p_i___t_y_p_e___html"><div class="ttname"><a href="struct___e_f___s_p_i___t_y_p_e__.html">_EF_SPI_TYPE_</a></div><div class="ttdef"><b>Definition:</b> EF_SPI_regs.h:85</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
@@ -239,7 +239,7 @@ function &lt;tt&gt;EF_SPI_assertCs&lt;/tt&gt;</h2>
 <p><em>asserts the CS line by setting the SS bit in the CTRL register to 1, asserts the CS line to start a transaction with the slave</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#a8b4118aeb52c24b0b9b20518c920d414">EF_SPI_assertCs</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a8b4118aeb52c24b0b9b20518c920d414"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a8b4118aeb52c24b0b9b20518c920d414">EF_SPI_assertCs</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_assertCs(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">asserts the CS line by setting the SS bit in the CTRL register to 1, asserts the CS line to start a t...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:258</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a8b4118aeb52c24b0b9b20518c920d414"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a8b4118aeb52c24b0b9b20518c920d414">EF_SPI_assertCs</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_assertCs(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">asserts the CS line by setting the SS bit in the CTRL register to 1, asserts the CS line to start a t...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:257</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -251,7 +251,7 @@ function &lt;tt&gt;EF_SPI_deassertCs&lt;/tt&gt;</h2>
 <p><em>deasserts the CS line by setting the SS bit in the CTRL register to 0, deasserts the CS line to end a transaction with the slave</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae">EF_SPI_deassertCs</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae"><div class="ttname"><a href="_e_f___s_p_i_8c.html#ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae">EF_SPI_deassertCs</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_deassertCs(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">deasserts the CS line by setting the SS bit in the CTRL register to 0, deasserts the CS line to end a...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:270</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae"><div class="ttname"><a href="_e_f___s_p_i_8c.html#ab6cdc2b71232f8f3d3fa1e6f9fa6d5ae">EF_SPI_deassertCs</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_deassertCs(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">deasserts the CS line by setting the SS bit in the CTRL register to 0, deasserts the CS line to end a...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:269</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -263,7 +263,7 @@ function &lt;tt&gt;EF_SPI_disable&lt;/tt&gt;</h2>
 <p><em>disables the SPI by setting the enable bit in the CTRL register to 0, disables spi master pulse generation</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#a779126c0c77ab36a9747aa8fe113c08d">EF_SPI_disable</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a779126c0c77ab36a9747aa8fe113c08d"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a779126c0c77ab36a9747aa8fe113c08d">EF_SPI_disable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_disable(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">disables the SPI by setting the enable bit in the CTRL register to 0, disables spi master pulse gener...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:222</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a779126c0c77ab36a9747aa8fe113c08d"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a779126c0c77ab36a9747aa8fe113c08d">EF_SPI_disable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_disable(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">disables the SPI by setting the enable bit in the CTRL register to 0, disables spi master pulse gener...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:221</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -275,7 +275,7 @@ function &lt;tt&gt;EF_SPI_disableRx&lt;/tt&gt;</h2>
 <p><em>disables the RX by setting the RX enable bit in the CTRL register to 0, disables storing bytes recieved from slave in RX FIFO</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#a3c26e6c7e5aa70bb44ee388a811aa762">EF_SPI_disableRx</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a3c26e6c7e5aa70bb44ee388a811aa762"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a3c26e6c7e5aa70bb44ee388a811aa762">EF_SPI_disableRx</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_disableRx(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">disables the RX by setting the RX enable bit in the CTRL register to 0, disables storing bytes reciev...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:246</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a3c26e6c7e5aa70bb44ee388a811aa762"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a3c26e6c7e5aa70bb44ee388a811aa762">EF_SPI_disableRx</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_disableRx(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">disables the RX by setting the RX enable bit in the CTRL register to 0, disables storing bytes reciev...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:245</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -287,7 +287,7 @@ function &lt;tt&gt;EF_SPI_enable&lt;/tt&gt;</h2>
 <p><em>enables the SPI by setting the enable bit in the CTRL register to 1, enables spi master pulse generation</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#a17bb022c768cb9acb92e540dd0d5dcce">EF_SPI_enable</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a17bb022c768cb9acb92e540dd0d5dcce"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a17bb022c768cb9acb92e540dd0d5dcce">EF_SPI_enable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_enable(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">enables the SPI by setting the enable bit in the CTRL register to 1, enables spi master pulse generat...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:210</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a17bb022c768cb9acb92e540dd0d5dcce"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a17bb022c768cb9acb92e540dd0d5dcce">EF_SPI_enable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_enable(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">enables the SPI by setting the enable bit in the CTRL register to 1, enables spi master pulse generat...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:209</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -299,7 +299,7 @@ function &lt;tt&gt;EF_SPI_enableRx&lt;/tt&gt;</h2>
 <p><em>enables the RX by setting the RX enable bit in the CTRL register to 1, enables storing bytes recieved from slave in RX FIFO</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#a9b5b4e72c33af4b4a7fc3ab0cdadde2e">EF_SPI_enableRx</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a9b5b4e72c33af4b4a7fc3ab0cdadde2e"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a9b5b4e72c33af4b4a7fc3ab0cdadde2e">EF_SPI_enableRx</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_enableRx(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">enables the RX by setting the RX enable bit in the CTRL register to 1, enables storing bytes recieved...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:234</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a9b5b4e72c33af4b4a7fc3ab0cdadde2e"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a9b5b4e72c33af4b4a7fc3ab0cdadde2e">EF_SPI_enableRx</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_enableRx(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">enables the RX by setting the RX enable bit in the CTRL register to 1, enables storing bytes recieved...</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:233</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -312,7 +312,7 @@ function &lt;tt&gt;EF_SPI_getIM&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    uint32_t *mask</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a0cbec2da38446744274c64e9585e846c"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a0cbec2da38446744274c64e9585e846c">EF_SPI_getIM</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_getIM(EF_SPI_TYPE_PTR spi, uint32_t *mask)</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:296</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a0cbec2da38446744274c64e9585e846c"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a0cbec2da38446744274c64e9585e846c">EF_SPI_getIM</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_getIM(EF_SPI_TYPE_PTR spi, uint32_t *mask)</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:295</div></div>
 </div><!-- fragment --><p>gets the value of the Interrupts Masking Register; which enable and disables interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt</p>
 <ul>
 <li>bit 0 TXE : Transmit FIFO is Empty.</li>
@@ -335,7 +335,7 @@ function &lt;tt&gt;EF_SPI_getMIS&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    uint32_t *mask</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a8f3ae4eb3cca3c9892bf0fd2ea1af96e"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a8f3ae4eb3cca3c9892bf0fd2ea1af96e">EF_SPI_getMIS</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_getMIS(EF_SPI_TYPE_PTR spi, uint32_t *mask)</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:327</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a8f3ae4eb3cca3c9892bf0fd2ea1af96e"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a8f3ae4eb3cca3c9892bf0fd2ea1af96e">EF_SPI_getMIS</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_getMIS(EF_SPI_TYPE_PTR spi, uint32_t *mask)</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:326</div></div>
 </div><!-- fragment --><p>gets the value of the Masked Interrupt Status Register; which shows the status of the interrupts after masking (ANDing) RIS by IM. The mask value is a 6-bit value, where each bit corresponds to a specific interrupt</p>
 <ul>
 <li>bit 0 TXE : Transmit FIFO is Empty.</li>
@@ -358,7 +358,7 @@ function &lt;tt&gt;EF_SPI_getRIS&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    uint32_t *mask</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a83c5fa1a6e95392f2b3ab02661f40dec"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a83c5fa1a6e95392f2b3ab02661f40dec">EF_SPI_getRIS</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_getRIS(EF_SPI_TYPE_PTR spi, uint32_t *mask)</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:312</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a83c5fa1a6e95392f2b3ab02661f40dec"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a83c5fa1a6e95392f2b3ab02661f40dec">EF_SPI_getRIS</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_getRIS(EF_SPI_TYPE_PTR spi, uint32_t *mask)</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:311</div></div>
 </div><!-- fragment --><p>gets the value of the Raw Interrupt Status Register; which shows the status of the interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt</p>
 <ul>
 <li>bit 0 TXE : Transmit FIFO is Empty.</li>
@@ -381,7 +381,7 @@ function &lt;tt&gt;EF_SPI_readData&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    uint32_t *data</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a76b8a68e19fbf8c73de0f0c6a2f1ffa0"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a76b8a68e19fbf8c73de0f0c6a2f1ffa0">EF_SPI_readData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_readData(EF_SPI_TYPE_PTR spi, uint32_t *data)</div><div class="ttdoc">reads a byte of data from the RXDATA register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:87</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a76b8a68e19fbf8c73de0f0c6a2f1ffa0"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a76b8a68e19fbf8c73de0f0c6a2f1ffa0">EF_SPI_readData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_readData(EF_SPI_TYPE_PTR spi, uint32_t *data)</div><div class="ttdoc">reads a byte of data from the RXDATA register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:86</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -391,11 +391,10 @@ function &lt;tt&gt;EF_SPI_readData&lt;/tt&gt;</h2>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
 <h2><a class="anchor" id="autotoc_md29"></a>
 function &lt;tt&gt;EF_SPI_readRxFifoEmpty&lt;/tt&gt;</h2>
-<p><em>reads the RX FIFO empty flag from the STATUS register</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#a143d8c3d4948fe4b3b673d4f7d37dc22">EF_SPI_readRxFifoEmpty</a> (</div>
+<p><em>reads the RX FIFO empty flag from the STATUS register</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_SPI_readRxFifoEmpty (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    uint32_t *RXfifo_state</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a143d8c3d4948fe4b3b673d4f7d37dc22"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a143d8c3d4948fe4b3b673d4f7d37dc22">EF_SPI_readRxFifoEmpty</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_readRxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state)</div><div class="ttdoc">reads the RX FIFO empty flag from the STATUS register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:152</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -405,11 +404,10 @@ function &lt;tt&gt;EF_SPI_readRxFifoEmpty&lt;/tt&gt;</h2>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
 <h2><a class="anchor" id="autotoc_md30"></a>
 function &lt;tt&gt;EF_SPI_readTxFifoEmpty&lt;/tt&gt;</h2>
-<p><em>reads the TX FIFO empty flag from the STATUS register</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#a5ba73cb278ddca9c4e4d7e2de81d086c">EF_SPI_readTxFifoEmpty</a> (</div>
+<p><em>reads the TX FIFO empty flag from the STATUS register</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_SPI_readTxFifoEmpty (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    uint32_t *TXfifo_state</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a5ba73cb278ddca9c4e4d7e2de81d086c"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a5ba73cb278ddca9c4e4d7e2de81d086c">EF_SPI_readTxFifoEmpty</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_readTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state)</div><div class="ttdoc">reads the TX FIFO empty flag from the STATUS register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:136</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -423,7 +421,7 @@ function &lt;tt&gt;EF_SPI_setGclkEnable&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    uint32_t value</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a825604b02b3136b2ae6b57cd74f7f885"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a825604b02b3136b2ae6b57cd74f7f885">EF_SPI_setGclkEnable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_setGclkEnable(EF_SPI_TYPE_PTR spi, uint32_t value)</div><div class="ttdoc">sets the GCLK enable bit in the SPI register to a certain value</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:58</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a825604b02b3136b2ae6b57cd74f7f885"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a825604b02b3136b2ae6b57cd74f7f885">EF_SPI_setGclkEnable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_setGclkEnable(EF_SPI_TYPE_PTR spi, uint32_t value)</div><div class="ttdoc">sets the GCLK enable bit in the SPI register to a certain value</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:57</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -437,7 +435,7 @@ function &lt;tt&gt;EF_SPI_setICR&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    uint32_t mask</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a1bd18073e3f75287527f0ee881546b2a"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a1bd18073e3f75287527f0ee881546b2a">EF_SPI_setICR</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_setICR(EF_SPI_TYPE_PTR spi, uint32_t mask)</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:343</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a1bd18073e3f75287527f0ee881546b2a"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a1bd18073e3f75287527f0ee881546b2a">EF_SPI_setICR</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_setICR(EF_SPI_TYPE_PTR spi, uint32_t mask)</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:342</div></div>
 </div><!-- fragment --><p>sets the value of the Interrupt Clear Register; which clears the interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt</p>
 <ul>
 <li>bit 0 TXE : Transmit FIFO is Empty.</li>
@@ -460,7 +458,7 @@ function &lt;tt&gt;EF_SPI_setIM&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    uint32_t mask</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a475700f9498d9ab54b03d3e81ace1f0a"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a475700f9498d9ab54b03d3e81ace1f0a">EF_SPI_setIM</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_setIM(EF_SPI_TYPE_PTR spi, uint32_t mask)</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:283</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a475700f9498d9ab54b03d3e81ace1f0a"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a475700f9498d9ab54b03d3e81ace1f0a">EF_SPI_setIM</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_setIM(EF_SPI_TYPE_PTR spi, uint32_t mask)</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:282</div></div>
 </div><!-- fragment --><p>sets the value of the Interrupts Masking Register; which enable and disables interrupts The mask value is a 6-bit value, where each bit corresponds to a specific interrupt</p>
 <ul>
 <li>bit 0 TXE : Transmit FIFO is Empty.</li>
@@ -482,7 +480,7 @@ function &lt;tt&gt;EF_SPI_waitRxFifoNotEmpty&lt;/tt&gt;</h2>
 <p><em>waits for the RX FIFO to be not empty by polling the RX FIFO empty flag in the STATUS register</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#a07fa3d20aee584b19921035cd715b71b">EF_SPI_waitRxFifoNotEmpty</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a07fa3d20aee584b19921035cd715b71b"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a07fa3d20aee584b19921035cd715b71b">EF_SPI_waitRxFifoNotEmpty</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_waitRxFifoNotEmpty(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">waits for the RX FIFO to be not empty by polling the RX FIFO empty flag in the STATUS register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:183</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a07fa3d20aee584b19921035cd715b71b"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a07fa3d20aee584b19921035cd715b71b">EF_SPI_waitRxFifoNotEmpty</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_waitRxFifoNotEmpty(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">waits for the RX FIFO to be not empty by polling the RX FIFO empty flag in the STATUS register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:182</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -494,7 +492,7 @@ function &lt;tt&gt;EF_SPI_waitTxFifoEmpty&lt;/tt&gt;</h2>
 <p><em>waits for the TX FIFO to be empty by polling the TX FIFO empty flag in the STATUS register</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#a37d6919aa636f75a7ad383d5c03a6595">EF_SPI_waitTxFifoEmpty</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a37d6919aa636f75a7ad383d5c03a6595"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a37d6919aa636f75a7ad383d5c03a6595">EF_SPI_waitTxFifoEmpty</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_waitTxFifoEmpty(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">waits for the TX FIFO to be empty by polling the TX FIFO empty flag in the STATUS register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:168</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a37d6919aa636f75a7ad383d5c03a6595"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a37d6919aa636f75a7ad383d5c03a6595">EF_SPI_waitTxFifoEmpty</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_waitTxFifoEmpty(EF_SPI_TYPE_PTR spi)</div><div class="ttdoc">waits for the TX FIFO to be empty by polling the TX FIFO empty flag in the STATUS register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:167</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -507,7 +505,7 @@ function &lt;tt&gt;EF_SPI_writeData&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    uint32_t data</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a1e57164045e2dc6ba9f3ebffc30f5985"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a1e57164045e2dc6ba9f3ebffc30f5985">EF_SPI_writeData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_writeData(EF_SPI_TYPE_PTR spi, uint32_t data)</div><div class="ttdoc">writes a byte of data to the TXDATA register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:73</div></div>
+<div class="ttc" id="a_e_f___s_p_i_8c_html_a1e57164045e2dc6ba9f3ebffc30f5985"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a1e57164045e2dc6ba9f3ebffc30f5985">EF_SPI_writeData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_writeData(EF_SPI_TYPE_PTR spi, uint32_t data)</div><div class="ttdoc">writes a byte of data to the TXDATA register</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:72</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -517,11 +515,10 @@ function &lt;tt&gt;EF_SPI_writeData&lt;/tt&gt;</h2>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
 <h2><a class="anchor" id="autotoc_md37"></a>
 function &lt;tt&gt;EF_SPI_writePhase&lt;/tt&gt;</h2>
-<p><em>sets the clock phase of the SPI in the CFG register to a certain value</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#a0391f44435674dff1569e37997485578">EF_SPI_writePhase</a> (</div>
+<p><em>sets the clock phase of the SPI in the CFG register to a certain value</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_SPI_writePhase (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    <span class="keywordtype">bool</span> phase</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_a0391f44435674dff1569e37997485578"><div class="ttname"><a href="_e_f___s_p_i_8c.html#a0391f44435674dff1569e37997485578">EF_SPI_writePhase</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_writePhase(EF_SPI_TYPE_PTR spi, bool phase)</div><div class="ttdoc">sets the clock phase of the SPI in the CFG register to a certain value</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:118</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
@@ -531,11 +528,10 @@ function &lt;tt&gt;EF_SPI_writePhase&lt;/tt&gt;</h2>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
 <h2><a class="anchor" id="autotoc_md38"></a>
 function &lt;tt&gt;EF_SPI_writepolarity&lt;/tt&gt;</h2>
-<p><em>sets the clock polarity of the SPI in the CFG register to a certain value</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___s_p_i_8c.html#af12037c75dc828ac46a94b871bce315f">EF_SPI_writepolarity</a> (</div>
+<p><em>sets the clock polarity of the SPI in the CFG register to a certain value</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_SPI_writepolarity (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___s_p_i___t_y_p_e__.html">EF_SPI_TYPE_PTR</a> spi,</div>
 <div class="line">    <span class="keywordtype">bool</span> polarity</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___s_p_i_8c_html_af12037c75dc828ac46a94b871bce315f"><div class="ttname"><a href="_e_f___s_p_i_8c.html#af12037c75dc828ac46a94b871bce315f">EF_SPI_writepolarity</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_SPI_writepolarity(EF_SPI_TYPE_PTR spi, bool polarity)</div><div class="ttdoc">sets the clock polarity of the SPI in the CFG register to a certain value</div><div class="ttdef"><b>Definition:</b> EF_SPI.c:102</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>spi</code> An **EF\_SPI\_TYPE** pointer, which points to the base memory address of SPI registers.**EF\_SPI\_TYPE** is a structure that contains the SPI registers.</li>
