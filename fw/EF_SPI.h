@@ -32,6 +32,7 @@
 /******************************************************************************
 * Macros and Constants
 ******************************************************************************/
+#define EF_SPI_TXDATA_MAX_VALUE ((uint32_t)0x000000FF)
 
 /******************************************************************************
 * Typedefs and Enums
@@ -77,7 +78,7 @@ EF_DRIVER_STATUS EF_SPI_readData(EF_SPI_TYPE_PTR spi, uint32_t *data);
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_SPI_writepolarity(EF_SPI_TYPE_PTR spi, bool polarity);
+EF_DRIVER_STATUS EF_SPI_setpolarity(EF_SPI_TYPE_PTR spi, bool polarity);
 
 //! sets the clock phase of the SPI in the CFG register to a certain value
     /*!
@@ -86,7 +87,7 @@ EF_DRIVER_STATUS EF_SPI_writepolarity(EF_SPI_TYPE_PTR spi, bool polarity);
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_SPI_writePhase(EF_SPI_TYPE_PTR spi, bool phase);
+EF_DRIVER_STATUS EF_SPI_setPhase(EF_SPI_TYPE_PTR spi, bool phase);
 
 //! reads the TX FIFO empty flag from the STATUS register
     /*!
@@ -95,7 +96,7 @@ EF_DRIVER_STATUS EF_SPI_writePhase(EF_SPI_TYPE_PTR spi, bool phase);
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_SPI_readTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state);
+EF_DRIVER_STATUS EF_SPI_isTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state);
 
 //! reads the RX FIFO empty flag from the STATUS register
     /*!
@@ -104,7 +105,7 @@ EF_DRIVER_STATUS EF_SPI_readTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_st
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_SPI_readRxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state);
+EF_DRIVER_STATUS EF_SPI_isRxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state);
 
 //! waits for the TX FIFO to be empty by polling the TX FIFO empty flag in the STATUS register
     /*!

@@ -53,7 +53,6 @@
 /******************************************************************************
 * Function Definitions
 ******************************************************************************/
-#define EF_SPI_TXDATA_MAX_VALUE 0x000000FF
 
 EF_DRIVER_STATUS EF_SPI_setGclkEnable (EF_SPI_TYPE_PTR spi, uint32_t value){
     
@@ -99,7 +98,7 @@ EF_DRIVER_STATUS EF_SPI_readData(EF_SPI_TYPE_PTR spi, uint32_t *data){
     return status;
 }
 
-EF_DRIVER_STATUS EF_SPI_writepolarity(EF_SPI_TYPE_PTR spi, bool polarity){
+EF_DRIVER_STATUS EF_SPI_setpolarity(EF_SPI_TYPE_PTR spi, bool polarity){
     
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
     if (spi == NULL){
@@ -115,7 +114,7 @@ EF_DRIVER_STATUS EF_SPI_writepolarity(EF_SPI_TYPE_PTR spi, bool polarity){
     return status;
 }
 
-EF_DRIVER_STATUS EF_SPI_writePhase(EF_SPI_TYPE_PTR spi, bool phase){
+EF_DRIVER_STATUS EF_SPI_setPhase(EF_SPI_TYPE_PTR spi, bool phase){
     
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
     if (spi == NULL){
@@ -133,7 +132,7 @@ EF_DRIVER_STATUS EF_SPI_writePhase(EF_SPI_TYPE_PTR spi, bool phase){
 }
 
 
-EF_DRIVER_STATUS EF_SPI_readTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state){
+EF_DRIVER_STATUS EF_SPI_isTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_state){
 
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
 
@@ -149,7 +148,7 @@ EF_DRIVER_STATUS EF_SPI_readTxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *TXfifo_st
     return status;
 }
 
-EF_DRIVER_STATUS EF_SPI_readRxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state){
+EF_DRIVER_STATUS EF_SPI_isRxFifoEmpty(EF_SPI_TYPE_PTR spi, uint32_t *RXfifo_state){
 
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
 
@@ -174,7 +173,7 @@ EF_DRIVER_STATUS EF_SPI_waitTxFifoEmpty(EF_SPI_TYPE_PTR spi){
     }else{
         uint32_t TXfifo_state;
         do {    
-            status = EF_SPI_readTxFifoEmpty(spi, &TXfifo_state);
+            status = EF_SPI_isTxFifoEmpty(spi, &TXfifo_state);
         } while((status == EF_DRIVER_OK) && (TXfifo_state == (uint32_t)0));
     }
     return status;
@@ -189,7 +188,7 @@ EF_DRIVER_STATUS EF_SPI_waitRxFifoNotEmpty(EF_SPI_TYPE_PTR spi){
     }else{
         uint32_t RXfifo_state;
         do {
-            status = EF_SPI_readRxFifoEmpty(spi, &RXfifo_state);
+            status = EF_SPI_isRxFifoEmpty(spi, &RXfifo_state);
         } while((status == EF_DRIVER_OK) && (RXfifo_state == (uint32_t)1));
     }
     return status;
