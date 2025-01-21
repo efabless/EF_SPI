@@ -151,23 +151,23 @@ external_interface:
   port: miso
   width: 1
   direction: input
-  description: SPI Master In Slave Out.
+  description: Master In Slave Out; this line carries data from the slave device to the master.
   sync: False
 - name: mosi
   port: mosi
   width: 1
   direction: output
-  description: SPI Master Out Slave In.
+  description: Master Out Slave In; this line carries data from the master device to the slave.
 - name: csb
   port: csb
   width: 1
   direction: output
-  description: Chip/Slave Select (Active Low)
+  description: Chip Select Bar; this signal selects the slave device to communicate with, typically active low.
 - name: sclk
   port: sclk
   width: 1
   direction: output
-  description: 
+  description: Serial Clock; this provides the clock signal that synchronizes data transfer between master and slave devices.
 
 clock:
   name: clk
