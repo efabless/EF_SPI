@@ -26,7 +26,7 @@ Directory Structure:
 
     - hdl 
         - rtl 
-            - **EF_SPI.v**: Verilog source code for the EF_SPI design, including the core logic of the UART module.
+            - **EF_SPI.v**: Verilog source code for the EF_SPI design.
             - **bus_wrappers**
                 - **EF_SPI_AHBL.v**: Verilog wrapper to interface the EF_SPI with the AMBA High-performance Bus (AHB-Lite) protocol.
                 - **EF_SPI_APB.v**: Verilog wrapper to interface the EF_SPI with the Advanced Peripheral Bus (APB) protocol.
