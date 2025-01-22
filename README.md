@@ -223,8 +223,8 @@ VERILOG_DEFINES:
 - CLKG_SKY130_HD
 ```
 ## Firmware Drivers:
-Firmware drivers for EF_SPI can be found in the [EF_SPI](https://github.com/efabless/EF_APIs_HUB/tree/main/EF_SPI) directory in the [EF_APIs_HUB](https://github.com/efabless/EF_APIs_HUB) repo. EF_SPI driver documentation  is available [here](https://github.com/efabless/EF_APIs_HUB/tree/main/EF_SPI/README.md).
-You can also find an example C application using the EF_SPI drivers [here](https://github.com/efabless/EF_APIs_HUB/tree/main/EF_SPI/EF_SPI_example.c).
+Firmware drivers for EF_SPI can be found in the [Drivers](https://github.com/efabless/EFIS/tree/main/Drivers) directory in the [EFIS](https://github.com/efabless/EFIS) (Efabless Firmware Interface Standard) repo. EF_SPI driver documentation  is available [here](https://github.com/efabless/EFIS/blob/main/Drivers/docs/EF_Driver_SPI/README.md).
+You can also find an example C application using the EF_SPI drivers [here](https://github.com/efabless/EFIS/tree/main/Drivers/docs/EF_Driver_SPI/example).
 ## Installation:
 You can install the IP either by cloning this repository or by using [IPM](https://github.com/efabless/IPM).
 ### 1. Using [IPM](https://github.com/efabless/IPM):
