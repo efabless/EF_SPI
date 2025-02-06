@@ -1,5 +1,5 @@
 /*
-	Copyright 2024 Efabless Corp.
+	Copyright 2025 Efabless Corp.
 
 	Author: Efabless Corp. (ip_admin@efabless.com)
 
@@ -107,7 +107,6 @@ module EF_SPI_APB #(
 	// Register Definitions
 	wire	[8-1:0]	RXDATA_WIRE;
 
-	wire	[8-1:0]	TXDATA_WIRE;
 
 	reg [1:0]	CFG_REG;
 	assign	CPOL	=	CFG_REG[0 : 0];
@@ -237,7 +236,6 @@ module EF_SPI_APB #(
 
 	assign	PRDATA = 
 			(PADDR[`APB_AW-1:0] == RXDATA_REG_OFFSET)	? RXDATA_WIRE :
-			(PADDR[`APB_AW-1:0] == TXDATA_REG_OFFSET)	? TXDATA_WIRE :
 			(PADDR[`APB_AW-1:0] == CFG_REG_OFFSET)	? CFG_REG :
 			(PADDR[`APB_AW-1:0] == CTRL_REG_OFFSET)	? CTRL_REG :
 			(PADDR[`APB_AW-1:0] == PR_REG_OFFSET)	? PR_REG :
