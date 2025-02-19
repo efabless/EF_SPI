@@ -279,6 +279,5 @@ You can install the IP either by cloning this repository or by using [IPM](https
 |tx_level_below|output|1|TX FIFO level is below trhe threshold.|
 |tx_level|output|FAW|TX FIFO data level.|
 |ss|input|1|None|
-|enable|input|1|enable for spi master pulse generation|
 |done|output|1|spi done flag.|
 |busy|output|1|spi busy flag.|
