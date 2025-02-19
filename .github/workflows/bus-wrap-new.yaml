@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   Run:
-    uses: ./.github/workflows/run_ip.yaml
+    uses: efabless/BusWrap/.github/workflows/run_ip.yaml@test-ci
     secrets: inherit
     with:
       repo: ${{ github.repository }}
